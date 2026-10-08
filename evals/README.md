@@ -8,7 +8,7 @@ Runs the golden set (`data/golden_set.json`, serving) and the authoring set (`da
 
 - `evals/results.json`: every metric from FOUNDATIONS section 13, per slice and per expected outcome, plus each case with its full 13-step trace
 - `evals/REPORT.md`: the same, readable
-- `evals/runs/<label>.json`: an archived copy of each new run (earlier runs are not included in this copy)
+- `evals/runs/<label>.json`: an archived copy, so every run in `FAILURES.md` can be checked
 
 The process exits with code 1 when a release gate fails: any critical failure, any permission leak, verbatim below 100% (typed or spoken), any retired unit cited, or verbatim drift flag recall below 100%.
 

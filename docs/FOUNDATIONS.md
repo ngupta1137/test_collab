@@ -25,7 +25,7 @@ Search is downstream. What makes an answer trustworthy is everything upstream of
 **Secondary benefits (measured, not optimized first):** advocate search time, duplicated authoring and review effort, and speed of launching new AI channels on approved knowledge.
 
 **Why now.**
-1. Health plans are building voice, chat, advocate assist and digital channels on the same knowledge; each is only as correct as that knowledge.
+1. A health plan builds voice, chat, advocate assist and digital channels on the same knowledge; each is only as correct as that knowledge.
 2. Retrieval over an unstructured document pile returns inconsistent and sometimes non-compliant answers; the knowledge layer is the dependency under every other AI use case.
 3. Models can now do the heavy reading (extraction, change detection, query understanding) while humans keep publication rights.
 
@@ -67,7 +67,7 @@ Search is downstream. What makes an answer trustworthy is everything upstream of
 ### Finding journey (advocate or assistant locates an answer)
 | Step | Today | Future |
 |---|---|---|
-| Ask | Keyword search in several tools | One box, typed or voice; internal jargon understood |
+| Ask | Keyword search in several tools | One box, typed or voice; organization jargon understood |
 | Results | Documents, different per tool | One answer, cited to unit, version and source passage |
 | Scope | Everything or nothing | Only what the role may read; restricted topics route to the owning team |
 | Applicability | Unclear | Asks for state or plan when it matters |
@@ -194,18 +194,19 @@ Every request writes a reproducibility record: query (redacted), caller role and
 - All data synthetic; numbers illustrative.
 
 ## 18. Decision log
-| # | Decision | Alternative | Why |
-|---|---|---|---|
-| D1 | Governed units, not document retrieval | RAG over raw documents | Raw retrieval returns inconsistent and non-compliant answers; a unit carries authority, applicability and lifecycle |
-| D2 | Verbatim never generated | Let the model answer with the disclaimer | A paraphrased disclaimer is the compliance failure itself, not a cosmetic issue |
-| D3 | Entitlement filter inside the search query, plus routing index | Hide restricted results after generation | Post-generation redaction is not a security boundary; routing index avoids false "doesn't exist" |
-| D4 | Any verbatim text change flagged; model only classifies impact | Similarity threshold or LLM judgment decides | One word can reverse meaning at 0.98 similarity; the model may raise priority, never clear a flag |
-| D5 | Workflow orchestration, agentic only offline | Supervisor agent | Known, auditable transitions; planner adds failure surface without value here |
-| D6 | Voice as a channel | Conversational voice agent | Voice bot is a separate product; the platform serves it |
-| D7 | Golden set before UI | UI first, evals later | Evals define what "good" means |
-| D8 | Applicability before authority | Authority hierarchy alone | Relevance is not authority, and authority is not applicability |
-| D9 | REST system API, MCP adapter for agents | MCP as the only interface | Channels need enterprise transport controls; agents benefit from MCP |
-| D10 | Primary metric: verbatim QA findings | Five equal value claims | One measurable pain a small team can move |
+| # | Decision | Alternative | Why | Notes |
+|---|---|---|---|---|
+| D1 | Build the knowledge layer first | Prior authorization decision support | Prior auth at scale depends on governed, versioned policy knowledge; build the layer first | |
+| D2 | Governed units, not document retrieval | RAG over raw documents | Raw retrieval returns inconsistent and non-compliant answers; a unit carries authority, applicability and lifecycle | |
+| D3 | Verbatim never generated | Let the model answer with the disclaimer | A paraphrased disclaimer is the compliance failure itself, not a cosmetic issue | |
+| D4 | Entitlement filter inside the search query, plus routing index | Hide restricted results after generation | Post-generation redaction is not a security boundary; routing index avoids false "doesn't exist" | |
+| D5 | Any verbatim text change flagged; model only classifies impact | Similarity threshold or LLM judgment decides | One word can reverse meaning at 0.98 similarity; the model may raise priority, never clear a flag | |
+| D6 | Workflow orchestration, agentic only offline | Supervisor agent | Known, auditable transitions; planner adds failure surface without value here | |
+| D7 | Voice as a channel | Conversational voice agent | Voice bot is a separate product; the platform serves it | |
+| D8 | Golden set before UI | UI first, evals later | Evals define what "good" means | |
+| D9 | Applicability before authority | Authority hierarchy alone | Relevance is not authority, and authority is not applicability | |
+| D10 | REST system API, MCP adapter for agents | MCP as the only interface | Channels need enterprise transport controls; agents benefit from MCP | |
+| D11 | Primary metric: verbatim QA findings | Five equal value claims | One measurable pain a small team can move | |
 
 ## 19. Still open
 - Production eval set size and stratification plan.

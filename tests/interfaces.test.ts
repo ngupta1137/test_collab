@@ -103,3 +103,49 @@ test('REST: identity required, same enforcement as MCP', async () => {
   assert.ok(calls.some((x: any) => x.interface === 'rest') && calls.some((x: any) => x.interface === 'mcp'));
   server.close();
 });
+
+test('hybrid plumbing: vectors only re-rank entitled units; stale or missing vectors fall back to keyword', async () => {
+  const { loadData: ld } = await import('../src/service/service.ts');
+  const { Verity: V } = await import('../src/engine/pipeline.ts');
+  const { unitVectorHash } = await import('../src/engine/retrieval.ts');
+  const { prepare } = await import('../src/engine/text.ts');
+  const base = ld(new URL('..', import.meta.url).pathname);
+  const req = { query: 'rx pricing disclaimer', role: 'pharmacy_advocate', channel: 'advocate_view', context: { lob: 'MAPD', state: null } } as const;
+  const plain = new V(base).serve({ ...req }).parts[0]!;
+  // Fake vectors: every unit orthogonal to the query except a restricted insurance unit that matches it perfectly.
+  const key = prepare(req.query, base.lexicon).text;
+  const restricted = base.units.find((u) => u.knowledge_base === 'KB-INS')!;
+  const units = Object.fromEntries(base.units.map((u) => [u.unit_id, { hash: unitVectorHash(u), vec: u.unit_id === restricted.unit_id ? [1, 0] : [0, 1] }]));
+  const hybrid = new V({ ...base, vectors: { model: 'fake', units, queries: { [key]: [1, 0] } } }).serve({ ...req }).parts[0]!;
+  assert.equal(hybrid.outcome, plain.outcome, 'a perfect vector match outside the role cannot change the outcome');
+  assert.ok(!hybrid.unit_ids.includes(restricted.unit_id), 'out-of-scope unit never returned');
+  // Stale hash: vectors ignored, same result as keyword.
+  const stale = Object.fromEntries(Object.entries(units).map(([k, v]) => [k, { ...v, hash: 'stale' }]));
+  const s = new V({ ...base, vectors: { model: 'fake', units: stale, queries: { [key]: [1, 0] } } }).serve({ ...req }).parts[0]!;
+  assert.deepEqual(s.unit_ids, plain.unit_ids);
+});
+
+test('stale and conflict outcomes open owner review items; repeats bump the count, claims are recorded', () => {
+  const service = new VerityService(root, mkdtempSync(join(tmpdir(), 'verity-')));
+  const id = { principal: 'agent:test', role: 'pharmacy_advocate' };
+  const ask = (q: string) => service.search(id as never, 'test', { query: q, channel: 'advocate_view', lob: 'MAPD', state: null } as never);
+  assert.equal(ask('is there a shipping fee for mail order').outcome, 'stale');
+  assert.equal(ask('how many days supply can i get by mail').outcome, 'conflict');
+  ask('is there a shipping fee for mail order');
+  const items = service.ownerQueue.list();
+  assert.equal(items.length, 2);
+  const stale = items.find((i) => i.kind === 'stale')!;
+  assert.deepEqual(stale.unit_ids, ['U-PH-008']);
+  assert.equal(stale.asks, 2);
+  assert.equal(items.find((i) => i.kind === 'conflict')!.unit_ids.sort().join(), 'U-PH-007,U-PH-107');
+  assert.equal(service.ownerQueue.claim(stale.item_id, 'Dana')!.status, 'claimed');
+});
+
+test('gap clusters carry age and a suggested owner; the first claim holds', async () => {
+  const { OwnerQueue } = await import('../src/engine/ownerQueue.ts');
+  const report = JSON.parse(readFileSync(join(root, 'analyst/gap_report.json'), 'utf8'));
+  assert.ok(report.clusters.every((c: any) => typeof c.suggested_owner === 'string' && c.age_days !== null));
+  const q = new OwnerQueue();
+  assert.equal(q.claimGap('C01', 'Dana', '2026-10-06').by, 'Dana');
+  assert.equal(q.claimGap('C01', 'Lee', '2026-10-06').by, 'Dana');
+});

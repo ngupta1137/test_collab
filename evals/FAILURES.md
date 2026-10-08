@@ -1,6 +1,6 @@
 # Eval failures: write-ups
 
-Every failure from a real run, in the order found. Format: symptom, root cause, change made, regression case. Raw results for each run were archived in the original working repo and are not included here; the latest results are in `evals/results*.json`. Nothing here is hypothetical.
+Every failure from a real run, in the order found. Format: symptom, root cause, change made, regression case. Raw results for each run are in `evals/runs/`. Nothing here is hypothetical.
 
 **Run 01** (`runs/01-baseline.json`, engine `baseline-deterministic-0.1`): release BLOCKED. 6 of 23 cases failed, 3 of them critical.
 **Run 02** (`runs/02-fixes.json`): release PASS. 1 of 25 cases failing (G17, major, open). 0 critical.
@@ -63,7 +63,7 @@ Caveat: the fixes below were made while looking at this 25-case set, so a pass h
 - **Root cause:** coverage counted body-only matches the same as topic matches. "file" matched "payment method on file" and "pharmacy" matched "pharmacy system" in the body, which reached 0.59 coverage while the one word that mattered, "grievance", matched nothing.
 - **Change:** coverage only qualifies a unit when at least one query word hits its title or synonyms. Body words alone are incidental. A curated synonym phrase match still qualifies on its own (F02).
 - **Regression case:** new R03, critical. No other case changed outcome.
-- **Lesson:** the golden set had 25 cases and passed. A second source of test traffic (real queries from the log) found a critical failure in minutes. This is why the production gate grows from production queries.
+- **Lesson for the deck:** the golden set had 25 cases and passed. A second source of test traffic (real queries from the log) found a critical failure in minutes. This is why the production gate grows from production queries.
 
 ## F07. FIXED (lexicon entry approved 2026-10-07): "copay for tier3" asks for the member's state
 
@@ -109,3 +109,22 @@ Caveat: the fixes below were made while looking at this 25-case set, so a pass h
 - **Root cause:** the gate that decides "relevant enough to answer" is lexical coverage. Real advocates add filler ("before I get into her meds..."), use other words ("3 month supply", "the CVS down the street", "primary doctor") and quote old wording. A keyword gate cannot tell filler from key words.
 - **Why not fixed here:** a threshold sweep shows the trade-off has no keyword answer (table in BLIND.md). Lowering the gate raises blind accuracy, but the engine starts answering when it must abstain, and at 0.2 the golden set takes its first critical failure. Semantic retrieval (embeddings) and the model query agent are the planned fix, and both are in the architecture; model weights are not reachable from this build environment.
 - **Plan:** the Haiku query agent at step 4 is now built (src/agents/queryAgent.ts) and plumbing-tested with a mock model (tests/agents.test.ts, 8 of 8). Its real score needs an API key: docs/MODEL_RUN.md. Embeddings in the search step follow if the agent alone does not close the gap. Acceptance: blind set at or above golden-set accuracy with 0 critical failures, then a second blind set written fresh, because this one has now been seen.
+
+## F13. OPEN: a stale unit is dropped silently and a weaker unit answers instead
+
+- **Case:** H13 "is there a charge for shipping on mail order" (critical, hold-out). Expected `stale`; got `answer` from U-PH-006 (delivery time).
+- **Symptom:** the advocate gets a confident answer about delivery time to a question about shipping cost.
+- **Root cause:** U-PH-008 (shipping cost) ties U-PH-006 on search score, but is past its review date. Step 7 removes it as ineligible, and step 9 then selects the tied unit that is eligible. The stale unit is never reported because it did not win by itself.
+- **Proposed change (not applied):** if an ineligible stale unit scores at least as high as the best eligible candidate, return `stale` for it. This is a general rule, not a case patch, but it changes outcomes, so it waits for review.
+- **Regression to add with the fix:** H13 plus a golden case where a stale and a fresh unit tie.
+
+## F14. OPEN: a paraphrase of a restricted unit's title returns insufficient_evidence, not not_authorized
+
+- **Case:** H15 "what do i confirm with the member before we talk about their prescriptions" as an insurance advocate (critical, hold-out). Expected `not_authorized` (U-PH-002 is pharmacy-only); got `insufficient_evidence`.
+- **Symptom:** the advocate is told nothing exists instead of being routed to the Pharmacy team.
+- **Root cause:** the routing index matches titles by lexical coverage (gate 0.5). "Confirm with the member before prescriptions" shares too few words with "Identity verification before discussing prescriptions". Same family as F12: a lexical gate cannot see a paraphrase.
+- **Fix path:** vectors for the routing index (titles only, so no body leaks) once the hybrid ranking is accepted. Not applied.
+
+## F12 addendum: hold-out set (data/holdout_set.json, 15 cases, written before it was run)
+
+First run, keyword only: 66.7% parts, 2 critical (H13, H15), abstention 80%. H01, H03 and H05 are further F12 cases (shorthand, "home delivery", "corner drug store"). The five decline cases that share vocabulary with approved units (H06 to H10) and the two applicability cases (H11, H12) all declined correctly. The semantic gate could not be judged on this set because the hold-out queries had no vectors yet; rerun after `npm run embed`.

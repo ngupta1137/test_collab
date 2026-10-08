@@ -1,6 +1,6 @@
 // Query agent: runtime step 4 (FOUNDATIONS section 7), model-backed.
 // It never answers. It rewrites the redacted question into standalone parts,
-// fixes speech-to-text and internal jargon, and PROPOSES candidate units from a
+// fixes speech-to-text and organization jargon, and PROPOSES candidate units from a
 // catalog of titles. Steps 7 to 9 then decide, deterministically, whether a
 // proposed unit is eligible, applicable and authoritative.
 //

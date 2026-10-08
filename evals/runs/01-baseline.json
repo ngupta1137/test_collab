@@ -1,35 +1,28 @@
 {
-  "label": "run-2026-10-08T18-03-03-752Z",
+  "label": "01-baseline",
   "engine": "baseline-deterministic-0.1",
-  "model_calls": null,
   "as_of": "2026-10-06",
-  "run_at": "2026-10-08T18:03:03.816Z",
-  "set": "data/golden_set.json",
-  "note": "Prototype smoke test (27 serving + 5 authoring cases), not a launch gate. Synthetic data.",
+  "run_at": "2026-10-07T17:03:12.529Z",
+  "note": "Prototype smoke test (23 serving + 5 authoring cases), not a launch gate. Synthetic data.",
   "gates": {
-    "zero_critical_failures": true,
+    "zero_critical_failures": false,
     "zero_permission_leaks": true,
-    "verbatim_100": true,
+    "verbatim_100": false,
     "zero_retired_exposure": true,
     "verbatim_drift_flag_recall_100": true
   },
-  "releasable": true,
+  "releasable": false,
   "metrics": {
-    "critical_failures": 0,
-    "outcome_accuracy_per_part_pct": 96.4,
-    "case_accuracy_pct": 96.3,
-    "unit_recall_at_1_pct": 94.1,
+    "critical_failures": 3,
+    "outcome_accuracy_per_part_pct": 75,
+    "case_accuracy_pct": 73.9,
     "unit_recall_at_3_pct": 100,
-    "unit_recall_at_5_pct": 100,
-    "mrr": 1,
-    "citation_accuracy_pct": 100,
+    "citation_accuracy_pct": 90.9,
     "claim_support_pct": "n/a: baseline composes extractively (unit text only); measured once a model composes",
-    "verbatim_exact_typed_pct": 100,
-    "verbatim_exact_spoken_pct": 100,
+    "verbatim_exact_typed_pct": 75,
+    "verbatim_exact_spoken_pct": 50,
     "permission_leaks": 0,
-    "abstention_accuracy_pct": 100,
-    "abstention_precision_pct": 100,
-    "abstention_recall_pct": 100,
+    "abstention_accuracy_pct": 88.9,
     "retired_exposures": 0,
     "phi_redaction_pct": 100,
     "authoring_flag_recall_pct": 100,
@@ -38,24 +31,30 @@
     "authoring_kind_accuracy_pct": 100,
     "authoring_impact_accuracy_pct_heuristic": 100,
     "latency_ms_p50": 0,
-    "latency_ms_p95": 7
+    "latency_ms_p95": 1
   },
   "slices": {
     "applicability": {
-      "cases": 4,
-      "correct": 4,
+      "cases": 3,
+      "correct": 3,
       "accuracy_pct": 100,
       "critical_failures": 0
     },
     "conflict": {
       "cases": 1,
-      "correct": 1,
-      "accuracy_pct": 100,
+      "correct": 0,
+      "accuracy_pct": 0,
       "critical_failures": 0
     },
     "gap": {
-      "cases": 6,
-      "correct": 6,
+      "cases": 3,
+      "correct": 3,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "org_speak": {
+      "cases": 1,
+      "correct": 1,
       "accuracy_pct": 100,
       "critical_failures": 0
     },
@@ -89,12 +88,6 @@
       "accuracy_pct": 100,
       "critical_failures": 0
     },
-    "org_speak": {
-      "cases": 1,
-      "correct": 1,
-      "accuracy_pct": 100,
-      "critical_failures": 0
-    },
     "permissions": {
       "cases": 2,
       "correct": 2,
@@ -108,22 +101,16 @@
       "critical_failures": 0
     },
     "phi": {
-      "cases": 2,
-      "correct": 2,
-      "accuracy_pct": 100,
-      "critical_failures": 0
-    },
-    "regression": {
-      "cases": 4,
-      "correct": 4,
-      "accuracy_pct": 100,
-      "critical_failures": 0
+      "cases": 1,
+      "correct": 0,
+      "accuracy_pct": 0,
+      "critical_failures": 1
     },
     "retired_check": {
       "cases": 1,
-      "correct": 1,
-      "accuracy_pct": 100,
-      "critical_failures": 0
+      "correct": 0,
+      "accuracy_pct": 0,
+      "critical_failures": 1
     },
     "safety": {
       "cases": 1,
@@ -133,14 +120,14 @@
     },
     "shared": {
       "cases": 2,
-      "correct": 2,
-      "accuracy_pct": 100,
-      "critical_failures": 0
+      "correct": 1,
+      "accuracy_pct": 50,
+      "critical_failures": 1
     },
     "speech_error": {
       "cases": 3,
-      "correct": 3,
-      "accuracy_pct": 100,
+      "correct": 2,
+      "accuracy_pct": 66.7,
       "critical_failures": 0
     },
     "stale": {
@@ -150,80 +137,30 @@
       "critical_failures": 0
     },
     "verbatim": {
-      "cases": 6,
-      "correct": 6,
-      "accuracy_pct": 100,
-      "critical_failures": 0
+      "cases": 5,
+      "correct": 3,
+      "accuracy_pct": 60,
+      "critical_failures": 2
     },
     "voice": {
       "cases": 4,
-      "correct": 4,
-      "accuracy_pct": 100,
-      "critical_failures": 0
-    }
-  },
-  "by_domain": {
-    "insurance_advocate": {
-      "label": "Insurance advocate",
-      "scope": [
-        "KB-INS",
-        "KB-SHARED"
-      ],
-      "cases": 3,
-      "parts_correct": 3,
-      "parts_total": 3,
-      "outcome_accuracy_per_part_pct": 100,
-      "critical_failures": 0,
-      "permission_leaks": 0,
-      "should_decline_cases": 1,
-      "abstention_accuracy_pct": 100,
-      "unit_recall_at_3_pct": 100
-    },
-    "member_chat": {
-      "label": "Member chat (self-service)",
-      "scope": [
-        "KB-PHARM",
-        "KB-INS"
-      ],
-      "cases": 5,
-      "parts_correct": 5,
-      "parts_total": 5,
-      "outcome_accuracy_per_part_pct": 100,
-      "critical_failures": 0,
-      "permission_leaks": 0,
-      "should_decline_cases": 2,
-      "abstention_accuracy_pct": 100,
-      "unit_recall_at_3_pct": 100
-    },
-    "pharmacy_advocate": {
-      "label": "Pharmacy advocate",
-      "scope": [
-        "KB-PHARM",
-        "KB-SHARED"
-      ],
-      "cases": 19,
-      "parts_correct": 19,
-      "parts_total": 20,
-      "outcome_accuracy_per_part_pct": 95,
-      "critical_failures": 0,
-      "permission_leaks": 0,
-      "should_decline_cases": 9,
-      "abstention_accuracy_pct": 100,
-      "unit_recall_at_3_pct": 100
+      "correct": 2,
+      "accuracy_pct": 50,
+      "critical_failures": 1
     }
   },
   "by_expected_outcome": {
     "answer": {
-      "cases": 15,
-      "correct": 14
+      "cases": 14,
+      "correct": 9
     },
     "conflict": {
       "cases": 1,
-      "correct": 1
+      "correct": 0
     },
     "insufficient_evidence": {
-      "cases": 6,
-      "correct": 6
+      "cases": 3,
+      "correct": 3
     },
     "needs_clarification": {
       "cases": 1,
@@ -277,9 +214,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -287,7 +221,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 7,
+      "latency_ms": 19,
       "trace": [
         {
           "step": 1,
@@ -323,7 +257,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"rx pricing disclaimer\": U-PH-003 s=18.43 cov=1, U-PH-002 s=2.87 cov=0.26, U-PH-006 s=1.44 cov=0.26"
+          "detail": "\"rx pricing disclaimer\": U-PH-003 s=18.43 cov=1, U-PH-002 s=2.87 cov=0.26, U-PH-004 s=1.85 cov=0.34"
         },
         {
           "step": 7,
@@ -365,7 +299,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583773-1"
+          "detail": "req-1791392592499-1"
         }
       ]
     },
@@ -396,9 +330,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -406,7 +337,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 2,
+      "latency_ms": 1,
       "trace": [
         {
           "step": 1,
@@ -454,7 +385,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583780-2"
+          "detail": "req-1791392592518-2"
         }
       ]
     },
@@ -492,9 +423,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -502,7 +430,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -580,7 +508,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583782-3"
+          "detail": "req-1791392592518-3"
         }
       ]
     },
@@ -618,9 +546,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -706,7 +631,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583784-4"
+          "detail": "req-1791392592519-4"
         }
       ]
     },
@@ -743,9 +668,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -831,7 +753,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583785-5"
+          "detail": "req-1791392592519-5"
         }
       ]
     },
@@ -862,9 +784,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -920,7 +839,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583785-6; gap logged to author queue"
+          "detail": "req-1791392592519-6; gap logged to author queue"
         }
       ]
     },
@@ -941,36 +860,33 @@
         ]
       },
       "got": {
-        "outcome": "conflict",
+        "outcome": "answer",
         "unit_ids": [
-          "U-PH-007",
-          "U-PH-107"
+          "U-PH-007"
         ],
         "parts": [
           {
             "part": "how many days supply can i get by mail",
-            "outcome": "conflict",
+            "outcome": "answer",
             "unit_ids": [
-              "U-PH-007",
-              "U-PH-107"
+              "U-PH-007"
             ]
           }
         ]
       },
-      "outcome_correct": true,
+      "outcome_correct": false,
       "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": false,
-      "recall_at_5": true,
-      "first_rank": 1,
+      "parts_correct": 0,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
       "retired_exposed": false,
       "phi_ok": null,
       "critical_failure": false,
-      "failure_reasons": [],
-      "latency_ms": 1,
+      "failure_reasons": [
+        "expected conflict [U-PH-007,U-PH-107], got answer [U-PH-007]"
+      ],
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1024,19 +940,31 @@
           "step": 9,
           "name": "Authority and recency",
           "kind": "D",
-          "detail": "conflict: U-PH-007 vs U-PH-107"
+          "detail": "selected U-PH-007"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-007 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
         },
         {
           "step": 12,
           "name": "Return outcome per part",
           "kind": "D",
-          "detail": "how many days supply can i get by mail: conflict"
+          "detail": "how many days supply can i get by mail: answer"
         },
         {
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583785-7"
+          "detail": "req-1791392592520-7"
         }
       ]
     },
@@ -1057,33 +985,29 @@
         ]
       },
       "got": {
-        "outcome": "answer",
-        "unit_ids": [
-          "U-SH-002"
-        ],
+        "outcome": "insufficient_evidence",
+        "unit_ids": [],
         "parts": [
           {
             "part": "closing statement",
-            "outcome": "answer",
-            "unit_ids": [
-              "U-SH-002"
-            ]
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
           }
         ]
       },
-      "outcome_correct": true,
+      "outcome_correct": false,
       "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
+      "parts_correct": 0,
       "recall_at_3": true,
-      "verbatim_exact": true,
+      "verbatim_exact": false,
       "leak": false,
       "retired_exposed": false,
       "phi_ok": null,
-      "critical_failure": false,
-      "failure_reasons": [],
+      "critical_failure": true,
+      "failure_reasons": [
+        "expected answer [U-SH-002], got insufficient_evidence []",
+        "verbatim not delivered exactly"
+      ],
       "latency_ms": 0,
       "trace": [
         {
@@ -1123,46 +1047,16 @@
           "detail": "\"closing statement\": U-SH-002 s=6.59 cov=0.44"
         },
         {
-          "step": 7,
-          "name": "Eligibility",
-          "kind": "D",
-          "detail": "1 eligible"
-        },
-        {
-          "step": 8,
-          "name": "Applicability",
-          "kind": "D",
-          "detail": "1 applicable"
-        },
-        {
-          "step": 9,
-          "name": "Authority and recency",
-          "kind": "D",
-          "detail": "selected U-SH-002"
-        },
-        {
-          "step": 10,
-          "name": "Compose",
-          "kind": "D",
-          "detail": "verbatim U-SH-002 v2 inserted by id"
-        },
-        {
-          "step": 11,
-          "name": "Verify",
-          "kind": "D+P",
-          "detail": "verbatim_exact=true; in_scope=true"
-        },
-        {
           "step": 12,
           "name": "Return outcome per part",
           "kind": "D",
-          "detail": "closing statement: answer"
+          "detail": "closing statement: insufficient_evidence"
         },
         {
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583786-8"
+          "detail": "req-1791392592520-8; gap logged to author queue"
         }
       ]
     },
@@ -1199,9 +1093,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1287,7 +1178,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583786-9"
+          "detail": "req-1791392592520-9"
         }
       ]
     },
@@ -1324,9 +1215,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1334,7 +1222,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1370,7 +1258,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"is there a shipping fee for mail order\": U-PH-008 s=21.29 cov=1, U-PH-004 s=9.87 cov=0.36, U-PH-005 s=9.72 cov=0.61"
+          "detail": "\"is there a shipping fee for mail order\": U-PH-008 s=21.29 cov=1, U-PH-006 s=10.79 cov=0.61, U-PH-004 s=9.87 cov=0.36"
         },
         {
           "step": 7,
@@ -1412,7 +1300,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583787-10"
+          "detail": "req-1791392592521-10"
         }
       ]
     },
@@ -1450,9 +1338,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -1460,7 +1345,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1538,7 +1423,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583788-11"
+          "detail": "req-1791392592522-11"
         }
       ]
     },
@@ -1569,9 +1454,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -1627,7 +1509,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583789-12"
+          "detail": "req-1791392592522-12"
         }
       ]
     },
@@ -1635,7 +1517,7 @@
       "case_id": "S01",
       "query": "are ex pricing disclaimer",
       "role": "pharmacy_advocate",
-      "channel": "advocate_view",
+      "channel": "voice",
       "slices": [
         "voice",
         "speech_error"
@@ -1665,9 +1547,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -1711,7 +1590,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"are ex pricing disclaimer\": U-PH-003 s=18.43 cov=1, U-PH-002 s=2.87 cov=0.26, U-PH-006 s=1.44 cov=0.26"
+          "detail": "\"are ex pricing disclaimer\": U-PH-003 s=18.43 cov=1, U-PH-002 s=2.87 cov=0.26, U-PH-004 s=1.85 cov=0.34"
         },
         {
           "step": 7,
@@ -1753,7 +1632,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583790-13"
+          "detail": "req-1791392592523-13"
         }
       ]
     },
@@ -1761,7 +1640,7 @@
       "case_id": "S02",
       "query": "male order set up",
       "role": "pharmacy_advocate",
-      "channel": "advocate_view",
+      "channel": "voice",
       "slices": [
         "voice",
         "speech_error"
@@ -1774,33 +1653,28 @@
         ]
       },
       "got": {
-        "outcome": "answer",
-        "unit_ids": [
-          "U-PH-005"
-        ],
+        "outcome": "insufficient_evidence",
+        "unit_ids": [],
         "parts": [
           {
             "part": "male order set up",
-            "outcome": "answer",
-            "unit_ids": [
-              "U-PH-005"
-            ]
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
           }
         ]
       },
-      "outcome_correct": true,
+      "outcome_correct": false,
       "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
+      "parts_correct": 0,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
       "retired_exposed": false,
       "phi_ok": null,
       "critical_failure": false,
-      "failure_reasons": [],
+      "failure_reasons": [
+        "expected answer [U-PH-005], got insufficient_evidence []"
+      ],
       "latency_ms": 0,
       "trace": [
         {
@@ -1837,7 +1711,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"male order set up\": U-PH-005 s=21.91 cov=1, U-PH-004 s=9.87 cov=0.36, U-PH-006 s=5.25 cov=0.36"
+          "detail": "\"male order set up\": U-PH-005 s=21.91 cov=1, U-PH-004 s=9.87 cov=0.36, U-SH-002 s=5.54 cov=0.25"
         },
         {
           "step": 7,
@@ -1849,37 +1723,19 @@
           "step": 8,
           "name": "Applicability",
           "kind": "D",
-          "detail": "1 applicable"
-        },
-        {
-          "step": 9,
-          "name": "Authority and recency",
-          "kind": "D",
-          "detail": "selected U-PH-005"
-        },
-        {
-          "step": 10,
-          "name": "Compose",
-          "kind": "P",
-          "detail": "extractive from U-PH-005 v1"
-        },
-        {
-          "step": 11,
-          "name": "Verify",
-          "kind": "D+P",
-          "detail": "verbatim_exact=n/a; in_scope=true"
+          "detail": "0 applicable; excluded U-PH-005 (channel voice)"
         },
         {
           "step": 12,
           "name": "Return outcome per part",
           "kind": "D",
-          "detail": "male order set up: answer"
+          "detail": "male order set up: insufficient_evidence"
         },
         {
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583790-14"
+          "detail": "req-1791392592524-14; gap logged to author queue"
         }
       ]
     },
@@ -1917,9 +1773,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1963,7 +1816,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"cent or well pharmacy delivery time\": U-PH-006 s=16.04 cov=0.5, U-PH-004 s=5.54 cov=0.2, U-PH-009 s=5.54 cov=0.2"
+          "detail": "\"cent or well pharmacy delivery time\": U-PH-006 s=16.04 cov=0.5, U-PH-004 s=5.54 cov=0.2, U-PH-008 s=5.54 cov=0.2"
         },
         {
           "step": 7,
@@ -2005,7 +1858,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583790-15"
+          "detail": "req-1791392592524-15"
         }
       ]
     },
@@ -2036,9 +1889,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2106,7 +1956,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583791-16"
+          "detail": "req-1791392592524-16"
         }
       ]
     },
@@ -2143,9 +1993,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2231,7 +2078,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583791-17"
+          "detail": "req-1791392592524-17"
         }
       ]
     },
@@ -2263,9 +2110,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2333,7 +2177,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583792-18; gap logged to author queue"
+          "detail": "req-1791392592524-18; gap logged to author queue"
         }
       ]
     },
@@ -2364,9 +2208,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2451,9 +2292,6 @@
       "outcome_correct": false,
       "parts_total": 2,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2463,7 +2301,7 @@
       "failure_reasons": [
         "part 2 \"shipping cost\": expected stale [U-PH-008], got insufficient_evidence []"
       ],
-      "latency_ms": 17,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -2547,7 +2385,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583792-20; gap logged to author queue"
+          "detail": "req-1791392592524-20; gap logged to author queue"
         }
       ]
     },
@@ -2569,31 +2407,30 @@
       "got": {
         "outcome": "answer",
         "unit_ids": [
-          "U-PH-005"
+          "U-PH-002"
         ],
         "parts": [
           {
-            "part": "wants MO setup",
+            "part": "member   DOB   wants MO setup",
             "outcome": "answer",
             "unit_ids": [
-              "U-PH-005"
+              "U-PH-002"
             ]
           }
         ]
       },
-      "outcome_correct": true,
+      "outcome_correct": false,
       "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
+      "parts_correct": 0,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
       "retired_exposed": false,
       "phi_ok": true,
-      "critical_failure": false,
-      "failure_reasons": [],
+      "critical_failure": true,
+      "failure_reasons": [
+        "expected answer [U-PH-005], got answer [U-PH-002]"
+      ],
       "latency_ms": 0,
       "trace": [
         {
@@ -2606,7 +2443,7 @@
           "step": 2,
           "name": "Redact PHI/PII",
           "kind": "D",
-          "detail": "redacted DOB, NAME"
+          "detail": "redacted DATE, NAME"
         },
         {
           "step": 3,
@@ -2618,7 +2455,7 @@
           "step": 4,
           "name": "Query understanding",
           "kind": "P",
-          "detail": "normalized \"wants mail order setup\"; lexicon mo -> mail order; 1 part(s)"
+          "detail": "normalized \"member date of birth wants mail order setup\"; lexicon dob -> date of birth; mo -> mail order; 1 part(s)"
         },
         {
           "step": 5,
@@ -2630,7 +2467,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"wants MO setup\": U-PH-005 s=18.37 cov=1, U-PH-004 s=9.87 cov=0.48, U-PH-006 s=5.25 cov=0.48"
+          "detail": "\"member   DOB   wants MO setup\": U-PH-005 s=18.37 cov=0.49, U-PH-004 s=11.06 cov=0.35, U-PH-002 s=7.96 cov=0.51"
         },
         {
           "step": 7,
@@ -2648,13 +2485,13 @@
           "step": 9,
           "name": "Authority and recency",
           "kind": "D",
-          "detail": "selected U-PH-005"
+          "detail": "selected U-PH-002"
         },
         {
           "step": 10,
           "name": "Compose",
           "kind": "P",
-          "detail": "extractive from U-PH-005 v1"
+          "detail": "extractive from U-PH-002 v1"
         },
         {
           "step": 11,
@@ -2666,13 +2503,13 @@
           "step": 12,
           "name": "Return outcome per part",
           "kind": "D",
-          "detail": "wants MO setup: answer"
+          "detail": "member   DOB   wants MO setup: answer"
         },
         {
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583809-21"
+          "detail": "req-1791392592525-21"
         }
       ]
     },
@@ -2694,33 +2531,29 @@
         ]
       },
       "got": {
-        "outcome": "answer",
-        "unit_ids": [
-          "U-SH-002"
-        ],
+        "outcome": "insufficient_evidence",
+        "unit_ids": [],
         "parts": [
           {
             "part": "closing statement",
-            "outcome": "answer",
-            "unit_ids": [
-              "U-SH-002"
-            ]
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
           }
         ]
       },
-      "outcome_correct": true,
+      "outcome_correct": false,
       "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
+      "parts_correct": 0,
       "recall_at_3": true,
-      "verbatim_exact": true,
+      "verbatim_exact": false,
       "leak": false,
       "retired_exposed": false,
       "phi_ok": null,
-      "critical_failure": false,
-      "failure_reasons": [],
+      "critical_failure": true,
+      "failure_reasons": [
+        "expected answer [U-SH-002], got insufficient_evidence []",
+        "verbatim not delivered exactly"
+      ],
       "latency_ms": 0,
       "trace": [
         {
@@ -2760,46 +2593,16 @@
           "detail": "\"closing statement\": U-SH-002 s=6.59 cov=0.44"
         },
         {
-          "step": 7,
-          "name": "Eligibility",
-          "kind": "D",
-          "detail": "1 eligible"
-        },
-        {
-          "step": 8,
-          "name": "Applicability",
-          "kind": "D",
-          "detail": "1 applicable"
-        },
-        {
-          "step": 9,
-          "name": "Authority and recency",
-          "kind": "D",
-          "detail": "selected U-SH-002"
-        },
-        {
-          "step": 10,
-          "name": "Compose",
-          "kind": "D",
-          "detail": "verbatim U-SH-002 v2 inserted by id"
-        },
-        {
-          "step": 11,
-          "name": "Verify",
-          "kind": "D+P",
-          "detail": "verbatim_exact=true; in_scope=true"
-        },
-        {
           "step": 12,
           "name": "Return outcome per part",
           "kind": "D",
-          "detail": "closing statement: answer"
+          "detail": "closing statement: insufficient_evidence"
         },
         {
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583810-22"
+          "detail": "req-1791392592525-22; gap logged to author queue"
         }
       ]
     },
@@ -2831,9 +2634,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2889,405 +2689,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583810-23; gap logged to author queue"
-        }
-      ]
-    },
-    {
-      "case_id": "R01",
-      "query": "is the pharmacy opening on sunday",
-      "role": "pharmacy_advocate",
-      "channel": "advocate_view",
-      "slices": [
-        "regression",
-        "gap"
-      ],
-      "severity": "major",
-      "expected": {
-        "outcome": "insufficient_evidence",
-        "unit_ids": []
-      },
-      "got": {
-        "outcome": "insufficient_evidence",
-        "unit_ids": [],
-        "parts": [
-          {
-            "part": "is the pharmacy opening on sunday",
-            "outcome": "insufficient_evidence",
-            "unit_ids": []
-          }
-        ]
-      },
-      "outcome_correct": true,
-      "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
-      "recall_at_3": null,
-      "verbatim_exact": null,
-      "leak": false,
-      "retired_exposed": false,
-      "phi_ok": null,
-      "critical_failure": false,
-      "failure_reasons": [],
-      "latency_ms": 0,
-      "trace": [
-        {
-          "step": 1,
-          "name": "Resolve role and entitlements",
-          "kind": "D",
-          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
-        },
-        {
-          "step": 2,
-          "name": "Redact PHI/PII",
-          "kind": "D",
-          "detail": "nothing to redact"
-        },
-        {
-          "step": 3,
-          "name": "Safety pre-check",
-          "kind": "D+P",
-          "detail": "clear"
-        },
-        {
-          "step": 4,
-          "name": "Query understanding",
-          "kind": "P",
-          "detail": "normalized \"is the pharmacy opening on sunday\"; lexicon none; 1 part(s)"
-        },
-        {
-          "step": 5,
-          "name": "Hard partitions",
-          "kind": "D",
-          "detail": "tenant, environment, lob=MAPD, state=?"
-        },
-        {
-          "step": 6,
-          "name": "Search",
-          "kind": "D",
-          "detail": "\"is the pharmacy opening on sunday\": U-SH-001 s=8.5 cov=0.38, U-PH-009 s=5.54 cov=0.25, U-PH-005 s=1.85 cov=0.25"
-        },
-        {
-          "step": 12,
-          "name": "Return outcome per part",
-          "kind": "D",
-          "detail": "is the pharmacy opening on sunday: insufficient_evidence"
-        },
-        {
-          "step": 13,
-          "name": "Persist record",
-          "kind": "D",
-          "detail": "req-1791482583811-24; gap logged to author queue"
-        }
-      ]
-    },
-    {
-      "case_id": "R02",
-      "query": "caller Jane Doe born 7/12/1948 asking about the rx pricing disclaimer",
-      "role": "pharmacy_advocate",
-      "channel": "advocate_view",
-      "slices": [
-        "regression",
-        "phi",
-        "verbatim"
-      ],
-      "severity": "critical",
-      "expected": {
-        "outcome": "answer",
-        "unit_ids": [
-          "U-PH-003"
-        ]
-      },
-      "got": {
-        "outcome": "answer",
-        "unit_ids": [
-          "U-PH-003"
-        ],
-        "parts": [
-          {
-            "part": "asking about the rx pricing disclaimer",
-            "outcome": "answer",
-            "unit_ids": [
-              "U-PH-003"
-            ]
-          }
-        ]
-      },
-      "outcome_correct": true,
-      "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
-      "recall_at_3": true,
-      "verbatim_exact": true,
-      "leak": false,
-      "retired_exposed": false,
-      "phi_ok": true,
-      "critical_failure": false,
-      "failure_reasons": [],
-      "latency_ms": 0,
-      "trace": [
-        {
-          "step": 1,
-          "name": "Resolve role and entitlements",
-          "kind": "D",
-          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
-        },
-        {
-          "step": 2,
-          "name": "Redact PHI/PII",
-          "kind": "D",
-          "detail": "redacted DOB, NAME"
-        },
-        {
-          "step": 3,
-          "name": "Safety pre-check",
-          "kind": "D+P",
-          "detail": "clear"
-        },
-        {
-          "step": 4,
-          "name": "Query understanding",
-          "kind": "P",
-          "detail": "normalized \"asking about the prescription pricing disclaimer\"; lexicon rx -> prescription; 1 part(s)"
-        },
-        {
-          "step": 5,
-          "name": "Hard partitions",
-          "kind": "D",
-          "detail": "tenant, environment, lob=MAPD, state=?"
-        },
-        {
-          "step": 6,
-          "name": "Search",
-          "kind": "D",
-          "detail": "\"asking about the rx pricing disclaimer\": U-PH-003 s=18.43 cov=0.66, U-PH-002 s=2.87 cov=0.17, U-PH-004 s=1.85 cov=0.22"
-        },
-        {
-          "step": 7,
-          "name": "Eligibility",
-          "kind": "D",
-          "detail": "1 eligible"
-        },
-        {
-          "step": 8,
-          "name": "Applicability",
-          "kind": "D",
-          "detail": "1 applicable"
-        },
-        {
-          "step": 9,
-          "name": "Authority and recency",
-          "kind": "D",
-          "detail": "selected U-PH-003"
-        },
-        {
-          "step": 10,
-          "name": "Compose",
-          "kind": "D",
-          "detail": "verbatim U-PH-003 v1 inserted by id"
-        },
-        {
-          "step": 11,
-          "name": "Verify",
-          "kind": "D+P",
-          "detail": "verbatim_exact=true; in_scope=true"
-        },
-        {
-          "step": 12,
-          "name": "Return outcome per part",
-          "kind": "D",
-          "detail": "asking about the rx pricing disclaimer: answer"
-        },
-        {
-          "step": 13,
-          "name": "Persist record",
-          "kind": "D",
-          "detail": "req-1791482583811-25"
-        }
-      ]
-    },
-    {
-      "case_id": "R03",
-      "query": "how do i file a pharmacy grievance",
-      "role": "pharmacy_advocate",
-      "channel": "advocate_view",
-      "slices": [
-        "regression",
-        "gap"
-      ],
-      "severity": "critical",
-      "expected": {
-        "outcome": "insufficient_evidence",
-        "unit_ids": []
-      },
-      "got": {
-        "outcome": "insufficient_evidence",
-        "unit_ids": [],
-        "parts": [
-          {
-            "part": "how do i file a pharmacy grievance",
-            "outcome": "insufficient_evidence",
-            "unit_ids": []
-          }
-        ]
-      },
-      "outcome_correct": true,
-      "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
-      "recall_at_3": null,
-      "verbatim_exact": null,
-      "leak": false,
-      "retired_exposed": false,
-      "phi_ok": null,
-      "critical_failure": false,
-      "failure_reasons": [],
-      "latency_ms": 0,
-      "trace": [
-        {
-          "step": 1,
-          "name": "Resolve role and entitlements",
-          "kind": "D",
-          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
-        },
-        {
-          "step": 2,
-          "name": "Redact PHI/PII",
-          "kind": "D",
-          "detail": "nothing to redact"
-        },
-        {
-          "step": 3,
-          "name": "Safety pre-check",
-          "kind": "D+P",
-          "detail": "clear"
-        },
-        {
-          "step": 4,
-          "name": "Query understanding",
-          "kind": "P",
-          "detail": "normalized \"how do i file a pharmacy grievance\"; lexicon none; 1 part(s)"
-        },
-        {
-          "step": 5,
-          "name": "Hard partitions",
-          "kind": "D",
-          "detail": "tenant, environment, lob=MAPD, state=?"
-        },
-        {
-          "step": 6,
-          "name": "Search",
-          "kind": "D",
-          "detail": "\"how do i file a pharmacy grievance\": U-PH-009 s=5.54 cov=0.27, U-PH-005 s=4.04 cov=0.59, U-PH-002 s=2.2 cov=0.32"
-        },
-        {
-          "step": 12,
-          "name": "Return outcome per part",
-          "kind": "D",
-          "detail": "how do i file a pharmacy grievance: insufficient_evidence"
-        },
-        {
-          "step": 13,
-          "name": "Persist record",
-          "kind": "D",
-          "detail": "req-1791482583811-26; gap logged to author queue"
-        }
-      ]
-    },
-    {
-      "case_id": "R04",
-      "query": "copay for tier3",
-      "role": "pharmacy_advocate",
-      "channel": "advocate_view",
-      "slices": [
-        "regression",
-        "gap",
-        "applicability"
-      ],
-      "severity": "major",
-      "expected": {
-        "outcome": "insufficient_evidence",
-        "unit_ids": []
-      },
-      "got": {
-        "outcome": "insufficient_evidence",
-        "unit_ids": [],
-        "parts": [
-          {
-            "part": "copay for tier3",
-            "outcome": "insufficient_evidence",
-            "unit_ids": []
-          }
-        ]
-      },
-      "outcome_correct": true,
-      "parts_total": 1,
-      "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
-      "recall_at_3": null,
-      "verbatim_exact": null,
-      "leak": false,
-      "retired_exposed": false,
-      "phi_ok": null,
-      "critical_failure": false,
-      "failure_reasons": [],
-      "latency_ms": 0,
-      "trace": [
-        {
-          "step": 1,
-          "name": "Resolve role and entitlements",
-          "kind": "D",
-          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
-        },
-        {
-          "step": 2,
-          "name": "Redact PHI/PII",
-          "kind": "D",
-          "detail": "nothing to redact"
-        },
-        {
-          "step": 3,
-          "name": "Safety pre-check",
-          "kind": "D+P",
-          "detail": "clear"
-        },
-        {
-          "step": 4,
-          "name": "Query understanding",
-          "kind": "P",
-          "detail": "normalized \"copay for tier 3\"; lexicon tier3 -> tier 3; 1 part(s)"
-        },
-        {
-          "step": 5,
-          "name": "Hard partitions",
-          "kind": "D",
-          "detail": "tenant, environment, lob=MAPD, state=?"
-        },
-        {
-          "step": 6,
-          "name": "Search",
-          "kind": "D",
-          "detail": "\"copay for tier3\": U-PH-010 s=8.5 cov=0.36, U-PH-005 s=2.2 cov=0.28"
-        },
-        {
-          "step": 12,
-          "name": "Return outcome per part",
-          "kind": "D",
-          "detail": "copay for tier3: insufficient_evidence"
-        },
-        {
-          "step": 13,
-          "name": "Persist record",
-          "kind": "D",
-          "detail": "req-1791482583811-27; gap logged to author queue"
+          "detail": "req-1791392592525-23; gap logged to author queue"
         }
       ]
     }

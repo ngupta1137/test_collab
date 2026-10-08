@@ -8,7 +8,7 @@
   },
   "scripts": {
     "eval": "node evals/run.ts",
-    "test": "node --test tests/interfaces.test.ts tests/agents.test.ts",
+    "test": "node --test tests/interfaces.test.ts tests/agents.test.ts tests/workflow.test.ts",
     "rest": "node rest/server.ts",
     "mcp": "node mcp/server.ts",
     "gaps": "node analyst/gap_analyst.ts",
@@ -16,7 +16,9 @@
     "mcp:demo": "node mcp/dist/verity-mcp-demo.mjs",
     "pretest": "npm run -s build:mcp",
     "eval:model:blind": "node evals/run.ts --set data/blind_set.json --model live --label blind-model-01",
-    "eval:model:golden": "node evals/run.ts --model live --label golden-model-01"
+    "eval:model:golden": "node evals/run.ts --model live --label golden-model-01",
+    "eval:extraction": "node evals/extraction.ts",
+    "embed": "node evals/embed.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",

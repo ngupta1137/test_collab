@@ -1,9 +1,9 @@
 {
-  "label": "blind-current",
+  "label": "run-2026-10-08T17-15-16-431Z",
   "engine": "baseline-deterministic-0.1",
   "model_calls": null,
   "as_of": "2026-10-06",
-  "run_at": "2026-10-08T03:35:19.627Z",
+  "run_at": "2026-10-08T17:15:16.501Z",
   "set": "data/blind_set.json",
   "note": "Prototype smoke test (30 serving + 5 authoring cases), not a launch gate. Synthetic data.",
   "gates": {
@@ -18,13 +18,18 @@
     "critical_failures": 5,
     "outcome_accuracy_per_part_pct": 51.5,
     "case_accuracy_pct": 50,
-    "unit_recall_at_3_pct": 76.5,
+    "unit_recall_at_1_pct": 70.6,
+    "unit_recall_at_3_pct": 82.4,
+    "unit_recall_at_5_pct": 88.2,
+    "mrr": 0.799,
     "citation_accuracy_pct": 80,
     "claim_support_pct": "n/a: baseline composes extractively (unit text only); measured once a model composes",
     "verbatim_exact_typed_pct": 25,
     "verbatim_exact_spoken_pct": null,
     "permission_leaks": 0,
     "abstention_accuracy_pct": 73.3,
+    "abstention_precision_pct": 60,
+    "abstention_recall_pct": 100,
     "retired_exposures": 0,
     "phi_redaction_pct": 100,
     "authoring_flag_recall_pct": 100,
@@ -33,7 +38,7 @@
     "authoring_kind_accuracy_pct": 100,
     "authoring_impact_accuracy_pct_heuristic": 100,
     "latency_ms_p50": 0,
-    "latency_ms_p95": 1
+    "latency_ms_p95": 9
   },
   "slices": {
     "90_vs_100": {
@@ -301,6 +306,56 @@
       "critical_failures": 0
     }
   },
+  "by_domain": {
+    "insurance_advocate": {
+      "label": "Insurance advocate",
+      "scope": [
+        "KB-INS",
+        "KB-SHARED"
+      ],
+      "cases": 5,
+      "parts_correct": 3,
+      "parts_total": 6,
+      "outcome_accuracy_per_part_pct": 50,
+      "critical_failures": 1,
+      "permission_leaks": 0,
+      "should_decline_cases": 1,
+      "abstention_accuracy_pct": 100,
+      "unit_recall_at_3_pct": 100
+    },
+    "member_chat": {
+      "label": "Member chat (self-service)",
+      "scope": [
+        "KB-PHARM",
+        "KB-INS"
+      ],
+      "cases": 6,
+      "parts_correct": 3,
+      "parts_total": 7,
+      "outcome_accuracy_per_part_pct": 42.9,
+      "critical_failures": 1,
+      "permission_leaks": 0,
+      "should_decline_cases": 4,
+      "abstention_accuracy_pct": 75,
+      "unit_recall_at_3_pct": 50
+    },
+    "pharmacy_advocate": {
+      "label": "Pharmacy advocate",
+      "scope": [
+        "KB-PHARM",
+        "KB-SHARED"
+      ],
+      "cases": 19,
+      "parts_correct": 11,
+      "parts_total": 20,
+      "outcome_accuracy_per_part_pct": 55,
+      "critical_failures": 3,
+      "permission_leaks": 0,
+      "should_decline_cases": 10,
+      "abstention_accuracy_pct": 70,
+      "unit_recall_at_3_pct": 81.8
+    }
+  },
   "by_expected_outcome": {
     "answer": {
       "cases": 15,
@@ -368,6 +423,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -375,7 +433,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 10,
+      "latency_ms": 9,
       "trace": [
         {
           "step": 1,
@@ -411,7 +469,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"whats the are ex price disclaimer i need to read\": U-PH-003 s=18.43 cov=0.66, U-PH-002 s=2.87 cov=0.17, U-PH-005 s=2.83 cov=0.34"
+          "detail": "\"whats the are ex price disclaimer i need to read\": U-PH-003 s=18.43 cov=0.66, U-PH-002 s=2.87 cov=0.17, U-PH-006 s=1.44 cov=0.17"
         },
         {
           "step": 7,
@@ -453,7 +511,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519602-1"
+          "detail": "req-1791479716459-1"
         }
       ]
     },
@@ -487,6 +545,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": false,
       "leak": false,
@@ -497,7 +558,7 @@
         "expected answer [U-PH-003], got insufficient_evidence []",
         "verbatim not delivered exactly"
       ],
-      "latency_ms": 1,
+      "latency_ms": 4,
       "trace": [
         {
           "step": 1,
@@ -533,7 +594,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"Can you reword the pricing disclaimer so it sounds more casual? Members think it sounds robotic.\": U-PH-003 s=12.13 cov=0.16, U-PH-002 s=3.57 cov=0.05, U-PH-004 s=3.04 cov=0.12"
+          "detail": "\"Can you reword the pricing disclaimer so it sounds more casual? Members think it sounds robotic.\": U-PH-003 s=12.13 cov=0.16, U-PH-004 s=3.04 cov=0.12, U-PH-002 s=3.57 cov=0.05"
         },
         {
           "step": 12,
@@ -545,7 +606,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519613-2; gap logged to author queue"
+          "detail": "req-1791479716469-2; gap logged to author queue"
         }
       ]
     },
@@ -581,6 +642,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": false,
       "leak": false,
@@ -591,7 +655,7 @@
         "expected answer [U-SH-001], got insufficient_evidence []",
         "verbatim not delivered exactly"
       ],
-      "latency_ms": 0,
+      "latency_ms": 1,
       "trace": [
         {
           "step": 1,
@@ -639,7 +703,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519614-3; gap logged to author queue"
+          "detail": "req-1791479716472-3; gap logged to author queue"
         }
       ]
     },
@@ -674,6 +738,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": false,
       "leak": false,
@@ -684,7 +751,7 @@
         "expected answer [U-SH-002], got insufficient_evidence []",
         "verbatim not delivered exactly"
       ],
-      "latency_ms": 0,
+      "latency_ms": 1,
       "trace": [
         {
           "step": 1,
@@ -732,7 +799,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519614-4; gap logged to author queue"
+          "detail": "req-1791479716473-4; gap logged to author queue"
         }
       ]
     },
@@ -766,6 +833,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -775,7 +845,7 @@
       "failure_reasons": [
         "expected answer [U-PH-002], got insufficient_evidence []"
       ],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -823,7 +893,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519614-5; gap logged to author queue"
+          "detail": "req-1791479716474-5; gap logged to author queue"
         }
       ]
     },
@@ -856,6 +926,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -899,7 +972,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"identity verification steps before discussing a prescription\": U-PH-002 s=31.93 cov=0.81, U-PH-005 s=5.67 cov=0.19, U-PH-003 s=4.31 cov=0.1"
+          "detail": "\"identity verification steps before discussing a prescription\": U-PH-002 s=31.93 cov=0.81, U-PH-005 s=5.67 cov=0.19, U-PH-006 s=1.44 cov=0.1"
         },
         {
           "step": 7,
@@ -923,7 +996,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519615-6; gap logged to author queue"
+          "detail": "req-1791479716474-6; gap logged to author queue"
         }
       ]
     },
@@ -958,6 +1031,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": false,
+      "recall_at_5": false,
+      "first_rank": null,
       "recall_at_3": false,
       "verbatim_exact": null,
       "leak": false,
@@ -1015,7 +1091,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519615-7; gap logged to author queue"
+          "detail": "req-1791479716475-7; gap logged to author queue"
         }
       ]
     },
@@ -1049,6 +1125,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -1056,7 +1135,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 3,
       "trace": [
         {
           "step": 1,
@@ -1104,13 +1183,13 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519615-8; gap logged to author queue"
+          "detail": "req-1791479716475-8; gap logged to author queue"
         }
       ]
     },
     {
       "case_id": "B09",
-      "query": "Member Dorothy Hale, DOB 04/02/1949, wants to know how long mary dale takes to ship her refill",
+      "query": "Member Dorothy Hale, DOB 04/02/1949, wants to know how long center well takes to ship her refill",
       "role": "pharmacy_advocate",
       "channel": "advocate_view",
       "slices": [
@@ -1132,7 +1211,7 @@
         "unit_ids": [],
         "parts": [
           {
-            "part": ",  , wants to know how long mary dale takes to ship her refill",
+            "part": ",  , wants to know how long center well takes to ship her refill",
             "outcome": "insufficient_evidence",
             "unit_ids": []
           }
@@ -1141,6 +1220,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1150,7 +1232,7 @@
       "failure_reasons": [
         "expected answer [U-PH-006], got insufficient_evidence []"
       ],
-      "latency_ms": 0,
+      "latency_ms": 1,
       "trace": [
         {
           "step": 1,
@@ -1174,7 +1256,7 @@
           "step": 4,
           "name": "Query understanding",
           "kind": "P",
-          "detail": "normalized \"wants to know how long mary dale takes to ship her refill\"; lexicon none; 1 part(s)"
+          "detail": "normalized \"wants to know how long center well takes to ship her refill\"; lexicon none; 1 part(s)"
         },
         {
           "step": 5,
@@ -1186,19 +1268,19 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\",  , wants to know how long mary dale takes to ship her refill\": U-PH-006 s=10.5 cov=0.14"
+          "detail": "\",  , wants to know how long center well takes to ship her refill\": U-PH-006 s=10.5 cov=0.14"
         },
         {
           "step": 12,
           "name": "Return outcome per part",
           "kind": "D",
-          "detail": ",  , wants to know how long mary dale takes to ship her refill: insufficient_evidence"
+          "detail": ",  , wants to know how long center well takes to ship her refill: insufficient_evidence"
         },
         {
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519617-9; gap logged to author queue"
+          "detail": "req-1791479716478-9; gap logged to author queue"
         }
       ]
     },
@@ -1234,6 +1316,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": false,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1279,7 +1364,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"can I tell her she gets a 3 month supply by mail or is it more than that?\": U-PH-004 s=8.25 cov=0.3, U-PH-007 s=7.92 cov=0.16, U-PH-107 s=7.92 cov=0.16"
+          "detail": "\"can I tell her she gets a 3 month supply by mail or is it more than that?\": U-PH-007 s=7.92 cov=0.16, U-PH-107 s=7.92 cov=0.16, U-PH-004 s=8.25 cov=0.3"
         },
         {
           "step": 12,
@@ -1291,7 +1376,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519617-10; gap logged to author queue"
+          "detail": "req-1791479716480-10; gap logged to author queue"
         }
       ]
     },
@@ -1330,6 +1415,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": false,
+      "recall_at_5": true,
+      "first_rank": 4,
       "recall_at_3": false,
       "verbatim_exact": null,
       "leak": false,
@@ -1417,7 +1505,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519618-11"
+          "detail": "req-1791479716480-11"
         }
       ]
     },
@@ -1451,7 +1539,10 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
-      "recall_at_3": false,
+      "recall_at_1": false,
+      "recall_at_5": true,
+      "first_rank": 3,
+      "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
       "retired_exposed": false,
@@ -1496,7 +1587,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"does the member have to pay for shiping on mail order\": U-PH-004 s=11.06 cov=0.31, U-PH-005 s=7.87 cov=0.21, U-PH-006 s=5.25 cov=0.21"
+          "detail": "\"does the member have to pay for shiping on mail order\": U-PH-004 s=11.06 cov=0.31, U-PH-005 s=7.87 cov=0.21, U-PH-008 s=5.25 cov=0.21"
         },
         {
           "step": 12,
@@ -1508,7 +1599,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519618-12; gap logged to author queue"
+          "detail": "req-1791479716480-12; gap logged to author queue"
         }
       ]
     },
@@ -1542,6 +1633,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": false,
+      "recall_at_5": false,
+      "first_rank": null,
       "recall_at_3": false,
       "verbatim_exact": null,
       "leak": false,
@@ -1599,7 +1693,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519618-13; gap logged to author queue"
+          "detail": "req-1791479716481-13; gap logged to author queue"
         }
       ]
     },
@@ -1638,6 +1732,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1681,7 +1778,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"is there any program to help with her prescription copays\": U-PH-010 s=25.03 cov=0.77, U-PH-003 s=4.31 cov=0.12, U-PH-002 s=2.87 cov=0.12"
+          "detail": "\"is there any program to help with her prescription copays\": U-PH-010 s=25.03 cov=0.77, U-PH-002 s=2.87 cov=0.12, U-PH-006 s=1.44 cov=0.12"
         },
         {
           "step": 7,
@@ -1723,7 +1820,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519618-14"
+          "detail": "req-1791479716481-14"
         }
       ]
     },
@@ -1756,6 +1853,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -1799,7 +1899,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"can I sign this member up for copay assistance?\": U-PH-010 s=20.19 cov=0.59, U-PH-005 s=5.54 cov=0.16, U-SH-002 s=5.54 cov=0.16"
+          "detail": "\"can I sign this member up for copay assistance?\": U-PH-010 s=20.19 cov=0.59, U-PH-002 s=3.57 cov=0.1, U-SH-002 s=5.54 cov=0.16"
         },
         {
           "step": 7,
@@ -1823,7 +1923,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519619-15"
+          "detail": "req-1791479716481-15"
         }
       ]
     },
@@ -1856,6 +1956,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -1899,7 +2002,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"copay help program for this member\": U-PH-010 s=26.78 cov=1, U-PH-002 s=3.57 cov=0.13, U-SH-002 s=2.2 cov=0.24"
+          "detail": "\"copay help program for this member\": U-PH-010 s=26.78 cov=1, U-PH-002 s=3.57 cov=0.13, U-PH-004 s=1.19 cov=0.13"
         },
         {
           "step": 7,
@@ -1923,7 +2026,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519619-16; gap logged to author queue"
+          "detail": "req-1791479716482-16; gap logged to author queue"
         }
       ]
     },
@@ -1956,6 +2059,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2023,7 +2129,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519619-17; gap logged to author queue"
+          "detail": "req-1791479716482-17; gap logged to author queue"
         }
       ]
     },
@@ -2059,6 +2165,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2116,7 +2225,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519619-18; gap logged to author queue"
+          "detail": "req-1791479716482-18; gap logged to author queue"
         }
       ]
     },
@@ -2151,6 +2260,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2208,7 +2320,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519620-19; gap logged to author queue"
+          "detail": "req-1791479716483-19; gap logged to author queue"
         }
       ]
     },
@@ -2240,6 +2352,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2285,7 +2400,7 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"member wants to switch her primary doctor, how do I update that\": U-PH-002 s=3.57 cov=0.08, U-PH-006 s=2.2 cov=0.15, U-PH-004 s=1.19 cov=0.08"
+          "detail": "\"member wants to switch her primary doctor, how do I update that\": U-PH-002 s=3.57 cov=0.08, U-PH-006 s=2.2 cov=0.15, U-PH-107 s=1.19 cov=0.08"
         },
         {
           "step": 12,
@@ -2297,7 +2412,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519620-20; gap logged to author queue"
+          "detail": "req-1791479716483-20; gap logged to author queue"
         }
       ]
     },
@@ -2330,6 +2445,9 @@
       "outcome_correct": false,
       "parts_total": 1,
       "parts_correct": 0,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2339,7 +2457,7 @@
       "failure_reasons": [
         "expected not_authorized [], got insufficient_evidence []"
       ],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -2387,7 +2505,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519620-21; gap logged to author queue"
+          "detail": "req-1791479716483-21; gap logged to author queue"
         }
       ]
     },
@@ -2420,6 +2538,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2475,7 +2596,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519621-22"
+          "detail": "req-1791479716484-22"
         }
       ]
     },
@@ -2532,6 +2653,9 @@
       "outcome_correct": false,
       "parts_total": 2,
       "parts_correct": 0,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2542,7 +2666,7 @@
         "part 1 \"how long does it take for my mail order meds to show up\": expected answer [U-PH-006], got insufficient_evidence []",
         "part 2 \"is the shipping free\": expected stale [U-PH-008], got insufficient_evidence []"
       ],
-      "latency_ms": 0,
+      "latency_ms": 11,
       "trace": [
         {
           "step": 1,
@@ -2596,7 +2720,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519621-23; gap logged to author queue"
+          "detail": "req-1791479716484-23; gap logged to author queue"
         }
       ]
     },
@@ -2654,6 +2778,9 @@
       "outcome_correct": true,
       "parts_total": 2,
       "parts_correct": 2,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2745,7 +2872,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519622-24"
+          "detail": "req-1791479716495-24"
         }
       ]
     },
@@ -2804,6 +2931,9 @@
       "outcome_correct": true,
       "parts_total": 2,
       "parts_correct": 2,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2895,7 +3025,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519623-25; gap logged to author queue"
+          "detail": "req-1791479716496-25; gap logged to author queue"
         }
       ]
     },
@@ -2927,6 +3057,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2985,6 +3118,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -3043,6 +3179,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -3098,7 +3237,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519623-28; gap logged to author queue"
+          "detail": "req-1791479716497-28; gap logged to author queue"
         }
       ]
     },
@@ -3132,6 +3271,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -3187,7 +3329,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519623-29; gap logged to author queue"
+          "detail": "req-1791479716497-29; gap logged to author queue"
         }
       ]
     },
@@ -3221,6 +3363,9 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
+      "recall_at_1": null,
+      "recall_at_5": null,
+      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -3276,7 +3421,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791430519624-30; gap logged to author queue"
+          "detail": "req-1791479716497-30; gap logged to author queue"
         }
       ]
     }

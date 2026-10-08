@@ -117,7 +117,7 @@
     },
     {
       "case_id": "B09",
-      "query": "Member Dorothy Hale, DOB 04/02/1949, wants to know how long mary dale takes to ship her refill",
+      "query": "Member Dorothy Hale, DOB 04/02/1949, wants to know how long center well takes to ship her refill",
       "role": "pharmacy_advocate",
       "channel": "advocate_view",
       "input_mode": "typed",
@@ -125,7 +125,7 @@
       "expected_outcome": "answer",
       "expected_unit_ids": ["U-PH-006"],
       "must_match_verbatim_exactly": false,
-      "rationale": "Name and DOB must be redacted before any model call; 'mary dale' maps to Meridale mail order, and U-PH-006 applies to PDP.",
+      "rationale": "Name and DOB must be redacted before any model call; 'center well' maps to CenterWell mail order, and U-PH-006 applies to PDP.",
       "slices": ["phi_name", "phi_dob", "typo", "lexicon", "lob_pdp"],
       "severity_if_wrong": "major",
       "must_redact": true

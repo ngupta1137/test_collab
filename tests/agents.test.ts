@@ -122,3 +122,29 @@ test('cache: live writes a reply, cache-only replays it without calling the prov
   assert.equal(replay.calls.cache, 1);
   assert.equal(mock.seen.length, 1);
 });
+
+test('cache cannot bypass the rules: a cached nomination is re-checked against current status and entitlement', async () => {
+  // Round 2 review (Gemini, ChatGPT, Perplexity): could a cached model reply serve stale or revoked content?
+  // The cache holds only the query agent's nominations (unit ids), never answer text, and steps 7 to 9 run on every request.
+  const cacheRoot = mkdtempSync(join(tmpdir(), 'vcache-'));
+  const nominate = J({ parts: [{ text: 'mail order delivery time', unit_ids: ['U-PH-006'], restricted_ids: [] }], urgent: false });
+  const live = new Gateway({ root: cacheRoot, mode: 'live', provider: new MockModel([['how fast does mail order ship', nominate]]) });
+  const q = req('how fast does mail order ship to her house');
+  const first = await engine.serveAsync(q, live);
+  assert.equal(first.outcome, 'answer');
+  assert.deepEqual(first.parts[0].unit_ids, ['U-PH-006']);
+
+  // Same prompt, so the nomination comes from cache, but the unit is now past its review date: the rules say stale.
+  const staleUnits = data.units.map((u) => (u.unit_id === 'U-PH-006' ? { ...u, review_date: '2026-01-01' } : u));
+  const cacheOnly = new Gateway({ root: cacheRoot, mode: 'cache-only', provider: null });
+  const afterStale = await new Verity({ ...data, units: staleUnits }).serveAsync(q, cacheOnly);
+  assert.equal(cacheOnly.calls.cache, 1, 'served from cache');
+  assert.equal(afterStale.outcome, 'stale');
+
+  // Access revoked: the pharmacy role loses KB-PHARM. Nothing from the cache can bring the unit back.
+  const revoked = { ...data.roles, pharmacy_advocate: { ...data.roles.pharmacy_advocate!, knowledge_bases: ['KB-SHARED'] } };
+  const afterRevoke = await new Verity({ ...data, roles: revoked }).serveAsync(q, cacheOnly);
+  assert.notEqual(afterRevoke.outcome, 'answer');
+  assert.ok(afterRevoke.parts.every((p) => p.text === null || !p.unit_ids.includes('U-PH-006')));
+  assert.ok(afterRevoke.record.model_context_unit_ids.every((id) => revoked.pharmacy_advocate.knowledge_bases.includes(engine.unit(id)!.knowledge_base)));
+});

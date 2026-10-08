@@ -12,13 +12,13 @@ Baseline gap analyst · as-of 2026-10-06 · synthetic search log. Everything bel
 
 ## Unanswered clusters, by demand
 
-| Cluster | Questions | Gap type | Nearest existing unit |
-| --- | --- | --- | --- |
-| C01 (3) | Q06 "tier 3 copay specialty drug"<br>Q07 "specialty drug copay"<br>Q08 "copay for tier3" | content gap: no approved source; route to the business owner | U-PH-010 Copay assistance program (Kentucky pilot) (coverage 0.21) |
-| C02 (1) | Q15 "OTC allowance balance" | content gap: no approved source; route to the business owner | none |
-| C03 (1) | Q16 "dental coverage for dentures" | content gap: no approved source; route to the business owner | none |
-| C04 (1) | Q17 "how do i file a pharmacy grievance" | content gap: no approved source; route to the business owner | U-PH-009 Objection: prefers local pharmacy (coverage 0.27) |
-| C05 (1) | Q18 "does my drug need a PA" | content gap: no approved source; route to the business owner | none |
+| Cluster | Questions | Age | Suggested owner | Gap type | Nearest existing unit |
+| --- | --- | --- | --- | --- | --- |
+| C01 (3) | Q06 "tier 3 copay specialty drug"<br>Q07 "specialty drug copay"<br>Q08 "copay for tier3" | 39 days | Pharmacy Ops | content gap: no approved source; route to the business owner | U-PH-010 Copay assistance program (Kentucky pilot) (coverage 0.21) |
+| C02 (1) | Q15 "OTC allowance balance" | 11 days | Knowledge Ops (triage) | content gap: no approved source; route to the business owner | none |
+| C03 (1) | Q16 "dental coverage for dentures" | 7 days | Knowledge Ops (triage) | content gap: no approved source; route to the business owner | none |
+| C04 (1) | Q17 "how do i file a pharmacy grievance" | 7 days | Pharmacy Ops | content gap: no approved source; route to the business owner | U-PH-009 Objection: prefers local pharmacy (coverage 0.27) |
+| C05 (1) | Q18 "does my drug need a PA" | 3 days | Knowledge Ops (triage) | content gap: no approved source; route to the business owner | none |
 
 ## Served or routed
 
@@ -36,4 +36,4 @@ Baseline gap analyst · as-of 2026-10-06 · synthetic search log. Everything bel
 | Q13 "replace id card" | answer (insurance_advocate) | U-IN-001 |
 | Q14 "pcp change" | answer (insurance_advocate) | U-IN-002 |
 | Q19 "are ex pricing disclaimer" | answer (pharmacy_advocate) | U-PH-003 |
-| Q20 "mdp delivery time" | answer (pharmacy_advocate) | U-PH-006 |
+| Q20 "cwp delivery time" | answer (pharmacy_advocate) | U-PH-006 |

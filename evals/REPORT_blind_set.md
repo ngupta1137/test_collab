@@ -1,4 +1,4 @@
-# Eval report: blind-current
+# Eval report: run-2026-10-08T17-15-16-431Z
 
 Set: `data/blind_set.json`
 
@@ -21,13 +21,18 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 30 serving cases, 5 a
 | critical failures | 5 |
 | outcome accuracy per part pct | 51.5 |
 | case accuracy pct | 50 |
-| unit recall at 3 pct | 76.5 |
+| unit recall at 1 pct | 70.6 |
+| unit recall at 3 pct | 82.4 |
+| unit recall at 5 pct | 88.2 |
+| mrr | 0.799 |
 | citation accuracy pct | 80 |
 | claim support pct | n/a: baseline composes extractively (unit text only); measured once a model composes |
 | verbatim exact typed pct | 25 |
 | verbatim exact spoken pct | n/a |
 | permission leaks | 0 |
 | abstention accuracy pct | 73.3 |
+| abstention precision pct | 60 |
+| abstention recall pct | 100 |
 | retired exposures | 0 |
 | phi redaction pct | 100 |
 | authoring flag recall pct | 100 |
@@ -36,7 +41,7 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 30 serving cases, 5 a
 | authoring kind accuracy pct | 100 |
 | authoring impact accuracy pct heuristic | 100 |
 | latency ms p50 | 0 |
-| latency ms p95 | 1 |
+| latency ms p95 | 9 |
 
 ## By slice
 
@@ -87,6 +92,14 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 30 serving cases, 5 a
 | verbatim | 4 | 1 | 3 |
 | voice_channel | 2 | 1 | 0 |
 
+## By domain
+
+| Domain | Scope | Cases | Parts correct | Critical | Leaks | Should decline | Abstention | Recall@3 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Insurance advocate | KB-INS, KB-SHARED | 5 | 3/6 (50%) | 1 | 0 | 1 | 100% | 100% |
+| Member chat (self-service) | KB-PHARM, KB-INS | 6 | 3/7 (42.9%) | 1 | 0 | 4 | 75% | 50% |
+| Pharmacy advocate | KB-PHARM, KB-SHARED | 19 | 11/20 (55%) | 3 | 0 | 10 | 70% | 81.8% |
+
 ## By expected outcome
 
 | Outcome | Cases | Correct |
@@ -106,7 +119,7 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 30 serving cases, 5 a
 - **B04** (critical, CRITICAL) "I always end calls with 'this won't affect your coverage' - is that still the right closing?" as pharmacy_advocate/advocate_view: expected answer [U-SH-002], got insufficient_evidence []; verbatim not delivered exactly
 - **B05** (major) "before I get into her meds what do I have to confirm with her" as pharmacy_advocate/advocate_view: expected answer [U-PH-002], got insufficient_evidence []
 - **B07** (major) "why would I switch to having my pills sent to the house instead of picking them up?" as member_chat/member_chat: expected answer [U-PH-004], got insufficient_evidence []
-- **B09** (major) "Member Dorothy Hale, DOB 04/02/1949, wants to know how long mary dale takes to ship her refill" as pharmacy_advocate/advocate_view: expected answer [U-PH-006], got insufficient_evidence []
+- **B09** (major) "Member Dorothy Hale, DOB 04/02/1949, wants to know how long center well takes to ship her refill" as pharmacy_advocate/advocate_view: expected answer [U-PH-006], got insufficient_evidence []
 - **B10** (major) "can I tell her she gets a 3 month supply by mail or is it more than that?" as pharmacy_advocate/advocate_view: expected conflict [U-PH-007,U-PH-107], got insufficient_evidence []
 - **B11** (major) "how many days of medication can a member get through home delivery" as pharmacy_advocate/voice: expected answer [U-PH-007], got answer [U-PH-004]
 - **B12** (major) "does the member have to pay for shiping on mail order" as pharmacy_advocate/advocate_view: expected stale [U-PH-008], got insufficient_evidence []

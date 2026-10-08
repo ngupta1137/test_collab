@@ -50,6 +50,9 @@
         }
       ],
       "demand": 3,
+      "first_seen": "2026-08-28",
+      "age_days": 39,
+      "suggested_owner": "Pharmacy Ops",
       "core_terms": [
         "copay"
       ],
@@ -88,6 +91,9 @@
         }
       ],
       "demand": 1,
+      "first_seen": "2026-09-25",
+      "age_days": 11,
+      "suggested_owner": "Knowledge Ops (triage)",
       "core_terms": [
         "over",
         "counter",
@@ -122,6 +128,9 @@
         }
       ],
       "demand": 1,
+      "first_seen": "2026-09-29",
+      "age_days": 7,
+      "suggested_owner": "Knowledge Ops (triage)",
       "core_terms": [
         "dental",
         "coverage",
@@ -155,6 +164,9 @@
         }
       ],
       "demand": 1,
+      "first_seen": "2026-09-29",
+      "age_days": 7,
+      "suggested_owner": "Pharmacy Ops",
       "core_terms": [
         "file",
         "pharmacy",
@@ -193,6 +205,9 @@
         }
       ],
       "demand": 1,
+      "first_seen": "2026-10-03",
+      "age_days": 3,
+      "suggested_owner": "Knowledge Ops (triage)",
       "core_terms": [
         "drug",
         "prior",
@@ -398,7 +413,7 @@
     },
     {
       "id": "Q20",
-      "text": "mdp delivery time",
+      "text": "cwp delivery time",
       "status": "served",
       "outcome": "answer",
       "role": "pharmacy_advocate",

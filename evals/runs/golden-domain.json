@@ -1,9 +1,9 @@
 {
-  "label": "run-2026-10-08T18-03-03-752Z",
+  "label": "golden-domain",
   "engine": "baseline-deterministic-0.1",
   "model_calls": null,
   "as_of": "2026-10-06",
-  "run_at": "2026-10-08T18:03:03.816Z",
+  "run_at": "2026-10-08T17:01:58.199Z",
   "set": "data/golden_set.json",
   "note": "Prototype smoke test (27 serving + 5 authoring cases), not a launch gate. Synthetic data.",
   "gates": {
@@ -18,18 +18,13 @@
     "critical_failures": 0,
     "outcome_accuracy_per_part_pct": 96.4,
     "case_accuracy_pct": 96.3,
-    "unit_recall_at_1_pct": 94.1,
     "unit_recall_at_3_pct": 100,
-    "unit_recall_at_5_pct": 100,
-    "mrr": 1,
     "citation_accuracy_pct": 100,
     "claim_support_pct": "n/a: baseline composes extractively (unit text only); measured once a model composes",
     "verbatim_exact_typed_pct": 100,
     "verbatim_exact_spoken_pct": 100,
     "permission_leaks": 0,
     "abstention_accuracy_pct": 100,
-    "abstention_precision_pct": 100,
-    "abstention_recall_pct": 100,
     "retired_exposures": 0,
     "phi_redaction_pct": 100,
     "authoring_flag_recall_pct": 100,
@@ -38,7 +33,7 @@
     "authoring_kind_accuracy_pct": 100,
     "authoring_impact_accuracy_pct_heuristic": 100,
     "latency_ms_p50": 0,
-    "latency_ms_p95": 7
+    "latency_ms_p95": 6
   },
   "slices": {
     "applicability": {
@@ -56,6 +51,12 @@
     "gap": {
       "cases": 6,
       "correct": 6,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "org_speak": {
+      "cases": 1,
+      "correct": 1,
       "accuracy_pct": 100,
       "critical_failures": 0
     },
@@ -84,12 +85,6 @@
       "critical_failures": 0
     },
     "no_parametric_answers": {
-      "cases": 1,
-      "correct": 1,
-      "accuracy_pct": 100,
-      "critical_failures": 0
-    },
-    "org_speak": {
       "cases": 1,
       "correct": 1,
       "accuracy_pct": 100,
@@ -277,9 +272,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -287,7 +279,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 7,
+      "latency_ms": 6,
       "trace": [
         {
           "step": 1,
@@ -365,7 +357,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583773-1"
+          "detail": "req-1791478918168-1"
         }
       ]
     },
@@ -396,9 +388,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -406,7 +395,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 2,
+      "latency_ms": 3,
       "trace": [
         {
           "step": 1,
@@ -454,7 +443,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583780-2"
+          "detail": "req-1791478918174-2"
         }
       ]
     },
@@ -492,9 +481,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -502,7 +488,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -580,7 +566,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583782-3"
+          "detail": "req-1791478918176-3"
         }
       ]
     },
@@ -618,9 +604,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -706,7 +689,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583784-4"
+          "detail": "req-1791478918177-4"
         }
       ]
     },
@@ -743,9 +726,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -831,7 +811,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583785-5"
+          "detail": "req-1791478918177-5"
         }
       ]
     },
@@ -862,9 +842,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -920,7 +897,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583785-6; gap logged to author queue"
+          "detail": "req-1791478918177-6; gap logged to author queue"
         }
       ]
     },
@@ -960,9 +937,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": false,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -970,7 +944,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1036,7 +1010,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583785-7"
+          "detail": "req-1791478918178-7"
         }
       ]
     },
@@ -1074,9 +1048,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -1162,7 +1133,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583786-8"
+          "detail": "req-1791478918178-8"
         }
       ]
     },
@@ -1199,9 +1170,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1209,7 +1177,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1287,7 +1255,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583786-9"
+          "detail": "req-1791478918179-9"
         }
       ]
     },
@@ -1324,9 +1292,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1412,7 +1377,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583787-10"
+          "detail": "req-1791478918179-10"
         }
       ]
     },
@@ -1450,9 +1415,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -1460,7 +1422,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1538,7 +1500,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583788-11"
+          "detail": "req-1791478918180-11"
         }
       ]
     },
@@ -1569,9 +1531,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -1579,7 +1538,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1627,7 +1586,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583789-12"
+          "detail": "req-1791478918180-12"
         }
       ]
     },
@@ -1665,9 +1624,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -1753,7 +1709,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583790-13"
+          "detail": "req-1791478918181-13"
         }
       ]
     },
@@ -1791,9 +1747,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -1879,7 +1832,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583790-14"
+          "detail": "req-1791478918181-14"
         }
       ]
     },
@@ -1917,9 +1870,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2005,7 +1955,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583790-15"
+          "detail": "req-1791478918181-15"
         }
       ]
     },
@@ -2036,9 +1986,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2046,7 +1993,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 0,
+      "latency_ms": 1,
       "trace": [
         {
           "step": 1,
@@ -2106,7 +2053,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583791-16"
+          "detail": "req-1791478918182-16"
         }
       ]
     },
@@ -2143,9 +2090,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2231,7 +2175,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583791-17"
+          "detail": "req-1791478918182-17"
         }
       ]
     },
@@ -2263,9 +2207,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2333,7 +2274,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583792-18; gap logged to author queue"
+          "detail": "req-1791478918183-18; gap logged to author queue"
         }
       ]
     },
@@ -2364,9 +2305,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2451,9 +2389,6 @@
       "outcome_correct": false,
       "parts_total": 2,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2463,7 +2398,7 @@
       "failure_reasons": [
         "part 2 \"shipping cost\": expected stale [U-PH-008], got insufficient_evidence []"
       ],
-      "latency_ms": 17,
+      "latency_ms": 11,
       "trace": [
         {
           "step": 1,
@@ -2547,7 +2482,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583792-20; gap logged to author queue"
+          "detail": "req-1791478918183-20; gap logged to author queue"
         }
       ]
     },
@@ -2584,9 +2519,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": null,
       "leak": false,
@@ -2672,7 +2604,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583809-21"
+          "detail": "req-1791478918194-21"
         }
       ]
     },
@@ -2711,9 +2643,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -2799,7 +2728,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583810-22"
+          "detail": "req-1791478918195-22"
         }
       ]
     },
@@ -2831,9 +2760,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2889,7 +2815,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583810-23; gap logged to author queue"
+          "detail": "req-1791478918195-23; gap logged to author queue"
         }
       ]
     },
@@ -2921,9 +2847,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -2979,7 +2902,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583811-24; gap logged to author queue"
+          "detail": "req-1791478918195-24; gap logged to author queue"
         }
       ]
     },
@@ -3018,9 +2941,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": true,
-      "recall_at_5": true,
-      "first_rank": 1,
       "recall_at_3": true,
       "verbatim_exact": true,
       "leak": false,
@@ -3106,7 +3026,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583811-25"
+          "detail": "req-1791478918195-25"
         }
       ]
     },
@@ -3138,9 +3058,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -3196,7 +3113,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583811-26; gap logged to author queue"
+          "detail": "req-1791478918196-26; gap logged to author queue"
         }
       ]
     },
@@ -3229,9 +3146,6 @@
       "outcome_correct": true,
       "parts_total": 1,
       "parts_correct": 1,
-      "recall_at_1": null,
-      "recall_at_5": null,
-      "first_rank": null,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
@@ -3287,7 +3201,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791482583811-27; gap logged to author queue"
+          "detail": "req-1791478918196-27; gap logged to author queue"
         }
       ]
     }

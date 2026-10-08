@@ -1,85 +1,105 @@
 {
-  "note": "SYNTHETIC search log: misspellings, acronyms, and unanswerable questions for gap capture.",
+  "note": "SYNTHETIC search log: misspellings, acronyms, and unanswerable questions for gap capture. Each query has a synthetic first-seen date so gap age can be shown.",
   "queries": [
     {
       "id": "Q01",
-      "text": "rx pricing disclaimer"
+      "text": "rx pricing disclaimer",
+      "seen": "2026-08-12"
     },
     {
       "id": "Q02",
-      "text": "rx pricng disclaimer"
+      "text": "rx pricng disclaimer",
+      "seen": "2026-08-16"
     },
     {
       "id": "Q03",
-      "text": "what do i say at the start of the call"
+      "text": "what do i say at the start of the call",
+      "seen": "2026-08-20"
     },
     {
       "id": "Q04",
-      "text": "MO setup steps"
+      "text": "MO setup steps",
+      "seen": "2026-08-24"
     },
     {
       "id": "Q05",
-      "text": "how long does mail order take"
+      "text": "how long does mail order take",
+      "seen": "2026-08-24"
     },
     {
       "id": "Q06",
-      "text": "tier 3 copay specialty drug"
+      "text": "tier 3 copay specialty drug",
+      "seen": "2026-08-28"
     },
     {
       "id": "Q07",
-      "text": "specialty drug copay"
+      "text": "specialty drug copay",
+      "seen": "2026-09-01"
     },
     {
       "id": "Q08",
-      "text": "copay for tier3"
+      "text": "copay for tier3",
+      "seen": "2026-09-05"
     },
     {
       "id": "Q09",
-      "text": "how many days supply by mail"
+      "text": "how many days supply by mail",
+      "seen": "2026-09-05"
     },
     {
       "id": "Q10",
-      "text": "90 day supply"
+      "text": "90 day supply",
+      "seen": "2026-09-09"
     },
     {
       "id": "Q11",
-      "text": "closing statement"
+      "text": "closing statement",
+      "seen": "2026-09-13"
     },
     {
       "id": "Q12",
-      "text": "is there a shipping fee for mail order"
+      "text": "is there a shipping fee for mail order",
+      "seen": "2026-09-17"
     },
     {
       "id": "Q13",
-      "text": "replace id card"
+      "text": "replace id card",
+      "seen": "2026-09-17"
     },
     {
       "id": "Q14",
-      "text": "pcp change"
+      "text": "pcp change",
+      "seen": "2026-09-21"
     },
     {
       "id": "Q15",
-      "text": "OTC allowance balance"
+      "text": "OTC allowance balance",
+      "seen": "2026-09-25"
     },
     {
       "id": "Q16",
-      "text": "dental coverage for dentures"
+      "text": "dental coverage for dentures",
+      "seen": "2026-09-29"
     },
     {
       "id": "Q17",
-      "text": "how do i file a pharmacy grievance"
+      "text": "how do i file a pharmacy grievance",
+      "seen": "2026-09-29"
     },
     {
       "id": "Q18",
-      "text": "does my drug need a PA"
+      "text": "does my drug need a PA",
+      "seen": "2026-10-03"
     },
     {
       "id": "Q19",
-      "text": "are ex pricing disclaimer"
+      "text": "are ex pricing disclaimer",
+      "seen": "2026-10-07"
     },
     {
       "id": "Q20",
-      "text": "mdp delivery time"
+      "text": "cwp delivery time",
+      "seen": "2026-10-11"
     }
   ]
 }

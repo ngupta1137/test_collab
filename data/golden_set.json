@@ -300,7 +300,7 @@
     },
     {
       "case_id": "S03",
-      "query": "merry dale pharmacy delivery time",
+      "query": "cent or well pharmacy delivery time",
       "role": "member_chat",
       "channel": "voice",
       "expected_outcome": "answer",
@@ -308,7 +308,7 @@
         "U-PH-006"
       ],
       "must_match_verbatim_exactly": false,
-      "rationale": "Speech-to-text error for \"Meridale\"",
+      "rationale": "Speech-to-text error for \"CenterWell\"",
       "slices": [
         "voice",
         "speech_error"

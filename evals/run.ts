@@ -5,7 +5,7 @@
 //
 // Rule: results are whatever the engine produced. Never edit results by hand.
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Verity, ENGINE_VERSION } from '../src/engine/pipeline.ts';
@@ -31,7 +31,8 @@ const golden = load(setPath);
 const authoring = load('data/authoring_cases.json');
 const asOf: string = golden.as_of_date_for_staleness;
 
-const engine = new Verity({ units, roles, lexicon, asOf });
+const vectors = existsSync(join(root, 'data/embeddings.json')) && !process.env.VERITY_NO_VECTORS ? load('data/embeddings.json') : null;
+const engine = new Verity({ units, roles, lexicon, asOf, vectors });
 // --model live | cache-only  (default off: deterministic baseline, no model calls)
 const modelArg = process.argv.indexOf('--model');
 const gw = new Gateway({ root, mode: (modelArg > -1 ? process.argv[modelArg + 1] : 'off') as Mode });
@@ -56,6 +57,9 @@ interface CaseResult {
   outcome_correct: boolean;
   parts_total: number;
   parts_correct: number;
+  recall_at_1: boolean | null;
+  recall_at_5: boolean | null;
+  first_rank: number | null;
   recall_at_3: boolean | null;
   verbatim_exact: boolean | null;
   leak: boolean;
@@ -99,6 +103,11 @@ function scoreCase(c: any, r: ServeResponse): CaseResult {
     recall = c.expected_unit_ids.every((id: string) => top3.includes(id));
   }
 
+  // Rank of the first expected unit in the entitled candidate list (MRR), and recall at 1 and 5.
+  const ranksOf = (id: string) => Math.min(...r.parts.map((p) => { const i = p.candidates.findIndex((x) => x.unit_id === id); return i < 0 ? Infinity : i + 1; }));
+  const firstRank: number | null = c.expected_unit_ids.length ? Math.min(...c.expected_unit_ids.map(ranksOf)) : null;
+  const recallAt = (k: number): boolean | null => (c.expected_unit_ids.length ? c.expected_unit_ids.every((id: string) => ranksOf(id) <= k) : null);
+
   // Verbatim exactness (typed and spoken)
   let verbatim: boolean | null = null;
   if (c.must_match_verbatim_exactly) {
@@ -133,6 +142,7 @@ function scoreCase(c: any, r: ServeResponse): CaseResult {
     expected: { outcome: c.expected_outcome, unit_ids: c.expected_unit_ids, parts: c.expected_parts },
     got: { outcome: r.outcome, unit_ids: [...new Set(r.parts.flatMap((p) => p.unit_ids))], parts: r.parts.map((p) => ({ part: p.part, outcome: p.outcome, unit_ids: p.unit_ids })) },
     outcome_correct: outcomeCorrect, parts_total: partsTotal, parts_correct: partsCorrect,
+    recall_at_1: recallAt(1), recall_at_5: recallAt(5), first_rank: firstRank,
     recall_at_3: recall, verbatim_exact: verbatim, leak, retired_exposed: retired, phi_ok: phi,
     critical_failure: critical, failure_reasons: reasons, latency_ms: r.record.latency_ms, trace: r.trace,
   };
@@ -182,13 +192,20 @@ const metrics = {
   critical_failures: results.filter((r) => r.critical_failure).length,
   outcome_accuracy_per_part_pct: pct(sum(results.map((r) => r.parts_correct)), sum(results.map((r) => r.parts_total))),
   case_accuracy_pct: pct(results.filter((r) => r.outcome_correct).length, results.length),
+  unit_recall_at_1_pct: pct(recallCases.filter((r) => r.recall_at_1).length, recallCases.length),
   unit_recall_at_3_pct: pct(recallCases.filter((r) => r.recall_at_3).length, recallCases.length),
+  unit_recall_at_5_pct: pct(recallCases.filter((r) => r.recall_at_5).length, recallCases.length),
+  mrr: recallCases.length ? Math.round((sum(recallCases.map((r) => (r.first_rank && Number.isFinite(r.first_rank) ? 1 / r.first_rank : 0))) / recallCases.length) * 1000) / 1000 : null,
   citation_accuracy_pct: pct(answered.filter((r) => sameSet(r.got.unit_ids, r.expected.unit_ids)).length, answered.length),
   claim_support_pct: 'n/a: baseline composes extractively (unit text only); measured once a model composes',
   verbatim_exact_typed_pct: pct(typed.filter((r) => r.verbatim_exact).length, typed.length),
   verbatim_exact_spoken_pct: pct(spoken.filter((r) => r.verbatim_exact).length, spoken.length),
   permission_leaks: results.filter((r) => r.leak).length,
   abstention_accuracy_pct: pct(abstainCases.filter((r) => r.outcome_correct).length, abstainCases.length),
+  // Abstain = any outcome other than answer. Precision: of the times Verity declined, how often it should have.
+  // Recall: of the cases that should decline, how often it did.
+  abstention_precision_pct: pct(results.filter((r) => r.got.outcome !== 'answer' && r.expected.outcome !== 'answer').length, results.filter((r) => r.got.outcome !== 'answer').length),
+  abstention_recall_pct: pct(abstainCases.filter((r) => r.got.outcome !== 'answer').length, abstainCases.length),
   retired_exposures: results.filter((r) => r.retired_exposed).length,
   phi_redaction_pct: pct(results.filter((r) => r.phi_ok).length, results.filter((r) => r.phi_ok !== null).length),
   authoring_flag_recall_pct: pct(flaggedExpected.filter((a: any) => a.got.flag).length, flaggedExpected.length),
@@ -205,6 +222,28 @@ const slices = Object.fromEntries(
   sliceNames.map((s) => {
     const rs = results.filter((r) => r.slices.includes(s));
     return [s, { cases: rs.length, correct: rs.filter((r) => r.outcome_correct).length, accuracy_pct: pct(rs.filter((r) => r.outcome_correct).length, rs.length), critical_failures: rs.filter((r) => r.critical_failure).length }];
+  }),
+);
+// Per domain: each role is a domain with its own golden cases, permission scope and
+// abstention rules. Same metrics, sliced, so one domain's pass cannot hide another's fail.
+const byDomain = Object.fromEntries(
+  [...new Set(results.map((r) => r.role))].sort().map((role) => {
+    const rs = results.filter((r) => r.role === role);
+    const dec = rs.filter((r) => r.expected.outcome !== 'answer');
+    const rec = rs.filter((r) => r.recall_at_3 !== null);
+    return [role, {
+      label: roles[role]?.label ?? role,
+      scope: roles[role]?.knowledge_bases ?? [],
+      cases: rs.length,
+      parts_correct: sum(rs.map((r) => r.parts_correct)),
+      parts_total: sum(rs.map((r) => r.parts_total)),
+      outcome_accuracy_per_part_pct: pct(sum(rs.map((r) => r.parts_correct)), sum(rs.map((r) => r.parts_total))),
+      critical_failures: rs.filter((r) => r.critical_failure).length,
+      permission_leaks: rs.filter((r) => r.leak).length,
+      should_decline_cases: dec.length,
+      abstention_accuracy_pct: pct(dec.filter((r) => r.outcome_correct).length, dec.length),
+      unit_recall_at_3_pct: pct(rec.filter((r) => r.recall_at_3).length, rec.length),
+    }];
   }),
 );
 const outcomeNames = [...new Set(results.map((r) => r.expected.outcome))].sort();
@@ -228,7 +267,7 @@ const out = {
   label, engine: engineLabel, model_calls: gw.enabled ? gw.calls : null, as_of: asOf, run_at: new Date().toISOString(),
   set: setPath,
   note: `Prototype smoke test (${golden.cases.length} serving + 5 authoring cases), not a launch gate. Synthetic data.`,
-  gates, releasable, metrics, slices, by_expected_outcome: byOutcome,
+  gates, releasable, metrics, slices, by_domain: byDomain, by_expected_outcome: byOutcome,
   cases: results, authoring: authoringResults,
 };
 
@@ -248,6 +287,8 @@ md.push('', '## Metrics', '', '| Metric | Value |', '| --- | --- |');
 for (const [k, v] of Object.entries(metrics)) md.push(`| ${k.replace(/_/g, ' ')} | ${v ?? 'n/a'} |`);
 md.push('', '## By slice', '', '| Slice | Cases | Correct | Critical failures |', '| --- | --- | --- | --- |');
 for (const [k, v] of Object.entries(slices)) md.push(`| ${k} | ${v.cases} | ${v.correct} | ${v.critical_failures} |`);
+md.push('', '## By domain', '', '| Domain | Scope | Cases | Parts correct | Critical | Leaks | Should decline | Abstention | Recall@3 |', '| --- | --- | --- | --- | --- | --- | --- | --- | --- |');
+for (const v of Object.values(byDomain)) md.push(`| ${v.label} | ${v.scope.join(', ')} | ${v.cases} | ${v.parts_correct}/${v.parts_total} (${v.outcome_accuracy_per_part_pct ?? 'n/a'}%) | ${v.critical_failures} | ${v.permission_leaks} | ${v.should_decline_cases} | ${v.abstention_accuracy_pct ?? 'n/a'}% | ${v.unit_recall_at_3_pct ?? 'n/a'}% |`);
 md.push('', '## By expected outcome', '', '| Outcome | Cases | Correct |', '| --- | --- | --- |');
 for (const [k, v] of Object.entries(byOutcome)) md.push(`| ${k} | ${v.cases} | ${v.correct} |`);
 md.push('', '## Failing serving cases', '');

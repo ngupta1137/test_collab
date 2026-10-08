@@ -4,7 +4,7 @@ The engine runs without any model by default. This turns on the model-backed que
 
 ## What it does and doesn't do
 
-- Rewrites each question into standalone parts, fixes speech-to-text errors and internal jargon, and **proposes** candidate units from a catalog of titles and synonyms.
+- Rewrites each question into standalone parts, fixes speech and organization jargon, and **proposes** candidate units from a catalog of titles and synonyms.
 - Never answers. Never sees a unit body or any PHI (both are tested in `tests/agents.test.ts`).
 - Its proposals are only nominations: eligibility, applicability, authority and conflict rules still decide, deterministically. A hallucinated or out-of-scope id is dropped before the engine sees it.
 - Its "urgent" flag can add a safety escalation, never remove one.
@@ -14,7 +14,7 @@ The engine runs without any model by default. This turns on the model-backed que
 1. `node -v` must print v22.18 or later (the eval runner is TypeScript run directly by Node). If not, install Node 22 LTS from nodejs.org.
 2. In the repo folder:
    ```
-   cd "C:\path\to\verity"
+   cd "C:\Users\nitin\Desktop\FracsNet\Claude Projects\verity-foundations\verity"
    git pull
    npm install
    ```

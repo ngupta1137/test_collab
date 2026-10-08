@@ -1,4 +1,4 @@
-# Eval report: run-2026-10-08T03-35-19-361Z
+# Eval report: run-2026-10-08T18-03-03-752Z
 
 Set: `data/golden_set.json`
 
@@ -21,13 +21,18 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 27 serving cases, 5 a
 | critical failures | 0 |
 | outcome accuracy per part pct | 96.4 |
 | case accuracy pct | 96.3 |
+| unit recall at 1 pct | 94.1 |
 | unit recall at 3 pct | 100 |
+| unit recall at 5 pct | 100 |
+| mrr | 1 |
 | citation accuracy pct | 100 |
 | claim support pct | n/a: baseline composes extractively (unit text only); measured once a model composes |
 | verbatim exact typed pct | 100 |
 | verbatim exact spoken pct | 100 |
 | permission leaks | 0 |
 | abstention accuracy pct | 100 |
+| abstention precision pct | 100 |
+| abstention recall pct | 100 |
 | retired exposures | 0 |
 | phi redaction pct | 100 |
 | authoring flag recall pct | 100 |
@@ -36,7 +41,7 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 27 serving cases, 5 a
 | authoring kind accuracy pct | 100 |
 | authoring impact accuracy pct heuristic | 100 |
 | latency ms p50 | 0 |
-| latency ms p95 | 1 |
+| latency ms p95 | 7 |
 
 ## By slice
 
@@ -62,6 +67,14 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 27 serving cases, 5 a
 | stale | 2 | 1 | 0 |
 | verbatim | 6 | 6 | 0 |
 | voice | 4 | 4 | 0 |
+
+## By domain
+
+| Domain | Scope | Cases | Parts correct | Critical | Leaks | Should decline | Abstention | Recall@3 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Insurance advocate | KB-INS, KB-SHARED | 3 | 3/3 (100%) | 0 | 0 | 1 | 100% | 100% |
+| Member chat (self-service) | KB-PHARM, KB-INS | 5 | 5/5 (100%) | 0 | 0 | 2 | 100% | 100% |
+| Pharmacy advocate | KB-PHARM, KB-SHARED | 19 | 19/20 (95%) | 0 | 0 | 9 | 100% | 100% |
 
 ## By expected outcome
 

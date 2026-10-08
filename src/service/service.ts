@@ -5,11 +5,15 @@
 // Identity is bound to the connection, never passed as a tool argument:
 // an agent cannot ask for a different role than the one it was issued.
 
-import { appendFileSync, mkdirSync, readFileSync } from 'node:fs';
+import { nextStep } from './nextStep.ts';
+import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { Verity } from '../engine/pipeline.ts';
+import type { VectorStore } from '../engine/retrieval.ts';
+import type { RegressionCase } from '../engine/regression.ts';
 import { redact } from '../engine/guards.ts';
 import type { KnowledgeUnit, Role, ServeRequest, ServeResponse } from '../engine/types.ts';
+import { OwnerQueue } from '../engine/ownerQueue.ts';
 import { Gateway } from '../gateway/gateway.ts';
 
 export interface Identity {
@@ -33,11 +37,15 @@ export function loadData(root: string) {
     roles: load('data/roles.json').roles as Record<string, Role>,
     lexicon: load('data/lexicon.json').entries as Record<string, string>,
     asOf: load('data/golden_set.json').as_of_date_for_staleness as string,
+    golden: load('data/golden_set.json').cases as RegressionCase[],
+    // Optional: built by evals/embed.mjs on a machine that can download the embedding model.
+    vectors: (existsSync(join(root, 'data/embeddings.json')) && !process.env.VERITY_NO_VECTORS ? load('data/embeddings.json') : null) as VectorStore | null,
   };
 }
 
 export class VerityService {
   readonly engine: Verity;
+  readonly ownerQueue = new OwnerQueue();
   readonly gateway: Gateway; // VERITY_MODEL_MODE=off (default) | live | cache-only
   private data: ReturnType<typeof loadData>;
   private runtimeDir: string;
@@ -107,6 +115,7 @@ export class VerityService {
         message: p.message,
         text: p.text,
         owner_team: p.owner_team ?? null,
+        next_step: nextStep(p.outcome, id.role, p.owner_team ?? (p.outcome === 'stale' && p.unit_ids[0] ? this.engine.unit(p.unit_ids[0])?.owner ?? null : null)),
         citations: p.unit_ids.map((uid) => {
           const u = this.engine.unit(uid)!;
           return {
@@ -119,6 +128,13 @@ export class VerityService {
       trace: r.trace.map((t) => `${t.step}. ${t.name} [${t.kind}]: ${t.detail}`),
       engine: r.record.engine,
     };
+    // Stale and conflict are work for the unit's owner, not only a message to the asker.
+    for (const p of r.parts) {
+      if (p.outcome !== 'stale' && p.outcome !== 'conflict') continue;
+      const owner = p.owner_team ?? (p.unit_ids[0] ? this.engine.unit(p.unit_ids[0])?.owner : null) ?? 'Knowledge Ops';
+      const it = this.ownerQueue.open(p.outcome, p.unit_ids, owner, r.record.query_redacted, this.data.asOf);
+      this.log('review_items.jsonl', { item_id: it.item_id, kind: it.kind, unit_ids: it.unit_ids, owner: it.owner, asks: it.asks, request_id: r.record.request_id });
+    }
     if (r.gap_logged) this.reportGap(id, 'auto', args.query, { lob: args.lob ?? null, state: args.state ?? null, channel: args.channel }, r.record.request_id);
     this.log('calls.jsonl', {
       interface: iface, principal: id.principal, role: id.role, tool: 'search_knowledge',

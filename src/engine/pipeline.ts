@@ -7,9 +7,10 @@ import type {
   Candidate, Exclusion, KnowledgeUnit, Outcome, PartResult, RequestContext,
   Role, ServeRequest, ServeResponse, TraceStep,
 } from './types.ts';
-import { KnowledgeIndex, MIN_COVERAGE } from './retrieval.ts';
+import { KnowledgeIndex, MIN_COVERAGE, type VectorStore } from './retrieval.ts';
 import { redact, safetyCheck, SAFETY_MESSAGE } from './guards.ts';
 import type { Lexicon } from './text.ts';
+import type { RegressionCase } from './regression.ts';
 import type { Gateway } from '../gateway/gateway.ts';
 import { runQueryAgent, QUERY_PROMPT_VERSION, type Assist, type AssistPart } from '../agents/queryAgent.ts';
 
@@ -22,6 +23,8 @@ export interface EngineData {
   roles: Record<string, Role>;
   lexicon: Lexicon;
   asOf: string; // YYYY-MM-DD, used for staleness
+  vectors?: VectorStore | null; // optional precomputed embeddings (hybrid ranking)
+  golden?: RegressionCase[]; // regression cases the publication gate runs (see regression.ts)
 }
 
 let counter = 0;
@@ -33,7 +36,7 @@ export class Verity {
 
   constructor(data: EngineData) {
     this.data = data;
-    this.index = new KnowledgeIndex(data.units, data.lexicon);
+    this.index = new KnowledgeIndex(data.units, data.lexicon, data.vectors ?? null);
     for (const u of data.units) this.byId.set(u.unit_id, u);
   }
 

@@ -33,6 +33,6 @@ Nothing failed in the dangerous direction: no permission leaks, no retired or du
 
 Lowering the gate buys blind accuracy by answering questions that should be declined. No setting reaches zero critical failures on the blind set. The gate stays at 0.5, because declining is the safe failure for a compliance product.
 
-## What this means
+## What this means for the deck
 
 The deterministic baseline is the floor: safe, auditable and offline, but brittle on real phrasing. That is exactly where the model steps sit in the architecture (step 4 query understanding, and embeddings in step 6), and this set is now their acceptance test. Once it has been used to tune them, a fresh blind set gets written.

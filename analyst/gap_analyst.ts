@@ -25,10 +25,10 @@ const engine = new Verity(data);
 const SERVING_ROLES = Object.keys(data.roles).filter((r) => data.roles[r].audience === 'advocate');
 
 // ---- inputs -------------------------------------------------------------
-const log: { id: string; text: string }[] = JSON.parse(readFileSync(join(root, 'data/search_log.json'), 'utf8')).queries;
+const log: { id: string; text: string; seen?: string }[] = JSON.parse(readFileSync(join(root, 'data/search_log.json'), 'utf8')).queries;
 const queuePath = join(root, 'runtime/gaps.jsonl');
 const queue = existsSync(queuePath)
-  ? readFileSync(queuePath, 'utf8').trim().split('\n').filter(Boolean).map((l, i) => ({ id: `GQ${i + 1}`, text: JSON.parse(l).query_redacted as string }))
+  ? readFileSync(queuePath, 'utf8').trim().split('\n').filter(Boolean).map((l, i) => ({ id: `GQ${i + 1}`, text: JSON.parse(l).query_redacted as string, seen: data.asOf }))
   : [];
 const queries = [...log, ...queue];
 
@@ -136,6 +136,9 @@ const clusters = [...groups.values()]
       cluster_id: '',
       questions: qs.map((q) => ({ id: q.id, text: q.text })),
       demand: qs.length,
+      first_seen: qs.map((q: any) => q.seen as string | undefined).filter(Boolean).sort()[0] ?? null,
+      age_days: (() => { const f = qs.map((q: any) => q.seen as string | undefined).filter(Boolean).sort()[0]; return f ? Math.max(0, Math.round((Date.parse(data.asOf) - Date.parse(f)) / 86400000)) : null; })(),
+      suggested_owner: nearestUnit?.owner ?? 'Knowledge Ops (triage)',
       core_terms: core,
       gap_type: evidence.length ? 'extraction gap: a source passage exists, no approved unit yet' : 'content gap: no approved source; route to the business owner',
       source_evidence: evidence,
@@ -176,9 +179,9 @@ md.push('## Lexicon proposals', '', '| Proposal | Kind | Evidence | Effect when 
 for (const p of lexiconProposals) md.push(`| "${p.from}" → "${p.to}" | ${p.kind} | ${p.evidence.join(', ')} | ${p.effects.map((e) => `${e.query}: ${e.before} → ${e.after}${e.units.length ? ` (${e.units.join(', ')})` : ''}`).join('; ')} |`);
 if (!lexiconProposals.length) md.push('| none | | | |');
 md.push('', '## Unanswered clusters, by demand', '');
-md.push('| Cluster | Questions | Gap type | Nearest existing unit |', '| --- | --- | --- | --- |');
+md.push('| Cluster | Questions | Age | Suggested owner | Gap type | Nearest existing unit |', '| --- | --- | --- | --- | --- | --- |');
 for (const c of clusters)
-  md.push(`| ${c.cluster_id} (${c.demand}) | ${c.questions.map((q) => `${q.id} "${q.text}"`).join('<br>')} | ${c.gap_type} | ${c.nearest_existing_unit ? `${c.nearest_existing_unit.unit_id} ${c.nearest_existing_unit.title} (coverage ${c.nearest_existing_unit.coverage})` : 'none'} |`);
+  md.push(`| ${c.cluster_id} (${c.demand}) | ${c.questions.map((q) => `${q.id} "${q.text}"`).join('<br>')} | ${c.age_days === null ? 'n/a' : c.age_days + ' days'} | ${c.suggested_owner} | ${c.gap_type} | ${c.nearest_existing_unit ? `${c.nearest_existing_unit.unit_id} ${c.nearest_existing_unit.title} (coverage ${c.nearest_existing_unit.coverage})` : 'none'} |`);
 md.push('', '## Served or routed', '', '| Query | Outcome | Unit |', '| --- | --- | --- |');
 for (const c of classified.filter((x) => x.status !== 'gap')) md.push(`| ${c.id} "${c.text}" | ${c.outcome}${c.role ? ` (${c.role})` : ''} | ${c.units.join(', ')} |`);
 writeFileSync(join(root, 'analyst/GAP_REPORT.md'), md.join('\n') + '\n');

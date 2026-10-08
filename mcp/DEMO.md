@@ -1,6 +1,6 @@
 # MCP demo: runbook
 
-The point to land: **an AI agent gets exactly the same rules as a person.** Same entitlements, same verbatim, same "I don't know". About 60 to 90 seconds.
+The point to land: **an AI agent gets exactly the same rules as a person.** Same entitlements, same verbatim, same "I don't know". About 60 to 90 seconds, during slide 8.
 
 There are two ways to show it. Set up both. Use Claude Desktop if the rehearsal goes cleanly; otherwise use the terminal version, which needs nothing but Node.
 
@@ -17,7 +17,7 @@ Tested automatically (`npm test`, 5 of 5 pass) against the bundled server `mcp/d
 ## Option A: terminal (zero setup, fully tested)
 
 ```
-cd "C:\path\to\verity"
+cd "C:\Users\nitin\Desktop\FracsNet\Claude Projects\verity-foundations\verity"
 node mcp\dist\verity-mcp-demo.mjs
 ```
 
@@ -36,7 +36,7 @@ An "Agent Assist" client connects over MCP as a pharmacy advocate and runs five 
   "mcpServers": {
     "verity": {
       "command": "node",
-      "args": ["C:/path/to/verity/mcp/dist/verity-mcp.mjs"],
+      "args": ["C:/Users/nitin/Desktop/FracsNet/Claude Projects/verity-foundations/verity/mcp/dist/verity-mcp.mjs"],
       "env": { "VERITY_ROLE": "pharmacy_advocate", "VERITY_PRINCIPAL": "agent:claude-desktop-demo" }
     }
   }

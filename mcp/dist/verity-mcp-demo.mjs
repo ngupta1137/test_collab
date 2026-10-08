@@ -39,9 +39,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/code.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/code.js
 var require_code = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/code.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/code.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.regexpCode = exports.getEsmExportName = exports.getProperty = exports.safeStringify = exports.stringify = exports.strConcat = exports.addCodeArg = exports.str = exports._ = exports.nil = exports._Code = exports.Name = exports.IDENTIFIER = exports._CodeOrName = void 0;
@@ -193,9 +193,9 @@ var require_code = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/scope.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/scope.js
 var require_scope = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/scope.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/scope.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ValueScope = exports.ValueScopeName = exports.Scope = exports.varKinds = exports.UsedValueState = void 0;
@@ -338,9 +338,9 @@ var require_scope = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/index.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/index.js
 var require_codegen = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/index.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/codegen/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.or = exports.and = exports.not = exports.CodeGen = exports.operators = exports.varKinds = exports.ValueScopeName = exports.ValueScope = exports.Scope = exports.Name = exports.regexpCode = exports.stringify = exports.getProperty = exports.nil = exports.strConcat = exports.str = exports._ = void 0;
@@ -1058,9 +1058,9 @@ var require_codegen = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/util.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/util.js
 var require_util = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/util.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/util.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.checkStrictMode = exports.getErrorPath = exports.Type = exports.useFunc = exports.setEvaluated = exports.evaluatedPropsToName = exports.mergeEvaluated = exports.eachItem = exports.unescapeJsonPointer = exports.escapeJsonPointer = exports.escapeFragment = exports.unescapeFragment = exports.schemaRefOrVal = exports.schemaHasRulesButRef = exports.schemaHasRules = exports.checkUnknownRules = exports.alwaysValidSchema = exports.toHash = void 0;
@@ -1225,9 +1225,9 @@ var require_util = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/names.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/names.js
 var require_names = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/names.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/names.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -1264,9 +1264,9 @@ var require_names = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/errors.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/errors.js
 var require_errors = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/errors.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/errors.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.extendErrors = exports.resetErrorsCount = exports.reportExtraError = exports.reportError = exports.keyword$DataError = exports.keywordError = void 0;
@@ -1386,9 +1386,9 @@ var require_errors = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/boolSchema.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/boolSchema.js
 var require_boolSchema = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/boolSchema.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/boolSchema.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.boolOrEmptySchema = exports.topBoolOrEmptySchema = void 0;
@@ -1437,9 +1437,9 @@ var require_boolSchema = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/rules.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/rules.js
 var require_rules = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/rules.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/rules.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRules = exports.isJSONType = void 0;
@@ -1468,9 +1468,9 @@ var require_rules = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/applicability.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/applicability.js
 var require_applicability = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/applicability.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/applicability.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.shouldUseRule = exports.shouldUseGroup = exports.schemaHasRulesForType = void 0;
@@ -1491,9 +1491,9 @@ var require_applicability = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/dataType.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/dataType.js
 var require_dataType = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/dataType.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/dataType.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.reportTypeError = exports.checkDataTypes = exports.checkDataType = exports.coerceAndCheckDataType = exports.getJSONTypes = exports.getSchemaTypes = exports.DataType = void 0;
@@ -1675,9 +1675,9 @@ var require_dataType = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/defaults.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/defaults.js
 var require_defaults = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/defaults.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/defaults.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.assignDefaults = void 0;
@@ -1712,9 +1712,9 @@ var require_defaults = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/code.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/code.js
 var require_code2 = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/code.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/code.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateUnion = exports.validateArray = exports.usePattern = exports.callValidateCode = exports.schemaProperties = exports.allSchemaProperties = exports.noPropertyInData = exports.propertyInData = exports.isOwnProperty = exports.hasPropFunc = exports.reportMissingProp = exports.checkMissingProp = exports.checkReportMissingProp = void 0;
@@ -1845,9 +1845,9 @@ var require_code2 = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/keyword.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/keyword.js
 var require_keyword = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/keyword.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/keyword.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateKeywordUsage = exports.validSchemaType = exports.funcKeywordCode = exports.macroKeywordCode = void 0;
@@ -1963,9 +1963,9 @@ var require_keyword = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/subschema.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/subschema.js
 var require_subschema = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/subschema.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/subschema.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.extendSubschemaMode = exports.extendSubschemaData = exports.getSubschema = void 0;
@@ -2046,9 +2046,9 @@ var require_subschema = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/fast-deep-equal/index.js
+// ../../../../home/claude/verity/node_modules/fast-deep-equal/index.js
 var require_fast_deep_equal = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/fast-deep-equal/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/fast-deep-equal/index.js"(exports, module) {
     "use strict";
     module.exports = function equal(a, b) {
       if (a === b) return true;
@@ -2081,9 +2081,9 @@ var require_fast_deep_equal = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/json-schema-traverse/index.js
+// ../../../../home/claude/verity/node_modules/json-schema-traverse/index.js
 var require_json_schema_traverse = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/json-schema-traverse/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/json-schema-traverse/index.js"(exports, module) {
     "use strict";
     var traverse = module.exports = function(schema, opts, cb) {
       if (typeof opts == "function") {
@@ -2169,9 +2169,9 @@ var require_json_schema_traverse = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/resolve.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/resolve.js
 var require_resolve = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/resolve.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/resolve.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getSchemaRefs = exports.resolveUrl = exports.normalizeId = exports._getFullPath = exports.getFullPath = exports.inlineRef = void 0;
@@ -2325,9 +2325,9 @@ var require_resolve = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/index.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/index.js
 var require_validate = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/index.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/validate/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getData = exports.KeywordCxt = exports.validateFunctionCode = void 0;
@@ -2833,9 +2833,9 @@ var require_validate = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/runtime/validation_error.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/runtime/validation_error.js
 var require_validation_error = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/runtime/validation_error.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/runtime/validation_error.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var ValidationError = class extends Error {
@@ -2849,9 +2849,9 @@ var require_validation_error = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/ref_error.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/ref_error.js
 var require_ref_error = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/ref_error.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/ref_error.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var resolve_1 = require_resolve();
@@ -2866,9 +2866,9 @@ var require_ref_error = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/compile/index.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/compile/index.js
 var require_compile = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/compile/index.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/compile/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveSchema = exports.getCompilingSchema = exports.resolveRef = exports.compileSchema = exports.SchemaEnv = void 0;
@@ -3090,9 +3090,9 @@ var require_compile = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/refs/data.json
+// ../../../../home/claude/verity/node_modules/ajv/dist/refs/data.json
 var require_data = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/refs/data.json"(exports, module) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/refs/data.json"(exports, module) {
     module.exports = {
       $id: "https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#",
       description: "Meta-schema for $data reference (JSON AnySchema extension proposal)",
@@ -3109,9 +3109,9 @@ var require_data = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/fast-uri/lib/utils.js
+// ../../../../home/claude/verity/node_modules/fast-uri/lib/utils.js
 var require_utils = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/fast-uri/lib/utils.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/fast-uri/lib/utils.js"(exports, module) {
     "use strict";
     var isUUID = RegExp.prototype.test.bind(/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/iu);
     var isIPv4 = RegExp.prototype.test.bind(/^(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)$/u);
@@ -3611,9 +3611,9 @@ var require_utils = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/fast-uri/lib/schemes.js
+// ../../../../home/claude/verity/node_modules/fast-uri/lib/schemes.js
 var require_schemes = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/fast-uri/lib/schemes.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/fast-uri/lib/schemes.js"(exports, module) {
     "use strict";
     var { isUUID } = require_utils();
     var URN_REG = /^([\da-z][\d\-a-z]{0,31}):((?:[\w!$'()*+,\-./:;=@]|%[\da-f]{2})+)$/iu;
@@ -3822,9 +3822,9 @@ var require_schemes = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/fast-uri/index.js
+// ../../../../home/claude/verity/node_modules/fast-uri/index.js
 var require_fast_uri = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/fast-uri/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/fast-uri/index.js"(exports, module) {
     "use strict";
     var { normalizeIPv6, removeDotSegments, recomposeAuthority, normalizePercentEncoding, normalizePathEncoding, serializePathEncoding, normalizeQueryFragmentEncoding, encodeQuery, encodeFragment, reescapeHostDelimiters, isIPv4, nonSimpleDomain } = require_utils();
     var { SCHEMES, getSchemeHandler } = require_schemes();
@@ -4228,9 +4228,9 @@ var require_fast_uri = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/runtime/uri.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/runtime/uri.js
 var require_uri = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/runtime/uri.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/runtime/uri.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var uri = require_fast_uri();
@@ -4239,9 +4239,9 @@ var require_uri = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/core.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/core.js
 var require_core = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/core.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/core.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
@@ -4850,9 +4850,9 @@ var require_core = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/id.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/id.js
 var require_id = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/id.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/id.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var def = {
@@ -4865,9 +4865,9 @@ var require_id = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/ref.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/ref.js
 var require_ref = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/ref.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/ref.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.callRef = exports.getValidate = void 0;
@@ -4987,9 +4987,9 @@ var require_ref = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/index.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/index.js
 var require_core2 = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/index.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/core/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var id_1 = require_id();
@@ -5008,9 +5008,9 @@ var require_core2 = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitNumber.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitNumber.js
 var require_limitNumber = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitNumber.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitNumber.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5040,9 +5040,9 @@ var require_limitNumber = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/multipleOf.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/multipleOf.js
 var require_multipleOf = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/multipleOf.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/multipleOf.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5068,9 +5068,9 @@ var require_multipleOf = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/runtime/ucs2length.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/runtime/ucs2length.js
 var require_ucs2length = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/runtime/ucs2length.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/runtime/ucs2length.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function ucs2length(str) {
@@ -5094,9 +5094,9 @@ var require_ucs2length = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitLength.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitLength.js
 var require_limitLength = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitLength.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitLength.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5126,9 +5126,9 @@ var require_limitLength = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/pattern.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/pattern.js
 var require_pattern = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/pattern.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/pattern.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5163,9 +5163,9 @@ var require_pattern = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitProperties.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitProperties.js
 var require_limitProperties = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitProperties.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitProperties.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5192,9 +5192,9 @@ var require_limitProperties = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/required.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/required.js
 var require_required = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/required.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/required.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5274,9 +5274,9 @@ var require_required = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitItems.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitItems.js
 var require_limitItems = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitItems.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/limitItems.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5303,9 +5303,9 @@ var require_limitItems = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/runtime/equal.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/runtime/equal.js
 var require_equal = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/runtime/equal.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/runtime/equal.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var equal = require_fast_deep_equal();
@@ -5314,9 +5314,9 @@ var require_equal = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js
 var require_uniqueItems = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var dataType_1 = require_dataType();
@@ -5381,9 +5381,9 @@ var require_uniqueItems = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/const.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/const.js
 var require_const = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/const.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/const.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5410,9 +5410,9 @@ var require_const = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/enum.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/enum.js
 var require_enum = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/enum.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/enum.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5459,9 +5459,9 @@ var require_enum = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/index.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/index.js
 var require_validation = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/index.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/validation/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var limitNumber_1 = require_limitNumber();
@@ -5497,9 +5497,9 @@ var require_validation = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js
 var require_additionalItems = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateAdditionalItems = void 0;
@@ -5550,9 +5550,9 @@ var require_additionalItems = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/items.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/items.js
 var require_items = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/items.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/items.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateTuple = void 0;
@@ -5607,9 +5607,9 @@ var require_items = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js
 var require_prefixItems = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var items_1 = require_items();
@@ -5624,9 +5624,9 @@ var require_prefixItems = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/items2020.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/items2020.js
 var require_items2020 = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/items2020.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/items2020.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5659,9 +5659,9 @@ var require_items2020 = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/contains.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/contains.js
 var require_contains = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/contains.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/contains.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5753,9 +5753,9 @@ var require_contains = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/dependencies.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/dependencies.js
 var require_dependencies = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/dependencies.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/dependencies.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateSchemaDeps = exports.validatePropertyDeps = exports.error = void 0;
@@ -5847,9 +5847,9 @@ var require_dependencies = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js
 var require_propertyNames = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5890,9 +5890,9 @@ var require_propertyNames = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js
 var require_additionalProperties = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5996,9 +5996,9 @@ var require_additionalProperties = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/properties.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/properties.js
 var require_properties = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/properties.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/properties.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var validate_1 = require_validate();
@@ -6054,9 +6054,9 @@ var require_properties = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js
 var require_patternProperties = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -6128,9 +6128,9 @@ var require_patternProperties = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/not.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/not.js
 var require_not = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/not.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/not.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var util_1 = require_util();
@@ -6159,9 +6159,9 @@ var require_not = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/anyOf.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/anyOf.js
 var require_anyOf = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/anyOf.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/anyOf.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -6176,9 +6176,9 @@ var require_anyOf = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/oneOf.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/oneOf.js
 var require_oneOf = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/oneOf.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/oneOf.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6234,9 +6234,9 @@ var require_oneOf = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/allOf.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/allOf.js
 var require_allOf = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/allOf.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/allOf.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var util_1 = require_util();
@@ -6261,9 +6261,9 @@ var require_allOf = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/if.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/if.js
 var require_if = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/if.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/if.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6330,9 +6330,9 @@ var require_if = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/thenElse.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/thenElse.js
 var require_thenElse = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/thenElse.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/thenElse.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var util_1 = require_util();
@@ -6348,9 +6348,9 @@ var require_thenElse = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/index.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/index.js
 var require_applicator = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/index.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/applicator/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var additionalItems_1 = require_additionalItems();
@@ -6396,9 +6396,9 @@ var require_applicator = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/format/format.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/format/format.js
 var require_format = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/format/format.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/format/format.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6486,9 +6486,9 @@ var require_format = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/format/index.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/format/index.js
 var require_format2 = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/format/index.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/format/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var format_1 = require_format();
@@ -6497,9 +6497,9 @@ var require_format2 = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/metadata.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/metadata.js
 var require_metadata = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/metadata.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/metadata.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.contentVocabulary = exports.metadataVocabulary = void 0;
@@ -6520,9 +6520,9 @@ var require_metadata = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/draft7.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/draft7.js
 var require_draft7 = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/draft7.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/draft7.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var core_1 = require_core2();
@@ -6542,9 +6542,9 @@ var require_draft7 = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/discriminator/types.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/discriminator/types.js
 var require_types = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/discriminator/types.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/discriminator/types.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DiscrError = void 0;
@@ -6556,9 +6556,9 @@ var require_types = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/discriminator/index.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/discriminator/index.js
 var require_discriminator = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/discriminator/index.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/vocabularies/discriminator/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6661,9 +6661,9 @@ var require_discriminator = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/refs/json-schema-draft-07.json
+// ../../../../home/claude/verity/node_modules/ajv/dist/refs/json-schema-draft-07.json
 var require_json_schema_draft_07 = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/refs/json-schema-draft-07.json"(exports, module) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/refs/json-schema-draft-07.json"(exports, module) {
     module.exports = {
       $schema: "http://json-schema.org/draft-07/schema#",
       $id: "http://json-schema.org/draft-07/schema#",
@@ -6818,9 +6818,9 @@ var require_json_schema_draft_07 = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv/dist/ajv.js
+// ../../../../home/claude/verity/node_modules/ajv/dist/ajv.js
 var require_ajv = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv/dist/ajv.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/ajv/dist/ajv.js"(exports, module) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = exports.Ajv = void 0;
@@ -6888,9 +6888,9 @@ var require_ajv = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv-formats/dist/formats.js
+// ../../../../home/claude/verity/node_modules/ajv-formats/dist/formats.js
 var require_formats = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv-formats/dist/formats.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv-formats/dist/formats.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.formatNames = exports.fastFormats = exports.fullFormats = void 0;
@@ -7091,9 +7091,9 @@ var require_formats = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv-formats/dist/limit.js
+// ../../../../home/claude/verity/node_modules/ajv-formats/dist/limit.js
 var require_limit = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv-formats/dist/limit.js"(exports) {
+  "../../../../home/claude/verity/node_modules/ajv-formats/dist/limit.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.formatLimitDefinition = void 0;
@@ -7163,9 +7163,9 @@ var require_limit = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/ajv-formats/dist/index.js
+// ../../../../home/claude/verity/node_modules/ajv-formats/dist/index.js
 var require_dist = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/ajv-formats/dist/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/ajv-formats/dist/index.js"(exports, module) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var formats_1 = require_formats();
@@ -7205,9 +7205,9 @@ var require_dist = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/isexe/windows.js
+// ../../../../home/claude/verity/node_modules/isexe/windows.js
 var require_windows = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/isexe/windows.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/isexe/windows.js"(exports, module) {
     module.exports = isexe;
     isexe.sync = sync;
     var fs = __require("fs");
@@ -7245,9 +7245,9 @@ var require_windows = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/isexe/mode.js
+// ../../../../home/claude/verity/node_modules/isexe/mode.js
 var require_mode = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/isexe/mode.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/isexe/mode.js"(exports, module) {
     module.exports = isexe;
     isexe.sync = sync;
     var fs = __require("fs");
@@ -7278,9 +7278,9 @@ var require_mode = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/isexe/index.js
+// ../../../../home/claude/verity/node_modules/isexe/index.js
 var require_isexe = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/isexe/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/isexe/index.js"(exports, module) {
     var fs = __require("fs");
     var core;
     if (process.platform === "win32" || global.TESTING_WINDOWS) {
@@ -7333,9 +7333,9 @@ var require_isexe = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/which/which.js
+// ../../../../home/claude/verity/node_modules/which/which.js
 var require_which = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/which/which.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/which/which.js"(exports, module) {
     var isWindows = process.platform === "win32" || process.env.OSTYPE === "cygwin" || process.env.OSTYPE === "msys";
     var path = __require("path");
     var COLON = isWindows ? ";" : ":";
@@ -7429,9 +7429,9 @@ var require_which = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/path-key/index.js
+// ../../../../home/claude/verity/node_modules/path-key/index.js
 var require_path_key = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/path-key/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/path-key/index.js"(exports, module) {
     "use strict";
     var pathKey = (options = {}) => {
       const environment = options.env || process.env;
@@ -7446,9 +7446,9 @@ var require_path_key = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/cross-spawn/lib/util/resolveCommand.js
+// ../../../../home/claude/verity/node_modules/cross-spawn/lib/util/resolveCommand.js
 var require_resolveCommand = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/cross-spawn/lib/util/resolveCommand.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/cross-spawn/lib/util/resolveCommand.js"(exports, module) {
     "use strict";
     var path = __require("path");
     var which = require_which();
@@ -7488,9 +7488,9 @@ var require_resolveCommand = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/cross-spawn/lib/util/escape.js
+// ../../../../home/claude/verity/node_modules/cross-spawn/lib/util/escape.js
 var require_escape = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/cross-spawn/lib/util/escape.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/cross-spawn/lib/util/escape.js"(exports, module) {
     "use strict";
     var metaCharsRegExp = /([()\][%!^"`<>&|;, *?])/g;
     function escapeCommand(arg) {
@@ -7513,17 +7513,17 @@ var require_escape = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/shebang-regex/index.js
+// ../../../../home/claude/verity/node_modules/shebang-regex/index.js
 var require_shebang_regex = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/shebang-regex/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/shebang-regex/index.js"(exports, module) {
     "use strict";
     module.exports = /^#!(.*)/;
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/shebang-command/index.js
+// ../../../../home/claude/verity/node_modules/shebang-command/index.js
 var require_shebang_command = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/shebang-command/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/shebang-command/index.js"(exports, module) {
     "use strict";
     var shebangRegex = require_shebang_regex();
     module.exports = (string3 = "") => {
@@ -7541,9 +7541,9 @@ var require_shebang_command = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/cross-spawn/lib/util/readShebang.js
+// ../../../../home/claude/verity/node_modules/cross-spawn/lib/util/readShebang.js
 var require_readShebang = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/cross-spawn/lib/util/readShebang.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/cross-spawn/lib/util/readShebang.js"(exports, module) {
     "use strict";
     var fs = __require("fs");
     var shebangCommand = require_shebang_command();
@@ -7563,9 +7563,9 @@ var require_readShebang = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/cross-spawn/lib/parse.js
+// ../../../../home/claude/verity/node_modules/cross-spawn/lib/parse.js
 var require_parse = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/cross-spawn/lib/parse.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/cross-spawn/lib/parse.js"(exports, module) {
     "use strict";
     var path = __require("path");
     var resolveCommand = require_resolveCommand();
@@ -7625,9 +7625,9 @@ var require_parse = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/cross-spawn/lib/enoent.js
+// ../../../../home/claude/verity/node_modules/cross-spawn/lib/enoent.js
 var require_enoent = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/cross-spawn/lib/enoent.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/cross-spawn/lib/enoent.js"(exports, module) {
     "use strict";
     var isWin = process.platform === "win32";
     function notFoundError(original, syscall) {
@@ -7675,9 +7675,9 @@ var require_enoent = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/cross-spawn/index.js
+// ../../../../home/claude/verity/node_modules/cross-spawn/index.js
 var require_cross_spawn = __commonJS({
-  "../../../../../../home/claude/verity/node_modules/cross-spawn/index.js"(exports, module) {
+  "../../../../home/claude/verity/node_modules/cross-spawn/index.js"(exports, module) {
     "use strict";
     var cp = __require("child_process");
     var parse3 = require_parse();
@@ -7702,7 +7702,7 @@ var require_cross_spawn = __commonJS({
   }
 });
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/util.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/util.js
 var util_exports = {};
 __export(util_exports, {
   BIGINT_FORMAT_RANGES: () => BIGINT_FORMAT_RANGES,
@@ -8545,7 +8545,7 @@ function constantCatch(value) {
   return fn;
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/core.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/core.js
 var _a;
 var _zodDesc = { value: void 0, enumerable: false };
 var _E = "captureStackTrace" in Error ? Error : null;
@@ -8663,7 +8663,7 @@ function config(newConfig) {
   return globalConfig;
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/errors.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/errors.js
 function _getMessage() {
   const internals = this._zod;
   internals.message ?? (internals.message = JSON.stringify(internals.def, jsonStringifyReplacer, 2));
@@ -8778,7 +8778,7 @@ function formatError(error2, mapper = (issue2) => issue2.message) {
   return fieldErrors;
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/parse.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/parse.js
 function finalizeParams(callee, params) {
   return { callee: params?.callee ?? callee, Err: params?.Err };
 }
@@ -8927,7 +8927,7 @@ var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
   return _safeParseAsync(_Err)(schema, value, _ctx);
 };
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/regexes.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/regexes.js
 var cuid = /^[cC][0-9a-z]{6,}$/;
 var cuid2 = /^[0-9a-z]+$/;
 var ulid = /^[0-7][0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{25}$/;
@@ -8986,7 +8986,7 @@ var _null = /^null$/i;
 var lowercase = /^[^A-Z]*$/;
 var uppercase = /^[^a-z]*$/;
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/checks.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
   var _a3;
   inst._zod ?? (inst._zod = {});
@@ -9306,7 +9306,7 @@ var $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (ins
   };
 });
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/doc.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/doc.js
 var Doc = class {
   constructor(args = [], closed = {}) {
     this.content = [];
@@ -9347,14 +9347,14 @@ ${content.join("\n")}
   }
 };
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/versions.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/versions.js
 var version = {
   major: 4,
   minor: 6,
   patch: 5
 };
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/schemas.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   var _a3;
   inst ?? (inst = {});
@@ -10997,7 +10997,7 @@ function handleRefineResult(result, payload, input, inst) {
   }
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/memoizer.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/memoizer.js
 var $ZodCyclicError = class extends Error {
   constructor() {
     super(`Cannot parse a reference cycle that closes through a transform`);
@@ -11271,7 +11271,7 @@ function isBackEdge(ctx, value) {
   return backEdges !== void 0 && isRef(value) && backEdges.has(value);
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/locales/en.js
+// ../../../../home/claude/verity/node_modules/zod/v4/locales/en.js
 var error = () => {
   const Sizable = {
     string: { unit: "characters", verb: "to have" },
@@ -11396,7 +11396,7 @@ function en_default() {
   };
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/registries.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/registries.js
 var _a2;
 var $ZodRegistry = class {
   constructor() {
@@ -11444,7 +11444,7 @@ function registry() {
 (_a2 = globalThis).__zod_globalRegistry ?? (_a2.__zod_globalRegistry = registry());
 var globalRegistry = globalThis.__zod_globalRegistry;
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/api.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/api.js
 function snapshotChecks(def) {
   if (def.checks)
     def.checks = [...def.checks];
@@ -11971,7 +11971,7 @@ function _check(fn, params) {
   return ch2;
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/to-json-schema.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/to-json-schema.js
 function assignProps(target, ...sources) {
   for (const source of sources) {
     for (const key of Reflect.ownKeys(source)) {
@@ -12501,7 +12501,7 @@ var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) =
   return finalize(ctx, schema);
 };
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/core/json-schema-processors.js
+// ../../../../home/claude/verity/node_modules/zod/v4/core/json-schema-processors.js
 var narrowMin = (agg, key, value) => {
   if (agg[key] === void 0 || value > agg[key])
     agg[key] = value;
@@ -13039,7 +13039,7 @@ var optionalProcessor = (schema, ctx, _json, params) => {
   seen.ref = def.innerType;
 };
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js
 function isZ4Schema(s) {
   const schema = s;
   return !!schema._zod;
@@ -13102,7 +13102,7 @@ function getLiteralValue(schema) {
   return void 0;
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/classic/errors.js
+// ../../../../home/claude/verity/node_modules/zod/v4/classic/errors.js
 var _installedErrorProtos = /* @__PURE__ */ new WeakSet([Object.prototype, Error.prototype]);
 function _lazyMethod(proto, key, make) {
   Object.defineProperty(proto, key, {
@@ -13147,7 +13147,7 @@ var ZodRealError = /* @__PURE__ */ $constructor("ZodError", initializer2, void 0
   Parent: Error
 });
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/classic/parse.js
+// ../../../../home/claude/verity/node_modules/zod/v4/classic/parse.js
 var parse2 = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync2 = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse3 = /* @__PURE__ */ _safeParse(ZodRealError);
@@ -13161,7 +13161,7 @@ var safeDecode2 = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync2 = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync2 = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/classic/schemas.js
+// ../../../../home/claude/verity/node_modules/zod/v4/classic/schemas.js
 function _ensureDefaultLocale() {
   if (!globalConfig.localeError)
     config(en_default());
@@ -14105,7 +14105,7 @@ function preprocess(fn, schema) {
   });
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod/v4/classic/iso.js
+// ../../../../home/claude/verity/node_modules/zod/v4/classic/iso.js
 var iso_exports = {};
 __export(iso_exports, {
   ZodISODate: () => ZodISODate,
@@ -14130,7 +14130,7 @@ function duration2(params) {
   return _isoDuration(ZodISODuration, params);
 }
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js
 var LATEST_PROTOCOL_VERSION = "2025-11-25";
 var SUPPORTED_PROTOCOL_VERSIONS = [LATEST_PROTOCOL_VERSION, "2025-06-18", "2025-03-26", "2024-11-05", "2024-10-07"];
 var RELATED_TASK_META_KEY = "io.modelcontextprotocol/related-task";
@@ -15649,15 +15649,15 @@ var UrlElicitationRequiredError = class extends McpError {
   }
 };
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js
 function isTerminal(status) {
   return status === "completed" || status === "failed" || status === "cancelled";
 }
 
-// ../../../../../../home/claude/verity/node_modules/zod-to-json-schema/dist/esm/parsers/string.js
+// ../../../../home/claude/verity/node_modules/zod-to-json-schema/dist/esm/parsers/string.js
 var ALPHA_NUMERIC = new Set("ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvxyz0123456789");
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js
 function getMethodLiteral(schema) {
   const shape = getObjectShape(schema);
   const methodSchema = shape?.method;
@@ -15678,7 +15678,7 @@ function parseWithCompat(schema, data) {
   return result.data;
 }
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js
 var DEFAULT_REQUEST_TIMEOUT_MSEC = 6e4;
 var Protocol = class {
   constructor(_options) {
@@ -16655,7 +16655,7 @@ function mergeCapabilities(base, additional) {
   return result;
 }
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js
 var import_ajv = __toESM(require_ajv(), 1);
 var import_ajv_formats = __toESM(require_dist(), 1);
 function createDefaultAjvInstance() {
@@ -16723,7 +16723,7 @@ var AjvJsonSchemaValidator = class {
   }
 };
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/client.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/client.js
 var ExperimentalClientTasks = class {
   constructor(_client) {
     this._client = _client;
@@ -16877,7 +16877,7 @@ var ExperimentalClientTasks = class {
   }
 };
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js
 function assertToolsCallTaskCapability(requests, method, entityName) {
   if (!requests) {
     throw new Error(`${entityName} does not support task creation (required for ${method})`);
@@ -16912,7 +16912,7 @@ function assertClientRequestTaskCapability(requests, method, entityName) {
   }
 }
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/client/index.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/client/index.js
 function applyElicitationDefaults(schema, data) {
   if (!schema || data === null || typeof data !== "object")
     return;
@@ -17423,12 +17423,12 @@ var Client = class extends Protocol {
   }
 };
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/client/stdio.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/client/stdio.js
 var import_cross_spawn = __toESM(require_cross_spawn(), 1);
 import process2 from "node:process";
 import { PassThrough } from "node:stream";
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js
 var STDIO_DEFAULT_MAX_BUFFER_SIZE = 10 * 1024 * 1024;
 var ReadBuffer = class {
   constructor(options) {
@@ -17465,7 +17465,7 @@ function serializeMessage(message) {
   return JSON.stringify(message) + "\n";
 }
 
-// ../../../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/client/stdio.js
+// ../../../../home/claude/verity/node_modules/@modelcontextprotocol/sdk/dist/esm/client/stdio.js
 var DEFAULT_INHERITED_ENV_VARS = process2.platform === "win32" ? [
   "APPDATA",
   "HOMEDRIVE",
