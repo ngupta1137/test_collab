@@ -1,0 +1,85 @@
+{
+  "note": "SYNTHETIC search log: misspellings, acronyms, and unanswerable questions for gap capture.",
+  "queries": [
+    {
+      "id": "Q01",
+      "text": "rx pricing disclaimer"
+    },
+    {
+      "id": "Q02",
+      "text": "rx pricng disclaimer"
+    },
+    {
+      "id": "Q03",
+      "text": "what do i say at the start of the call"
+    },
+    {
+      "id": "Q04",
+      "text": "MO setup steps"
+    },
+    {
+      "id": "Q05",
+      "text": "how long does mail order take"
+    },
+    {
+      "id": "Q06",
+      "text": "tier 3 copay specialty drug"
+    },
+    {
+      "id": "Q07",
+      "text": "specialty drug copay"
+    },
+    {
+      "id": "Q08",
+      "text": "copay for tier3"
+    },
+    {
+      "id": "Q09",
+      "text": "how many days supply by mail"
+    },
+    {
+      "id": "Q10",
+      "text": "90 day supply"
+    },
+    {
+      "id": "Q11",
+      "text": "closing statement"
+    },
+    {
+      "id": "Q12",
+      "text": "is there a shipping fee for mail order"
+    },
+    {
+      "id": "Q13",
+      "text": "replace id card"
+    },
+    {
+      "id": "Q14",
+      "text": "pcp change"
+    },
+    {
+      "id": "Q15",
+      "text": "OTC allowance balance"
+    },
+    {
+      "id": "Q16",
+      "text": "dental coverage for dentures"
+    },
+    {
+      "id": "Q17",
+      "text": "how do i file a pharmacy grievance"
+    },
+    {
+      "id": "Q18",
+      "text": "does my drug need a PA"
+    },
+    {
+      "id": "Q19",
+      "text": "are ex pricing disclaimer"
+    },
+    {
+      "id": "Q20",
+      "text": "mdp delivery time"
+    }
+  ]
+}

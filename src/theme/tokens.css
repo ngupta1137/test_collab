@@ -1,0 +1,10 @@
+/* Design tokens for the Verity concept prototype. */
+:root{
+  --brand-green:#5EA908;       /* accents, fills, highlights only; never body text */
+  --brand-green-dark:#4E8416;  /* primary buttons (white text), links, active states; WCAG AA */
+  --ink:#1F2A24; --ink-muted:#5F6B64;
+  --surface:#FFFFFF; --surface-alt:#F5F7F4; --border:#DDE3DA;
+  --outcome-answer:#4E8416; --outcome-insufficient:#B26B00; --outcome-conflict:#6B4FA3;
+  --outcome-stale:#6F6F6F; --outcome-unauthorized:#B3261E;
+  --font-body:"Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}

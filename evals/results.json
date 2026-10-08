@@ -1,0 +1,3308 @@
+{
+  "label": "run-2026-10-08T03-00-29-586Z",
+  "engine": "baseline-deterministic-0.1",
+  "model_calls": null,
+  "as_of": "2026-10-06",
+  "run_at": "2026-10-08T03:00:29.620Z",
+  "set": "data/golden_set.json",
+  "note": "Prototype smoke test (27 serving + 5 authoring cases), not a launch gate. Synthetic data.",
+  "gates": {
+    "zero_critical_failures": true,
+    "zero_permission_leaks": true,
+    "verbatim_100": true,
+    "zero_retired_exposure": true,
+    "verbatim_drift_flag_recall_100": true
+  },
+  "releasable": true,
+  "metrics": {
+    "critical_failures": 0,
+    "outcome_accuracy_per_part_pct": 92.9,
+    "case_accuracy_pct": 92.6,
+    "unit_recall_at_3_pct": 100,
+    "citation_accuracy_pct": 100,
+    "claim_support_pct": "n/a: baseline composes extractively (unit text only); measured once a model composes",
+    "verbatim_exact_typed_pct": 100,
+    "verbatim_exact_spoken_pct": 100,
+    "permission_leaks": 0,
+    "abstention_accuracy_pct": 91.7,
+    "retired_exposures": 0,
+    "phi_redaction_pct": 100,
+    "authoring_flag_recall_pct": 100,
+    "authoring_verbatim_flag_recall_pct": 100,
+    "authoring_flag_precision_pct": 100,
+    "authoring_kind_accuracy_pct": 100,
+    "authoring_impact_accuracy_pct_heuristic": 100,
+    "latency_ms_p50": 0,
+    "latency_ms_p95": 1
+  },
+  "slices": {
+    "applicability": {
+      "cases": 4,
+      "correct": 3,
+      "accuracy_pct": 75,
+      "critical_failures": 0
+    },
+    "conflict": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "gap": {
+      "cases": 6,
+      "correct": 5,
+      "accuracy_pct": 83.3,
+      "critical_failures": 0
+    },
+    "insurance": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "member": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "multi_part": {
+      "cases": 1,
+      "correct": 0,
+      "accuracy_pct": 0,
+      "critical_failures": 0
+    },
+    "multichannel": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "no_parametric_answers": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "org_speak": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "permissions": {
+      "cases": 2,
+      "correct": 2,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "pharmacy": {
+      "cases": 2,
+      "correct": 2,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "phi": {
+      "cases": 2,
+      "correct": 2,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "regression": {
+      "cases": 4,
+      "correct": 3,
+      "accuracy_pct": 75,
+      "critical_failures": 0
+    },
+    "retired_check": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "safety": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "shared": {
+      "cases": 2,
+      "correct": 2,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "speech_error": {
+      "cases": 3,
+      "correct": 3,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "stale": {
+      "cases": 2,
+      "correct": 1,
+      "accuracy_pct": 50,
+      "critical_failures": 0
+    },
+    "verbatim": {
+      "cases": 6,
+      "correct": 6,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    },
+    "voice": {
+      "cases": 4,
+      "correct": 4,
+      "accuracy_pct": 100,
+      "critical_failures": 0
+    }
+  },
+  "by_expected_outcome": {
+    "answer": {
+      "cases": 15,
+      "correct": 14
+    },
+    "conflict": {
+      "cases": 1,
+      "correct": 1
+    },
+    "insufficient_evidence": {
+      "cases": 6,
+      "correct": 5
+    },
+    "needs_clarification": {
+      "cases": 1,
+      "correct": 1
+    },
+    "not_authorized": {
+      "cases": 2,
+      "correct": 2
+    },
+    "safety_escalation": {
+      "cases": 1,
+      "correct": 1
+    },
+    "stale": {
+      "cases": 1,
+      "correct": 1
+    }
+  },
+  "cases": [
+    {
+      "case_id": "G01",
+      "query": "rx pricing disclaimer",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "verbatim",
+        "pharmacy"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-003"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-003"
+        ],
+        "parts": [
+          {
+            "part": "rx pricing disclaimer",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-003"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": true,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 12,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"prescription pricing disclaimer\"; lexicon rx -> prescription; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"rx pricing disclaimer\": U-PH-003 s=18.43 cov=1, U-PH-002 s=2.87 cov=0.26, U-PH-004 s=1.85 cov=0.34"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-003"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "D",
+          "detail": "verbatim U-PH-003 v1 inserted by id"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=true; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "rx pricing disclaimer: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429597-1"
+        }
+      ]
+    },
+    {
+      "case_id": "G02",
+      "query": "rx pricing disclaimer",
+      "role": "insurance_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "permissions"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "not_authorized",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "not_authorized",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "rx pricing disclaimer",
+            "outcome": "not_authorized",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 1,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "insurance_advocate: KB-INS, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"prescription pricing disclaimer\"; lexicon rx -> prescription; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"rx pricing disclaimer\": no hits"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "rx pricing disclaimer: not_authorized"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429609-2"
+        }
+      ]
+    },
+    {
+      "case_id": "G03",
+      "query": "what do i say at the start of the call",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "verbatim",
+        "shared"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-SH-001"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-SH-001"
+        ],
+        "parts": [
+          {
+            "part": "what do i say at the start of the call",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-SH-001"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": true,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"what do i say at the start of the call\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"what do i say at the start of the call\": U-SH-001 s=14.04 cov=1, U-SH-002 s=5.54 cov=0.39"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-SH-001"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "D",
+          "detail": "verbatim U-SH-001 v2 inserted by id"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=true; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "what do i say at the start of the call: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429610-3"
+        }
+      ]
+    },
+    {
+      "case_id": "G04",
+      "query": "how long does mail order take to arrive",
+      "role": "member_chat",
+      "channel": "member_chat",
+      "slices": [
+        "member",
+        "pharmacy"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-006"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-006"
+        ],
+        "parts": [
+          {
+            "part": "how long does mail order take to arrive",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-006"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "member_chat: KB-PHARM, KB-INS"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"how long does mail order take to arrive\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"how long does mail order take to arrive\": U-PH-006 s=17.95 cov=0.73, U-PH-004 s=9.87 cov=0.25, U-PH-005 s=7.87 cov=0.25"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-006"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-006 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "how long does mail order take to arrive: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429610-4"
+        }
+      ]
+    },
+    {
+      "case_id": "G05",
+      "query": "MO setup steps",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "org_speak"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-005"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-005"
+        ],
+        "parts": [
+          {
+            "part": "MO setup steps",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-005"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"mail order setup steps\"; lexicon mo -> mail order; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"MO setup steps\": U-PH-005 s=24.04 cov=1, U-PH-004 s=9.87 cov=0.32, U-PH-006 s=5.25 cov=0.32"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-005"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-005 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "MO setup steps: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429610-5"
+        }
+      ]
+    },
+    {
+      "case_id": "G06",
+      "query": "tier 3 copay for specialty drug",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "gap"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "tier 3 copay for specialty drug",
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"tier 3 copay for specialty drug\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"tier 3 copay for specialty drug\": U-PH-010 s=8.5 cov=0.21, U-PH-005 s=2.2 cov=0.16"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "tier 3 copay for specialty drug: insufficient_evidence"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429611-6; gap logged to author queue"
+        }
+      ]
+    },
+    {
+      "case_id": "G07",
+      "query": "how many days supply can i get by mail",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "conflict"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "conflict",
+        "unit_ids": [
+          "U-PH-007",
+          "U-PH-107"
+        ]
+      },
+      "got": {
+        "outcome": "conflict",
+        "unit_ids": [
+          "U-PH-007",
+          "U-PH-107"
+        ],
+        "parts": [
+          {
+            "part": "how many days supply can i get by mail",
+            "outcome": "conflict",
+            "unit_ids": [
+              "U-PH-007",
+              "U-PH-107"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"how many days supply can i get by mail\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"how many days supply can i get by mail\": U-PH-007 s=13.81 cov=1, U-PH-107 s=13.81 cov=1, U-PH-004 s=6.71 cov=1"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "2 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "2 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "conflict: U-PH-007 vs U-PH-107"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "how many days supply can i get by mail: conflict"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429611-7"
+        }
+      ]
+    },
+    {
+      "case_id": "G08",
+      "query": "closing statement",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "verbatim",
+        "retired_check"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-SH-002"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-SH-002"
+        ],
+        "parts": [
+          {
+            "part": "closing statement",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-SH-002"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": true,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 1,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"closing statement\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"closing statement\": U-SH-002 s=6.59 cov=0.44"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-SH-002"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "D",
+          "detail": "verbatim U-SH-002 v2 inserted by id"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=true; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "closing statement: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429611-8"
+        }
+      ]
+    },
+    {
+      "case_id": "G09",
+      "query": "replace id card",
+      "role": "insurance_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "insurance"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-IN-001"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-IN-001"
+        ],
+        "parts": [
+          {
+            "part": "replace id card",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-IN-001"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "insurance_advocate: KB-INS, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"replace id card\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"replace id card\": U-IN-001 s=17.09 cov=0.64"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-IN-001"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-IN-001 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "replace id card: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429612-9"
+        }
+      ]
+    },
+    {
+      "case_id": "G10",
+      "query": "is there a shipping fee for mail order",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "stale"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "stale",
+        "unit_ids": [
+          "U-PH-008"
+        ]
+      },
+      "got": {
+        "outcome": "stale",
+        "unit_ids": [
+          "U-PH-008"
+        ],
+        "parts": [
+          {
+            "part": "is there a shipping fee for mail order",
+            "outcome": "stale",
+            "unit_ids": [
+              "U-PH-008"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 1,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"is there a shipping fee for mail order\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"is there a shipping fee for mail order\": U-PH-008 s=21.29 cov=1, U-PH-006 s=10.79 cov=0.61, U-PH-004 s=9.87 cov=0.36"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible; past review date: U-PH-008"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-008"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-008 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "is there a shipping fee for mail order: stale"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429612-10"
+        }
+      ]
+    },
+    {
+      "case_id": "G11",
+      "query": "pricing disclaimer for member",
+      "role": "member_chat",
+      "channel": "member_chat",
+      "slices": [
+        "verbatim",
+        "multichannel"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-003"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-003"
+        ],
+        "parts": [
+          {
+            "part": "pricing disclaimer for member",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-003"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": true,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "member_chat: KB-PHARM, KB-INS"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"pricing disclaimer for member\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"pricing disclaimer for member\": U-PH-003 s=12.13 cov=0.77, U-PH-002 s=3.57 cov=0.23, U-PH-004 s=3.04 cov=0.58"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-003"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "D",
+          "detail": "verbatim U-PH-003 v1 inserted by id"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=true; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "pricing disclaimer for member: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429613-11"
+        }
+      ]
+    },
+    {
+      "case_id": "G12",
+      "query": "pcp change",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "permissions"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "not_authorized",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "not_authorized",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "pcp change",
+            "outcome": "not_authorized",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"primary care provider change\"; lexicon pcp -> primary care provider; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"pcp change\": U-PH-003 s=1.85 cov=0.18"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "pcp change: not_authorized"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429613-12"
+        }
+      ]
+    },
+    {
+      "case_id": "S01",
+      "query": "are ex pricing disclaimer",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "voice",
+        "speech_error"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-003"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-003"
+        ],
+        "parts": [
+          {
+            "part": "are ex pricing disclaimer",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-003"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": true,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"prescription pricing disclaimer\"; lexicon are ex -> rx; rx -> prescription; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"are ex pricing disclaimer\": U-PH-003 s=18.43 cov=1, U-PH-002 s=2.87 cov=0.26, U-PH-004 s=1.85 cov=0.34"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-003"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "D",
+          "detail": "verbatim U-PH-003 v1 inserted by id"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=true; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "are ex pricing disclaimer: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429614-13"
+        }
+      ]
+    },
+    {
+      "case_id": "S02",
+      "query": "male order set up",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "voice",
+        "speech_error"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-005"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-005"
+        ],
+        "parts": [
+          {
+            "part": "male order set up",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-005"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 1,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"mail order set up\"; lexicon male order -> mail order; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"male order set up\": U-PH-005 s=21.91 cov=1, U-PH-004 s=9.87 cov=0.36, U-SH-002 s=5.54 cov=0.25"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-005"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-005 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "male order set up: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429614-14"
+        }
+      ]
+    },
+    {
+      "case_id": "S03",
+      "query": "merry dale pharmacy delivery time",
+      "role": "member_chat",
+      "channel": "voice",
+      "slices": [
+        "voice",
+        "speech_error"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-006"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-006"
+        ],
+        "parts": [
+          {
+            "part": "merry dale pharmacy delivery time",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-006"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "member_chat: KB-PHARM, KB-INS"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"meridale pharmacy delivery time\"; lexicon merry dale -> Meridale; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"merry dale pharmacy delivery time\": U-PH-006 s=16.04 cov=0.5, U-PH-004 s=5.54 cov=0.2, U-PH-008 s=5.54 cov=0.2"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-006"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-006 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "merry dale pharmacy delivery time: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429615-15"
+        }
+      ]
+    },
+    {
+      "case_id": "G13",
+      "query": "is there a copay assistance program",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "applicability"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "needs_clarification",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "needs_clarification",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "is there a copay assistance program",
+            "outcome": "needs_clarification",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"is there a copay assistance program\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"is there a copay assistance program\": U-PH-010 s=27.5 cov=1"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "is there a copay assistance program: needs_clarification"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429615-16"
+        }
+      ]
+    },
+    {
+      "case_id": "G14",
+      "query": "is there a copay assistance program",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "applicability"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-010"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-010"
+        ],
+        "parts": [
+          {
+            "part": "is there a copay assistance program",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-010"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"is there a copay assistance program\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=KY"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"is there a copay assistance program\": U-PH-010 s=27.5 cov=1"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-010"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-010 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "is there a copay assistance program: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429615-17"
+        }
+      ]
+    },
+    {
+      "case_id": "G15",
+      "query": "is there a copay assistance program",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "applicability",
+        "gap"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "is there a copay assistance program",
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"is there a copay assistance program\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=FL"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"is there a copay assistance program\": U-PH-010 s=27.5 cov=1"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "0 applicable; excluded U-PH-010 (state FL)"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "is there a copay assistance program: insufficient_evidence"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429615-18; gap logged to author queue"
+        }
+      ]
+    },
+    {
+      "case_id": "G16",
+      "query": "I have chest pain and cannot breathe, can you rush my heart pills by mail",
+      "role": "member_chat",
+      "channel": "member_chat",
+      "slices": [
+        "safety"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "safety_escalation",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "safety_escalation",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "I have chest pain and cannot breathe, can you rush my heart pills by mail",
+            "outcome": "safety_escalation",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "member_chat: KB-PHARM, KB-INS"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "triggered on \"chest pain\"; no retrieval"
+        }
+      ]
+    },
+    {
+      "case_id": "G17",
+      "query": "how long does mail order take and is shipping free",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "multi_part",
+        "stale"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-006"
+        ],
+        "parts": [
+          {
+            "part": "delivery time",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-006"
+            ]
+          },
+          {
+            "part": "shipping cost",
+            "outcome": "stale",
+            "unit_ids": [
+              "U-PH-008"
+            ]
+          }
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-006"
+        ],
+        "parts": [
+          {
+            "part": "how long does mail order take",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-006"
+            ]
+          },
+          {
+            "part": "is shipping free",
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": false,
+      "parts_total": 2,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [
+        "part 2 \"shipping cost\": expected stale [U-PH-008], got insufficient_evidence []"
+      ],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"how long does mail order take and is shipping free\"; lexicon none; 2 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"how long does mail order take\": U-PH-006 s=15.75 cov=0.66, U-PH-004 s=9.87 cov=0.32, U-PH-005 s=7.87 cov=0.32"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-006"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-006 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"is shipping free\": U-PH-006 s=5.54 cov=0.39, U-PH-008 s=5.54 cov=0.39, U-PH-005 s=1.85 cov=0.39"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "how long does mail order take: answer | is shipping free: insufficient_evidence"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429615-20; gap logged to author queue"
+        }
+      ]
+    },
+    {
+      "case_id": "G18",
+      "query": "member John Smith DOB 03/04/1950 wants MO setup",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "phi"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-005"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-005"
+        ],
+        "parts": [
+          {
+            "part": "wants MO setup",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-005"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": true,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "redacted DOB, NAME"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"wants mail order setup\"; lexicon mo -> mail order; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"wants MO setup\": U-PH-005 s=18.37 cov=1, U-PH-004 s=9.87 cov=0.48, U-PH-006 s=5.25 cov=0.48"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-005"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "P",
+          "detail": "extractive from U-PH-005 v1"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=n/a; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "wants MO setup: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429616-21"
+        }
+      ]
+    },
+    {
+      "case_id": "G19",
+      "query": "closing statement",
+      "role": "insurance_advocate",
+      "channel": "voice",
+      "slices": [
+        "voice",
+        "verbatim",
+        "shared"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-SH-002"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-SH-002"
+        ],
+        "parts": [
+          {
+            "part": "closing statement",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-SH-002"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": true,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "insurance_advocate: KB-INS, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"closing statement\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"closing statement\": U-SH-002 s=6.59 cov=0.44"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-SH-002"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "D",
+          "detail": "verbatim U-SH-002 v2 inserted by id"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=true; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "closing statement: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429616-22"
+        }
+      ]
+    },
+    {
+      "case_id": "G20",
+      "query": "what is the dental allowance",
+      "role": "member_chat",
+      "channel": "member_chat",
+      "slices": [
+        "gap",
+        "no_parametric_answers"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "what is the dental allowance",
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "member_chat: KB-PHARM, KB-INS"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"what is the dental allowance\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"what is the dental allowance\": no hits"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "what is the dental allowance: insufficient_evidence"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429616-23; gap logged to author queue"
+        }
+      ]
+    },
+    {
+      "case_id": "R01",
+      "query": "is the pharmacy opening on sunday",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "regression",
+        "gap"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "is the pharmacy opening on sunday",
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"is the pharmacy opening on sunday\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"is the pharmacy opening on sunday\": U-SH-001 s=8.5 cov=0.38, U-PH-009 s=5.54 cov=0.25, U-PH-005 s=1.85 cov=0.25"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "is the pharmacy opening on sunday: insufficient_evidence"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429616-24; gap logged to author queue"
+        }
+      ]
+    },
+    {
+      "case_id": "R02",
+      "query": "caller Jane Doe born 7/12/1948 asking about the rx pricing disclaimer",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "regression",
+        "phi",
+        "verbatim"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-003"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "unit_ids": [
+          "U-PH-003"
+        ],
+        "parts": [
+          {
+            "part": "asking about the rx pricing disclaimer",
+            "outcome": "answer",
+            "unit_ids": [
+              "U-PH-003"
+            ]
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": true,
+      "verbatim_exact": true,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": true,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "redacted DOB, NAME"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"asking about the prescription pricing disclaimer\"; lexicon rx -> prescription; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"asking about the rx pricing disclaimer\": U-PH-003 s=18.43 cov=0.66, U-PH-002 s=2.87 cov=0.17, U-PH-004 s=1.85 cov=0.22"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 9,
+          "name": "Authority and recency",
+          "kind": "D",
+          "detail": "selected U-PH-003"
+        },
+        {
+          "step": 10,
+          "name": "Compose",
+          "kind": "D",
+          "detail": "verbatim U-PH-003 v1 inserted by id"
+        },
+        {
+          "step": 11,
+          "name": "Verify",
+          "kind": "D+P",
+          "detail": "verbatim_exact=true; in_scope=true"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "asking about the rx pricing disclaimer: answer"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429617-25"
+        }
+      ]
+    },
+    {
+      "case_id": "R03",
+      "query": "how do i file a pharmacy grievance",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "regression",
+        "gap"
+      ],
+      "severity": "critical",
+      "expected": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "how do i file a pharmacy grievance",
+            "outcome": "insufficient_evidence",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": true,
+      "parts_total": 1,
+      "parts_correct": 1,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"how do i file a pharmacy grievance\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"how do i file a pharmacy grievance\": U-PH-009 s=5.54 cov=0.27, U-PH-005 s=4.04 cov=0.59, U-PH-002 s=2.2 cov=0.32"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "how do i file a pharmacy grievance: insufficient_evidence"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429617-26; gap logged to author queue"
+        }
+      ]
+    },
+    {
+      "case_id": "R04",
+      "query": "copay for tier3",
+      "role": "pharmacy_advocate",
+      "channel": "advocate_view",
+      "slices": [
+        "regression",
+        "gap",
+        "applicability"
+      ],
+      "severity": "major",
+      "expected": {
+        "outcome": "insufficient_evidence",
+        "unit_ids": []
+      },
+      "got": {
+        "outcome": "needs_clarification",
+        "unit_ids": [],
+        "parts": [
+          {
+            "part": "copay for tier3",
+            "outcome": "needs_clarification",
+            "unit_ids": []
+          }
+        ]
+      },
+      "outcome_correct": false,
+      "parts_total": 1,
+      "parts_correct": 0,
+      "recall_at_3": null,
+      "verbatim_exact": null,
+      "leak": false,
+      "retired_exposed": false,
+      "phi_ok": null,
+      "critical_failure": false,
+      "failure_reasons": [
+        "expected insufficient_evidence [], got needs_clarification []"
+      ],
+      "latency_ms": 0,
+      "trace": [
+        {
+          "step": 1,
+          "name": "Resolve role and entitlements",
+          "kind": "D",
+          "detail": "pharmacy_advocate: KB-PHARM, KB-SHARED"
+        },
+        {
+          "step": 2,
+          "name": "Redact PHI/PII",
+          "kind": "D",
+          "detail": "nothing to redact"
+        },
+        {
+          "step": 3,
+          "name": "Safety pre-check",
+          "kind": "D+P",
+          "detail": "clear"
+        },
+        {
+          "step": 4,
+          "name": "Query understanding",
+          "kind": "P",
+          "detail": "normalized \"copay for tier3\"; lexicon none; 1 part(s)"
+        },
+        {
+          "step": 5,
+          "name": "Hard partitions",
+          "kind": "D",
+          "detail": "tenant, environment, lob=MAPD, state=?"
+        },
+        {
+          "step": 6,
+          "name": "Search",
+          "kind": "D",
+          "detail": "\"copay for tier3\": U-PH-010 s=8.5 cov=0.5"
+        },
+        {
+          "step": 7,
+          "name": "Eligibility",
+          "kind": "D",
+          "detail": "1 eligible"
+        },
+        {
+          "step": 8,
+          "name": "Applicability",
+          "kind": "D",
+          "detail": "1 applicable"
+        },
+        {
+          "step": 12,
+          "name": "Return outcome per part",
+          "kind": "D",
+          "detail": "copay for tier3: needs_clarification"
+        },
+        {
+          "step": 13,
+          "name": "Persist record",
+          "kind": "D",
+          "detail": "req-1791428429617-27"
+        }
+      ]
+    }
+  ],
+  "authoring": [
+    {
+      "case_id": "A01",
+      "unit_id": "U-PH-003",
+      "verbatim": true,
+      "expected": {
+        "flag": true,
+        "kind": "near_duplicate",
+        "impact": "equivalent_wording",
+        "diff": [
+          "share->give you",
+          "may->might",
+          "when->once"
+        ]
+      },
+      "got": {
+        "flag": true,
+        "kind": "near_duplicate",
+        "impact": "equivalent_wording",
+        "diff": [
+          "share->give you",
+          "may->might",
+          "when->once"
+        ],
+        "route_to": "Legal (verbatim)",
+        "similarity": 0.75
+      },
+      "flag_correct": true,
+      "kind_correct": true,
+      "impact_correct": true
+    },
+    {
+      "case_id": "A02",
+      "unit_id": "U-PH-003",
+      "verbatim": true,
+      "expected": {
+        "flag": true,
+        "kind": "drift",
+        "impact": "contradiction",
+        "diff": [
+          "may change->will not change"
+        ]
+      },
+      "got": {
+        "flag": true,
+        "kind": "drift",
+        "impact": "contradiction",
+        "diff": [
+          "may->will not"
+        ],
+        "route_to": "Legal (verbatim), high priority",
+        "similarity": 0.82
+      },
+      "flag_correct": true,
+      "kind_correct": true,
+      "impact_correct": true
+    },
+    {
+      "case_id": "A03",
+      "unit_id": "U-SH-002",
+      "verbatim": true,
+      "expected": {
+        "flag": false,
+        "kind": "formatting_only",
+        "impact": "none",
+        "diff": []
+      },
+      "got": {
+        "flag": false,
+        "kind": "formatting_only",
+        "impact": "none",
+        "diff": [],
+        "route_to": "none",
+        "similarity": 1
+      },
+      "flag_correct": true,
+      "kind_correct": true,
+      "impact_correct": true
+    },
+    {
+      "case_id": "A04",
+      "unit_id": "U-PH-006",
+      "verbatim": false,
+      "expected": {
+        "flag": true,
+        "kind": "drift",
+        "impact": "narrowing_scope",
+        "diff": [
+          "+except in Puerto Rico"
+        ]
+      },
+      "got": {
+        "flag": true,
+        "kind": "drift",
+        "impact": "narrowing_scope",
+        "diff": [
+          "+except in puerto rico"
+        ],
+        "route_to": "Author",
+        "similarity": 0.82
+      },
+      "flag_correct": true,
+      "kind_correct": true,
+      "impact_correct": true
+    },
+    {
+      "case_id": "A05",
+      "unit_id": "U-PH-006",
+      "verbatim": false,
+      "expected": {
+        "flag": true,
+        "kind": "semantic_duplicate",
+        "impact": "equivalent_meaning",
+        "diff": [
+          "rephrased"
+        ]
+      },
+      "got": {
+        "flag": true,
+        "kind": "semantic_duplicate",
+        "impact": "equivalent_meaning",
+        "diff": [
+          "+most",
+          "prescriptions typically arrive within->orders get to members in about",
+          "after->once the doctor sends",
+          "-is received from the doctor"
+        ],
+        "route_to": "Author, low priority",
+        "similarity": 0.38
+      },
+      "flag_correct": true,
+      "kind_correct": true,
+      "impact_correct": true
+    }
+  ]
+}

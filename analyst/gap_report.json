@@ -1,0 +1,424 @@
+{
+  "engine": "gap-analyst-baseline-0.1",
+  "as_of": "2026-10-06",
+  "summary": {
+    "queries": 20,
+    "from_search_log": 20,
+    "from_gap_queue": 0,
+    "served": 14,
+    "routed_not_authorized": 0,
+    "unanswered": 6,
+    "clusters": 5,
+    "lexicon_proposals": 2
+  },
+  "lexicon_proposals": [
+    {
+      "from": "pricng",
+      "to": "pricing",
+      "kind": "typo",
+      "evidence": [
+        "Q02"
+      ],
+      "effects": [
+        {
+          "query": "Q02",
+          "before": "answer",
+          "after": "answer",
+          "units": [
+            "U-PH-003"
+          ]
+        }
+      ],
+      "status": "proposed: needs Knowledge Ops approval"
+    },
+    {
+      "from": "tier3",
+      "to": "tier 3",
+      "kind": "joined_token",
+      "evidence": [
+        "Q08"
+      ],
+      "effects": [
+        {
+          "query": "Q08",
+          "before": "needs_clarification",
+          "after": "insufficient_evidence",
+          "units": []
+        }
+      ],
+      "status": "proposed: needs Knowledge Ops approval"
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "C01",
+      "questions": [
+        {
+          "id": "Q06",
+          "text": "tier 3 copay specialty drug"
+        },
+        {
+          "id": "Q07",
+          "text": "specialty drug copay"
+        }
+      ],
+      "demand": 2,
+      "core_terms": [
+        "copay",
+        "specialty",
+        "drug"
+      ],
+      "gap_type": "content gap: no approved source; route to the business owner",
+      "source_evidence": [],
+      "nearest_existing_unit": {
+        "unit_id": "U-PH-010",
+        "title": "Copay assistance program (Kentucky pilot)",
+        "owner": "Pharmacy Ops",
+        "coverage": 0.21
+      },
+      "draft_unit": {
+        "status": "proposed",
+        "title": null,
+        "synonyms": [
+          "tier 3 copay specialty drug",
+          "specialty drug copay"
+        ],
+        "body": null,
+        "knowledge_base": null,
+        "owner": "to be assigned by Knowledge Ops",
+        "needs": [
+          "author",
+          "approver",
+          "business owner to supply the policy"
+        ]
+      }
+    },
+    {
+      "cluster_id": "C02",
+      "questions": [
+        {
+          "id": "Q15",
+          "text": "OTC allowance balance"
+        }
+      ],
+      "demand": 1,
+      "core_terms": [
+        "over",
+        "counter",
+        "allowance",
+        "balance"
+      ],
+      "gap_type": "content gap: no approved source; route to the business owner",
+      "source_evidence": [],
+      "nearest_existing_unit": null,
+      "draft_unit": {
+        "status": "proposed",
+        "title": null,
+        "synonyms": [
+          "otc allowance balance"
+        ],
+        "body": null,
+        "knowledge_base": null,
+        "owner": "to be assigned by Knowledge Ops",
+        "needs": [
+          "author",
+          "approver",
+          "business owner to supply the policy"
+        ]
+      }
+    },
+    {
+      "cluster_id": "C03",
+      "questions": [
+        {
+          "id": "Q16",
+          "text": "dental coverage for dentures"
+        }
+      ],
+      "demand": 1,
+      "core_terms": [
+        "dental",
+        "coverage",
+        "denture"
+      ],
+      "gap_type": "content gap: no approved source; route to the business owner",
+      "source_evidence": [],
+      "nearest_existing_unit": null,
+      "draft_unit": {
+        "status": "proposed",
+        "title": null,
+        "synonyms": [
+          "dental coverage for dentures"
+        ],
+        "body": null,
+        "knowledge_base": null,
+        "owner": "to be assigned by Knowledge Ops",
+        "needs": [
+          "author",
+          "approver",
+          "business owner to supply the policy"
+        ]
+      }
+    },
+    {
+      "cluster_id": "C04",
+      "questions": [
+        {
+          "id": "Q17",
+          "text": "how do i file a pharmacy grievance"
+        }
+      ],
+      "demand": 1,
+      "core_terms": [
+        "file",
+        "pharmacy",
+        "grievance"
+      ],
+      "gap_type": "content gap: no approved source; route to the business owner",
+      "source_evidence": [],
+      "nearest_existing_unit": {
+        "unit_id": "U-PH-009",
+        "title": "Objection: prefers local pharmacy",
+        "owner": "Pharmacy Ops",
+        "coverage": 0.27
+      },
+      "draft_unit": {
+        "status": "proposed",
+        "title": null,
+        "synonyms": [
+          "how do i file a pharmacy grievance"
+        ],
+        "body": null,
+        "knowledge_base": null,
+        "owner": "to be assigned by Knowledge Ops",
+        "needs": [
+          "author",
+          "approver",
+          "business owner to supply the policy"
+        ]
+      }
+    },
+    {
+      "cluster_id": "C05",
+      "questions": [
+        {
+          "id": "Q18",
+          "text": "does my drug need a PA"
+        }
+      ],
+      "demand": 1,
+      "core_terms": [
+        "drug",
+        "prior",
+        "authorization"
+      ],
+      "gap_type": "content gap: no approved source; route to the business owner",
+      "source_evidence": [],
+      "nearest_existing_unit": null,
+      "draft_unit": {
+        "status": "proposed",
+        "title": null,
+        "synonyms": [
+          "does my drug need a pa"
+        ],
+        "body": null,
+        "knowledge_base": null,
+        "owner": "to be assigned by Knowledge Ops",
+        "needs": [
+          "author",
+          "approver",
+          "business owner to supply the policy"
+        ]
+      }
+    }
+  ],
+  "classified": [
+    {
+      "id": "Q01",
+      "text": "rx pricing disclaimer",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-003"
+      ]
+    },
+    {
+      "id": "Q02",
+      "text": "rx pricng disclaimer",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-003"
+      ]
+    },
+    {
+      "id": "Q03",
+      "text": "what do i say at the start of the call",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-SH-001"
+      ]
+    },
+    {
+      "id": "Q04",
+      "text": "MO setup steps",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-005"
+      ]
+    },
+    {
+      "id": "Q05",
+      "text": "how long does mail order take",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-006"
+      ]
+    },
+    {
+      "id": "Q06",
+      "text": "tier 3 copay specialty drug",
+      "status": "gap",
+      "outcome": "insufficient_evidence",
+      "role": null,
+      "units": []
+    },
+    {
+      "id": "Q07",
+      "text": "specialty drug copay",
+      "status": "gap",
+      "outcome": "insufficient_evidence",
+      "role": null,
+      "units": []
+    },
+    {
+      "id": "Q08",
+      "text": "copay for tier3",
+      "status": "served",
+      "outcome": "needs_clarification",
+      "role": "pharmacy_advocate",
+      "units": []
+    },
+    {
+      "id": "Q09",
+      "text": "how many days supply by mail",
+      "status": "served",
+      "outcome": "conflict",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-007",
+        "U-PH-107"
+      ]
+    },
+    {
+      "id": "Q10",
+      "text": "90 day supply",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-007"
+      ]
+    },
+    {
+      "id": "Q11",
+      "text": "closing statement",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-SH-002"
+      ]
+    },
+    {
+      "id": "Q12",
+      "text": "is there a shipping fee for mail order",
+      "status": "served",
+      "outcome": "stale",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-008"
+      ]
+    },
+    {
+      "id": "Q13",
+      "text": "replace id card",
+      "status": "served",
+      "outcome": "answer",
+      "role": "insurance_advocate",
+      "units": [
+        "U-IN-001"
+      ]
+    },
+    {
+      "id": "Q14",
+      "text": "pcp change",
+      "status": "served",
+      "outcome": "answer",
+      "role": "insurance_advocate",
+      "units": [
+        "U-IN-002"
+      ]
+    },
+    {
+      "id": "Q15",
+      "text": "OTC allowance balance",
+      "status": "gap",
+      "outcome": "insufficient_evidence",
+      "role": null,
+      "units": []
+    },
+    {
+      "id": "Q16",
+      "text": "dental coverage for dentures",
+      "status": "gap",
+      "outcome": "insufficient_evidence",
+      "role": null,
+      "units": []
+    },
+    {
+      "id": "Q17",
+      "text": "how do i file a pharmacy grievance",
+      "status": "gap",
+      "outcome": "insufficient_evidence",
+      "role": null,
+      "units": []
+    },
+    {
+      "id": "Q18",
+      "text": "does my drug need a PA",
+      "status": "gap",
+      "outcome": "insufficient_evidence",
+      "role": null,
+      "units": []
+    },
+    {
+      "id": "Q19",
+      "text": "are ex pricing disclaimer",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-003"
+      ]
+    },
+    {
+      "id": "Q20",
+      "text": "mdp delivery time",
+      "status": "served",
+      "outcome": "answer",
+      "role": "pharmacy_advocate",
+      "units": [
+        "U-PH-006"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "note": "SYNTHETIC authoring eval set for dedup and drift. Measures flag recall (no meaningful change missed) and flag precision (no wasted Legal reviews). Any textual change to a verbatim unit must be flagged, whatever its similarity score.",
+  "cases": [
+    {
+      "case_id": "A01",
+      "unit_id": "U-PH-003",
+      "before": "The prices I share today are estimates based on your current plan and may change. Your final cost will be confirmed when your prescription is processed.",
+      "after": "The prices I give you today are estimates based on your current plan and might change. Your final cost will be confirmed once your prescription is processed.",
+      "expected_flag": true,
+      "expected_kind": "near_duplicate",
+      "expected_diff": [
+        "share->give you",
+        "may->might",
+        "when->once"
+      ],
+      "expected_impact": "equivalent_wording",
+      "route_to": "Legal (verbatim)"
+    },
+    {
+      "case_id": "A02",
+      "unit_id": "U-PH-003",
+      "before": "The prices I share today are estimates based on your current plan and may change.",
+      "after": "The prices I share today are estimates based on your current plan and will not change.",
+      "expected_flag": true,
+      "expected_kind": "drift",
+      "expected_diff": [
+        "may change->will not change"
+      ],
+      "expected_impact": "contradiction",
+      "route_to": "Legal (verbatim), high priority"
+    },
+    {
+      "case_id": "A03",
+      "unit_id": "U-SH-002",
+      "before": "Your decision today has no impact on your plan membership.",
+      "after": "Your decision today  has no impact on your plan membership.",
+      "expected_flag": false,
+      "expected_kind": "formatting_only",
+      "expected_diff": [],
+      "expected_impact": "none",
+      "route_to": "none (normalization removes it)"
+    },
+    {
+      "case_id": "A04",
+      "unit_id": "U-PH-006",
+      "before": "Mail order prescriptions typically arrive within 7 to 10 business days after the prescription is received from the doctor.",
+      "after": "Mail order prescriptions typically arrive within 7 to 10 business days after the prescription is received from the doctor, except in Puerto Rico.",
+      "expected_flag": true,
+      "expected_kind": "drift",
+      "expected_diff": [
+        "+except in Puerto Rico"
+      ],
+      "expected_impact": "narrowing_scope",
+      "route_to": "Author; propose applies_to change"
+    },
+    {
+      "case_id": "A05",
+      "unit_id": "U-PH-006",
+      "before": "Mail order prescriptions typically arrive within 7 to 10 business days after the prescription is received from the doctor.",
+      "after": "Most mail order orders get to members in about 7 to 10 business days once the doctor sends the prescription.",
+      "expected_flag": true,
+      "expected_kind": "semantic_duplicate",
+      "expected_diff": [
+        "rephrased"
+      ],
+      "expected_impact": "equivalent_meaning",
+      "route_to": "Author, low priority (merge suggestion)"
+    }
+  ]
+}
