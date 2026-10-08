@@ -1,0 +1,21 @@
+{
+  "note": "Organization-specific lexicon (SYNTHETIC seed). Grows from search logs, human-approved.",
+  "entries": {
+    "rx": "prescription",
+    "are ex": "rx",
+    "r x": "rx",
+    "mo": "mail order",
+    "male order": "mail order",
+    "cwp": "CenterWell Pharmacy",
+    "cent or well": "CenterWell",
+    "pcp": "primary care provider",
+    "id&v": "identity verification",
+    "dob": "date of birth",
+    "oop": "out-of-pocket",
+    "mapd": "Medicare Advantage Prescription Drug plan",
+    "pdp": "Prescription Drug Plan",
+    "pa": "prior authorization",
+    "otc": "over-the-counter",
+    "tier3": "tier 3"
+  }
+}

@@ -1,0 +1,646 @@
+{
+  "note": "SYNTHETIC. Expected knowledge units after extraction and approval. Used to seed the store and score extraction.",
+  "as_of": "2026-10-06",
+  "units": [
+    {
+      "unit_id": "U-SH-001",
+      "title": "Call opening and recorded-line notice",
+      "type": "verbatim",
+      "body": "Thank you for calling. This call is on a recorded line and may be monitored for quality and training purposes. My name is [Advocate Name]. May I have your full name and date of birth?",
+      "verbatim": true,
+      "spoken_version": null,
+      "knowledge_base": "KB-SHARED",
+      "audience": [
+        "advocate"
+      ],
+      "channels": [
+        "advocate_view",
+        "voice"
+      ],
+      "authority_level": "legal_approved",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[OPENING]",
+      "effective_date": "2026-01-15",
+      "review_date": "2027-01-15",
+      "version": 2,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "greeting",
+        "opening",
+        "recorded line",
+        "start of call"
+      ],
+      "owner": "Compliance",
+      "approved_by": "Legal (synthetic)",
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-SH-002",
+      "title": "Call closing: no impact on membership",
+      "type": "verbatim",
+      "body": "Your decision today has no impact on your plan membership. Is there anything else I can help you with today?",
+      "verbatim": true,
+      "spoken_version": null,
+      "knowledge_base": "KB-SHARED",
+      "audience": [
+        "advocate"
+      ],
+      "channels": [
+        "advocate_view",
+        "voice"
+      ],
+      "authority_level": "legal_approved",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[CLOSING]",
+      "effective_date": "2026-01-15",
+      "review_date": "2027-01-15",
+      "version": 2,
+      "status": "approved",
+      "supersedes": "U-SH-000",
+      "synonyms": [
+        "closing",
+        "wrap up",
+        "end of call"
+      ],
+      "owner": "Compliance",
+      "approved_by": "Legal (synthetic)",
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-SH-000",
+      "title": "Call closing (old)",
+      "type": "verbatim",
+      "body": "...this won't affect your coverage.",
+      "verbatim": true,
+      "spoken_version": null,
+      "knowledge_base": "KB-SHARED",
+      "audience": [
+        "advocate"
+      ],
+      "channels": [
+        "advocate_view",
+        "voice"
+      ],
+      "authority_level": "legal_approved",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[CLOSING] note",
+      "effective_date": "2024-01-01",
+      "review_date": "2026-01-15",
+      "version": 1,
+      "status": "retired",
+      "supersedes": null,
+      "synonyms": [],
+      "owner": "Compliance",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-002",
+      "title": "Identity verification before discussing prescriptions",
+      "type": "procedure",
+      "body": "Verify full name, date of birth, and either member ID or address on file before discussing any prescription.",
+      "verbatim": false,
+      "spoken_version": "Before we talk about prescriptions, I need to verify your full name, date of birth, and member ID or address.",
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate"
+      ],
+      "channels": [
+        "advocate_view"
+      ],
+      "authority_level": "policy",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[OPENING]",
+      "effective_date": "2026-01-15",
+      "review_date": "2026-12-31",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "ID&V",
+        "verify member",
+        "authentication"
+      ],
+      "owner": "Pharmacy Ops",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-003",
+      "title": "Pricing disclaimer (Rx)",
+      "type": "verbatim",
+      "body": "The prices I share today are estimates based on your current plan and may change. Your final cost will be confirmed when your prescription is processed.",
+      "verbatim": true,
+      "spoken_version": null,
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate",
+        "member"
+      ],
+      "channels": [
+        "advocate_view",
+        "member_chat",
+        "voice"
+      ],
+      "authority_level": "legal_approved",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[EDUCATION] Pricing disclaimer",
+      "effective_date": "2026-01-15",
+      "review_date": "2027-01-15",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "rx pricing disclaimer",
+        "price disclaimer",
+        "cost disclaimer"
+      ],
+      "owner": "Compliance",
+      "approved_by": "Legal (synthetic)",
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-004",
+      "title": "Mail order benefits",
+      "type": "fact",
+      "body": "Mail order delivers medications to the member's home and offers a 90-day supply for most maintenance medications. It may cost less than retail; quote member-specific prices only from the pricing tool.",
+      "verbatim": false,
+      "spoken_version": "Mail order brings your medications to your home, and you can get a ninety-day supply of most maintenance medications.",
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate",
+        "member"
+      ],
+      "channels": [
+        "advocate_view",
+        "member_chat",
+        "voice"
+      ],
+      "authority_level": "knowledge_article",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[EDUCATION]",
+      "effective_date": "2026-01-15",
+      "review_date": "2026-12-31",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "home delivery",
+        "MO",
+        "mail order benefits"
+      ],
+      "owner": "Pharmacy Ops",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-005",
+      "title": "Mail order setup steps",
+      "type": "procedure",
+      "body": "1) Confirm shipping address. 2) Confirm payment method on file. 3) Ask permission to contact the prescriber. 4) Submit the request in the pharmacy system and read back the confirmation number.",
+      "verbatim": false,
+      "spoken_version": null,
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate"
+      ],
+      "channels": [
+        "advocate_view"
+      ],
+      "authority_level": "policy",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[MAIL ORDER SETUP]",
+      "effective_date": "2026-01-15",
+      "review_date": "2026-12-31",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "MO setup",
+        "set up mail order",
+        "enroll mail order"
+      ],
+      "owner": "Pharmacy Ops",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-006",
+      "title": "Mail order delivery time",
+      "type": "fact",
+      "body": "Mail order prescriptions typically arrive within 7 to 10 business days after the prescription is received from the doctor.",
+      "verbatim": false,
+      "spoken_version": "Your medication usually arrives within seven to ten business days after we receive your prescription from your doctor.",
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate",
+        "member"
+      ],
+      "channels": [
+        "advocate_view",
+        "member_chat",
+        "voice"
+      ],
+      "authority_level": "knowledge_article",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[EDUCATION] Delivery",
+      "effective_date": "2026-01-15",
+      "review_date": "2026-12-31",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "delivery time",
+        "how long",
+        "shipping time"
+      ],
+      "owner": "Pharmacy Ops",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-007",
+      "title": "Days supply by mail (90-day)",
+      "type": "fact",
+      "body": "A 90-day supply is available by mail for most maintenance medications.",
+      "verbatim": false,
+      "spoken_version": "You can get a ninety-day supply of most maintenance medications by mail.",
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate",
+        "member"
+      ],
+      "channels": [
+        "advocate_view",
+        "member_chat",
+        "voice"
+      ],
+      "authority_level": "knowledge_article",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[EDUCATION]",
+      "effective_date": "2026-01-15",
+      "review_date": "2026-12-31",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "90 day",
+        "days supply"
+      ],
+      "owner": "Pharmacy Ops",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-107",
+      "title": "Days supply by mail (100-day, legacy)",
+      "type": "fact",
+      "body": "Members can get up to a 100-day supply of maintenance medications by mail.",
+      "verbatim": false,
+      "spoken_version": null,
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate",
+        "member"
+      ],
+      "channels": [
+        "advocate_view",
+        "member_chat"
+      ],
+      "authority_level": "knowledge_article",
+      "source_doc": "KB-PHARM-0098",
+      "source_section": "Talking points",
+      "effective_date": "2025-11-01",
+      "review_date": "2026-11-01",
+      "version": 3,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "100 day",
+        "days supply"
+      ],
+      "owner": "Outbound Pharmacy",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-008",
+      "title": "Mail order shipping cost",
+      "type": "fact",
+      "body": "Standard shipping for mail order is at no extra cost.",
+      "verbatim": false,
+      "spoken_version": "Standard shipping for mail order is free.",
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate",
+        "member"
+      ],
+      "channels": [
+        "advocate_view",
+        "member_chat",
+        "voice"
+      ],
+      "authority_level": "knowledge_article",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[EDUCATION] Shipping",
+      "effective_date": "2025-06-30",
+      "review_date": "2026-06-30",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "shipping fee",
+        "delivery cost"
+      ],
+      "owner": "Pharmacy Ops",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-009",
+      "title": "Objection: prefers local pharmacy",
+      "type": "procedure",
+      "body": "Acknowledge the preference; explain the member can use both mail order and their local pharmacy; never pressure.",
+      "verbatim": false,
+      "spoken_version": null,
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate"
+      ],
+      "channels": [
+        "advocate_view"
+      ],
+      "authority_level": "knowledge_article",
+      "source_doc": "KB-PHARM-0142",
+      "source_section": "[OBJECTIONS]",
+      "effective_date": "2026-01-15",
+      "review_date": "2026-12-31",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "objection",
+        "local pharmacy"
+      ],
+      "owner": "Pharmacy Ops",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-103",
+      "title": "Pricing disclaimer (Rx) - near-duplicate",
+      "type": "verbatim",
+      "body": "The prices I give you today are estimates based on your current plan and might change. Your final cost will be confirmed once your prescription is processed.",
+      "verbatim": true,
+      "spoken_version": null,
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate"
+      ],
+      "channels": [
+        "advocate_view"
+      ],
+      "authority_level": "legal_approved",
+      "source_doc": "KB-PHARM-0098",
+      "source_section": "Pricing disclaimer",
+      "effective_date": "2025-11-01",
+      "review_date": "2026-11-01",
+      "version": 1,
+      "status": "duplicate_candidate",
+      "supersedes": null,
+      "synonyms": [],
+      "owner": "Outbound Pharmacy",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-IN-001",
+      "title": "Replacement member ID card",
+      "type": "procedure",
+      "body": "Members can request a replacement ID card via the member portal, the mobile app, or an advocate. A new card arrives within 7 to 10 days; a temporary card can be printed right away from the portal.",
+      "verbatim": false,
+      "spoken_version": "You can order a new ID card online, in the app, or with us now. It arrives in seven to ten days, and you can print a temporary card right away from the member portal.",
+      "knowledge_base": "KB-INS",
+      "audience": [
+        "advocate",
+        "member"
+      ],
+      "channels": [
+        "advocate_view",
+        "member_chat",
+        "voice"
+      ],
+      "authority_level": "knowledge_article",
+      "source_doc": "KB-INS-0057",
+      "source_section": "ID card",
+      "effective_date": "2026-02-10",
+      "review_date": "2027-02-10",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "ID card",
+        "lost card",
+        "new card"
+      ],
+      "owner": "Member Services",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-IN-002",
+      "title": "Change primary care provider (PCP)",
+      "type": "procedure",
+      "body": "1) Confirm the new PCP is in network. 2) Update the PCP in the member record. 3) Tell the member the change is effective the first day of next month.",
+      "verbatim": false,
+      "spoken_version": null,
+      "knowledge_base": "KB-INS",
+      "audience": [
+        "advocate"
+      ],
+      "channels": [
+        "advocate_view"
+      ],
+      "authority_level": "policy",
+      "source_doc": "KB-INS-0057",
+      "source_section": "PCP",
+      "effective_date": "2026-02-10",
+      "review_date": "2027-02-10",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "PCP change",
+        "switch doctor"
+      ],
+      "owner": "Member Services",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD",
+          "PDP"
+        ],
+        "states": "ALL",
+        "plan_year": 2026
+      }
+    },
+    {
+      "unit_id": "U-PH-010",
+      "title": "Copay assistance program (Kentucky pilot)",
+      "type": "fact",
+      "body": "Members in Kentucky can enroll in the Rx copay assistance pilot through an advocate. Eligibility is confirmed in the pharmacy system before enrollment.",
+      "verbatim": false,
+      "spoken_version": "If you live in Kentucky, I can enroll you in our prescription copay assistance pilot after checking your eligibility.",
+      "knowledge_base": "KB-PHARM",
+      "audience": [
+        "advocate",
+        "member"
+      ],
+      "channels": [
+        "advocate_view",
+        "member_chat",
+        "voice"
+      ],
+      "authority_level": "policy",
+      "source_doc": "KB-PHARM-0150",
+      "source_section": "KY pilot",
+      "effective_date": "2026-03-01",
+      "review_date": "2027-03-01",
+      "version": 1,
+      "status": "approved",
+      "supersedes": null,
+      "synonyms": [
+        "copay help",
+        "copay assistance",
+        "copay program"
+      ],
+      "owner": "Pharmacy Ops",
+      "approved_by": null,
+      "synthetic": true,
+      "applies_to": {
+        "lob": [
+          "MAPD"
+        ],
+        "states": [
+          "KY"
+        ],
+        "plan_year": 2026
+      }
+    }
+  ],
+  "system_of_record_note": "Verity is NOT the source of legal or business truth. Source documents and their owners are. Verity is the governed serving layer derived from them; source_doc and source_section keep the lineage."
+}

@@ -1,0 +1,111 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-dark: var(--brand-green-dark);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-outcome-answer: var(--outcome-answer);
+  --color-outcome-clarify: var(--outcome-clarify);
+  --color-outcome-insufficient: var(--outcome-insufficient);
+  --color-outcome-conflict: var(--outcome-conflict);
+  --color-outcome-stale: var(--outcome-stale);
+  --color-outcome-unauthorized: var(--outcome-unauthorized);
+  --color-outcome-safety: var(--outcome-safety);
+}
+
+:root {
+  --radius: 0.5rem;
+  --brand-green: #5ea908;
+  --brand-green-dark: #4e8416;
+  --ink: #1f2a24;
+  --ink-muted: #5f6b64;
+  --surface: #ffffff;
+  --surface-alt: #f5f7f4;
+  --border: #dde3da;
+
+  --outcome-answer: #4e8416;
+  --outcome-clarify: #1f6fb2;
+  --outcome-insufficient: #b26b00;
+  --outcome-conflict: #6b4fa3;
+  --outcome-stale: #6f6f6f;
+  --outcome-unauthorized: #b3261e;
+  --outcome-safety: #b3261e;
+
+  --background: var(--surface);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--brand-green-dark);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface-alt);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface-alt);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--surface-alt);
+  --accent-foreground: var(--ink);
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --input: var(--border);
+  --ring: var(--brand-green-dark);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+@utility field-select {
+  height: 2.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  padding: 0 0.625rem;
+  font-size: 0.875rem;
+  &:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 1px;
+  }
+}

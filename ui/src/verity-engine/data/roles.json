@@ -1,0 +1,60 @@
+{
+  "note": "SYNTHETIC roles and knowledge-base entitlements. Permissions are applied BEFORE retrieval.",
+  "roles": {
+    "pharmacy_advocate": {
+      "label": "Pharmacy advocate",
+      "knowledge_bases": [
+        "KB-PHARM",
+        "KB-SHARED"
+      ],
+      "audience": "advocate",
+      "lob": [
+        "MAPD",
+        "PDP"
+      ]
+    },
+    "insurance_advocate": {
+      "label": "Insurance advocate",
+      "knowledge_bases": [
+        "KB-INS",
+        "KB-SHARED"
+      ],
+      "audience": "advocate",
+      "lob": [
+        "MAPD",
+        "PDP"
+      ]
+    },
+    "member_chat": {
+      "label": "Member chat (self-service)",
+      "knowledge_bases": [
+        "KB-PHARM",
+        "KB-INS"
+      ],
+      "audience": "member",
+      "lob": [
+        "MAPD",
+        "PDP"
+      ]
+    }
+  },
+  "authority_hierarchy": [
+    "legal_approved",
+    "policy",
+    "knowledge_article"
+  ],
+  "conflict_rule": "If approved units disagree: higher authority wins and the answer notes the override. If they have EQUAL authority, return outcome=conflict and route to both owners. Never let the model pick.",
+  "hard_partitions": {
+    "tenant": "demo-tenant",
+    "environment": "prototype",
+    "note": "Applied before any search: tenant, environment, line of business and state jurisdiction."
+  },
+  "two_index_design": "Body index: unit text, filtered by entitlement before search; only this ever reaches the model. Routing index: unit_id, title, knowledge_base and owner team only (no body), searched across all units so a restricted match returns not_authorized with the owning team instead of a false insufficient_evidence. Titles must be written so they are safe to expose.",
+  "resolution_order": [
+    "eligible (status approved, within effective and review dates, entitlement)",
+    "applicable (line of business, state, plan year, audience, channel)",
+    "authority (legal_approved > policy > knowledge_article)",
+    "recency only through an explicit supersedes link (approved 2026-10-07); a later effective_date alone never wins",
+    "still tied and disagreeing: conflict"
+  ]
+}
