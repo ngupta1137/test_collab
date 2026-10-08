@@ -7,6 +7,7 @@ Every failure from a real run, in the order found. Format: symptom, root cause, 
 **Run 03** (`runs/03-anchoring.json`): release PASS. 2 of 27 cases failing (G17 and R04, both major, open). 0 critical. F06 and F07 were found by the gap analyst running the search log, not by the golden set.
 **Blind run 01** (`runs/blind-01.json`, 30 cases written by an agent that never saw the engine, the golden set or this file): release BLOCKED. **19 of 30 failing, 9 critical, 39.4% outcome accuracy** (golden set: 92.9%). This is the honest generalization score. See `evals/BLIND.md`.
 **Run 04 / blind run 02** (`runs/04-blind-fixes.json`, `runs/blind-02.json`): four genuine bugs fixed (F08 to F11). Golden set unchanged (PASS, same two open majors). Blind set 51.5%, 5 critical. The fixed blind cases are no longer blind.
+**Run 05 / blind run 03** (`runs/05-approvals.json`, `runs/blind-03.json`): two spec decisions approved on 2026-10-07: recency only through an explicit `supersedes` link (F01, now written into `data/roles.json`) and the lexicon entry "tier3" → "tier 3" (F07). Golden set PASS, 1 open major (G17); R04 now passes. Blind set unchanged.
 
 Caveat: the fixes below were made while looking at this 25-case set, so a pass here partly reflects fitting. The next step is a held-out set written by someone who has not seen the engine.
 
@@ -64,13 +65,13 @@ Caveat: the fixes below were made while looking at this 25-case set, so a pass h
 - **Regression case:** new R03, critical. No other case changed outcome.
 - **Lesson:** the golden set had 25 cases and passed. A second source of test traffic (real queries from the log) found a critical failure in minutes. This is why the production gate grows from production queries.
 
-## F07. OPEN, pending your approval: "copay for tier3" asks for the member's state
+## F07. FIXED (lexicon entry approved 2026-10-07): "copay for tier3" asks for the member's state
 
 - **Case:** search log Q08 "copay for tier3" (major). Found by the gap analyst.
 - **Symptom:** `needs_clarification` ("Which state is the member's plan in?"). If the advocate answers "Kentucky", Verity returns the Kentucky copay assistance pilot for a tier-3 copay question.
 - **Root cause:** "tier3" is one unknown token, so "copay" alone reaches the 0.5 coverage threshold and anchors on the copay pilot's synonyms. With "tier 3" split, coverage drops and the engine correctly abstains (G06 already covers the split form).
-- **Proposed change:** lexicon entry "tier3" → "tier 3", proposed by the gap analyst with evidence (Q08) and re-tested: Q08 goes from `needs_clarification` to `insufficient_evidence`. Lexicon entries need human approval, so it is not applied yet.
-- **Regression case:** new R04, failing until the entry is approved.
+- **Proposed change:** lexicon entry "tier3" → "tier 3", proposed by the gap analyst with evidence (Q08) and re-tested: Q08 goes from `needs_clarification` to `insufficient_evidence`. Lexicon entries need human approval; approved and applied 2026-10-07.
+- **Regression case:** R04, now passing.
 - **Wider point:** `needs_clarification` is only safe when the topic match is strong. Asking a clarifying question on a weak match invites a confident wrong answer one turn later. Worth a threshold of its own once the model query agent lands.
 
 ## F08. PHI survived when "Member" was capitalized (blind run 01)

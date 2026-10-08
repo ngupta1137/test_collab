@@ -35,6 +35,13 @@ const engine = new Verity({ units, roles, lexicon, asOf });
 // --model live | cache-only  (default off: deterministic baseline, no model calls)
 const modelArg = process.argv.indexOf('--model');
 const gw = new Gateway({ root, mode: (modelArg > -1 ? process.argv[modelArg + 1] : 'off') as Mode });
+try {
+  await gw.preflight();
+} catch (e) {
+  console.error((e as Error).message);
+  console.error('Fix the key (see docs/MODEL_RUN.md) and run again. No results were written.');
+  process.exit(2);
+}
 const engineLabel = gw.enabled ? `${ENGINE_VERSION}+${QUERY_PROMPT_VERSION}@${gw.modelFor('query')} (${gw.mode})` : ENGINE_VERSION;
 
 interface CaseResult {
@@ -135,6 +142,10 @@ const results: CaseResult[] = [];
 for (const c of golden.cases) {
   const req = { query: c.query, role: c.role, channel: c.channel, input_mode: c.input_mode, context: c.context ?? { lob: null, state: null } };
   results.push(scoreCase(c, gw.enabled ? await engine.serveAsync(req, gw) : engine.serve(req)));
+}
+if (gw.mode === 'live' && gw.calls.errors > 0) {
+  console.error(`${gw.calls.errors} model call(s) failed, so some cases ran without the model. No results were written; run again.`);
+  process.exit(2);
 }
 
 // Authoring set

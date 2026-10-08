@@ -37157,7 +37157,13 @@ var AnthropicProvider = class {
   async complete(model, req) {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
-      headers: { "x-api-key": this.key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
+      headers: {
+        "x-api-key": this.key,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+        // Only needed for keys that are not scoped to a workspace.
+        ...process.env.VERITY_ANTHROPIC_WORKSPACE ? { "anthropic-workspace-id": process.env.VERITY_ANTHROPIC_WORKSPACE } : {}
+      },
       body: JSON.stringify({ model, max_tokens: req.maxTokens, temperature: 0, system: req.system, messages: [{ role: "user", content: req.user }] })
     });
     if (!res.ok) throw new Error(`anthropic ${res.status}: ${(await res.text()).slice(0, 300)}`);
@@ -37188,6 +37194,15 @@ var Gateway = class {
   }
   key(model, req) {
     return createHash("sha256").update(JSON.stringify([model, req.system, req.user, req.maxTokens])).digest("hex").slice(0, 24);
+  }
+  /** One tiny live call before a run, so a bad key or model name stops the run instead of silently falling back. */
+  async preflight() {
+    if (this.mode !== "live" || !this.provider) return;
+    try {
+      await this.provider.complete(this.modelFor("query"), { task: "query", system: "Reply with OK.", user: "ping", maxTokens: 5 });
+    } catch (e) {
+      throw new Error(`model preflight failed, nothing was run: ${e.message}`);
+    }
   }
   /** Returns null when the model is off, the cache misses in cache-only mode, or the call fails. Callers fall back to the baseline. */
   async complete(req) {

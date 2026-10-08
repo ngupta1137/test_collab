@@ -54,7 +54,7 @@
     "eligible (status approved, within effective and review dates, entitlement)",
     "applicable (line of business, state, plan year, audience, channel)",
     "authority (legal_approved > policy > knowledge_article)",
-    "recency (later effective_date wins only within equal authority and identical applicability)",
+    "recency only through an explicit supersedes link (approved 2026-10-07); a later effective_date alone never wins",
     "still tied and disagreeing: conflict"
   ]
 }

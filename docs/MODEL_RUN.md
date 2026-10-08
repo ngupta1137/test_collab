@@ -18,7 +18,9 @@ The engine runs without any model by default. This turns on the model-backed que
    git pull
    npm install
    ```
-3. Set the key **for this window only** (it disappears when you close it, and it never touches the terminal you use for Claude Code). Use a key from your Claude API credits:
+3. Create a normal API key in the Claude Console (console.anthropic.com, **API Keys → Create Key**, in a workspace such as Default). It starts with `sk-ant-api03-`. Keys that are not scoped to a workspace fail with a 400 asking for `anthropic-workspace-id`; either make a workspace key, or also set `$env:VERITY_ANTHROPIC_WORKSPACE = "wrkspc_..."`. The run now checks the key with one tiny call first and stops if it fails, so a bad key never produces a results file.
+
+   Set the key **for this window only** (it disappears when you close it, and it never touches the terminal you use for Claude Code). Use a key from your Claude API credits:
    ```
    $env:VERITY_ANTHROPIC_KEY = "sk-ant-..."
    ```

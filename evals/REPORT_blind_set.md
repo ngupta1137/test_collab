@@ -36,7 +36,7 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 30 serving cases, 5 a
 | authoring kind accuracy pct | 100 |
 | authoring impact accuracy pct heuristic | 100 |
 | latency ms p50 | 0 |
-| latency ms p95 | 2 |
+| latency ms p95 | 1 |
 
 ## By slice
 

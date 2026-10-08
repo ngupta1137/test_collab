@@ -1,9 +1,9 @@
 {
-  "label": "run-2026-10-08T03-00-29-586Z",
+  "label": "run-2026-10-08T03-35-19-361Z",
   "engine": "baseline-deterministic-0.1",
   "model_calls": null,
   "as_of": "2026-10-06",
-  "run_at": "2026-10-08T03:00:29.620Z",
+  "run_at": "2026-10-08T03:35:19.397Z",
   "set": "data/golden_set.json",
   "note": "Prototype smoke test (27 serving + 5 authoring cases), not a launch gate. Synthetic data.",
   "gates": {
@@ -16,15 +16,15 @@
   "releasable": true,
   "metrics": {
     "critical_failures": 0,
-    "outcome_accuracy_per_part_pct": 92.9,
-    "case_accuracy_pct": 92.6,
+    "outcome_accuracy_per_part_pct": 96.4,
+    "case_accuracy_pct": 96.3,
     "unit_recall_at_3_pct": 100,
     "citation_accuracy_pct": 100,
     "claim_support_pct": "n/a: baseline composes extractively (unit text only); measured once a model composes",
     "verbatim_exact_typed_pct": 100,
     "verbatim_exact_spoken_pct": 100,
     "permission_leaks": 0,
-    "abstention_accuracy_pct": 91.7,
+    "abstention_accuracy_pct": 100,
     "retired_exposures": 0,
     "phi_redaction_pct": 100,
     "authoring_flag_recall_pct": 100,
@@ -38,8 +38,8 @@
   "slices": {
     "applicability": {
       "cases": 4,
-      "correct": 3,
-      "accuracy_pct": 75,
+      "correct": 4,
+      "accuracy_pct": 100,
       "critical_failures": 0
     },
     "conflict": {
@@ -50,8 +50,8 @@
     },
     "gap": {
       "cases": 6,
-      "correct": 5,
-      "accuracy_pct": 83.3,
+      "correct": 6,
+      "accuracy_pct": 100,
       "critical_failures": 0
     },
     "insurance": {
@@ -110,8 +110,8 @@
     },
     "regression": {
       "cases": 4,
-      "correct": 3,
-      "accuracy_pct": 75,
+      "correct": 4,
+      "accuracy_pct": 100,
       "critical_failures": 0
     },
     "retired_check": {
@@ -168,7 +168,7 @@
     },
     "insufficient_evidence": {
       "cases": 6,
-      "correct": 5
+      "correct": 6
     },
     "needs_clarification": {
       "cases": 1,
@@ -229,7 +229,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 12,
+      "latency_ms": 11,
       "trace": [
         {
           "step": 1,
@@ -307,7 +307,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429597-1"
+          "detail": "req-1791430519375-1"
         }
       ]
     },
@@ -393,7 +393,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429609-2"
+          "detail": "req-1791430519386-2"
         }
       ]
     },
@@ -516,7 +516,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429610-3"
+          "detail": "req-1791430519387-3"
         }
       ]
     },
@@ -639,7 +639,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429610-4"
+          "detail": "req-1791430519387-4"
         }
       ]
     },
@@ -761,7 +761,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429610-5"
+          "detail": "req-1791430519388-5"
         }
       ]
     },
@@ -799,7 +799,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 0,
+      "latency_ms": 1,
       "trace": [
         {
           "step": 1,
@@ -847,7 +847,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429611-6; gap logged to author queue"
+          "detail": "req-1791430519388-6; gap logged to author queue"
         }
       ]
     },
@@ -960,7 +960,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429611-7"
+          "detail": "req-1791430519389-7"
         }
       ]
     },
@@ -1005,7 +1005,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1083,7 +1083,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429611-8"
+          "detail": "req-1791430519389-8"
         }
       ]
     },
@@ -1205,7 +1205,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429612-9"
+          "detail": "req-1791430519389-9"
         }
       ]
     },
@@ -1327,7 +1327,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429612-10"
+          "detail": "req-1791430519390-10"
         }
       ]
     },
@@ -1450,7 +1450,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429613-11"
+          "detail": "req-1791430519390-11"
         }
       ]
     },
@@ -1536,7 +1536,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429613-12"
+          "detail": "req-1791430519390-12"
         }
       ]
     },
@@ -1659,7 +1659,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429614-13"
+          "detail": "req-1791430519391-13"
         }
       ]
     },
@@ -1704,7 +1704,7 @@
       "phi_ok": null,
       "critical_failure": false,
       "failure_reasons": [],
-      "latency_ms": 1,
+      "latency_ms": 0,
       "trace": [
         {
           "step": 1,
@@ -1782,7 +1782,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429614-14"
+          "detail": "req-1791430519391-14"
         }
       ]
     },
@@ -1905,7 +1905,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429615-15"
+          "detail": "req-1791430519391-15"
         }
       ]
     },
@@ -2003,7 +2003,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429615-16"
+          "detail": "req-1791430519391-16"
         }
       ]
     },
@@ -2125,7 +2125,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429615-17"
+          "detail": "req-1791430519391-17"
         }
       ]
     },
@@ -2224,7 +2224,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429615-18; gap logged to author queue"
+          "detail": "req-1791430519391-18; gap logged to author queue"
         }
       ]
     },
@@ -2432,7 +2432,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429615-20; gap logged to author queue"
+          "detail": "req-1791430519392-20; gap logged to author queue"
         }
       ]
     },
@@ -2554,7 +2554,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429616-21"
+          "detail": "req-1791430519392-21"
         }
       ]
     },
@@ -2678,7 +2678,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429616-22"
+          "detail": "req-1791430519393-22"
         }
       ]
     },
@@ -2765,7 +2765,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429616-23; gap logged to author queue"
+          "detail": "req-1791430519393-23; gap logged to author queue"
         }
       ]
     },
@@ -2852,7 +2852,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429616-24; gap logged to author queue"
+          "detail": "req-1791430519393-24; gap logged to author queue"
         }
       ]
     },
@@ -2976,7 +2976,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429617-25"
+          "detail": "req-1791430519393-25"
         }
       ]
     },
@@ -3063,7 +3063,7 @@
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429617-26; gap logged to author queue"
+          "detail": "req-1791430519394-26; gap logged to author queue"
         }
       ]
     },
@@ -3083,28 +3083,26 @@
         "unit_ids": []
       },
       "got": {
-        "outcome": "needs_clarification",
+        "outcome": "insufficient_evidence",
         "unit_ids": [],
         "parts": [
           {
             "part": "copay for tier3",
-            "outcome": "needs_clarification",
+            "outcome": "insufficient_evidence",
             "unit_ids": []
           }
         ]
       },
-      "outcome_correct": false,
+      "outcome_correct": true,
       "parts_total": 1,
-      "parts_correct": 0,
+      "parts_correct": 1,
       "recall_at_3": null,
       "verbatim_exact": null,
       "leak": false,
       "retired_exposed": false,
       "phi_ok": null,
       "critical_failure": false,
-      "failure_reasons": [
-        "expected insufficient_evidence [], got needs_clarification []"
-      ],
+      "failure_reasons": [],
       "latency_ms": 0,
       "trace": [
         {
@@ -3129,7 +3127,7 @@
           "step": 4,
           "name": "Query understanding",
           "kind": "P",
-          "detail": "normalized \"copay for tier3\"; lexicon none; 1 part(s)"
+          "detail": "normalized \"copay for tier 3\"; lexicon tier3 -> tier 3; 1 part(s)"
         },
         {
           "step": 5,
@@ -3141,31 +3139,19 @@
           "step": 6,
           "name": "Search",
           "kind": "D",
-          "detail": "\"copay for tier3\": U-PH-010 s=8.5 cov=0.5"
-        },
-        {
-          "step": 7,
-          "name": "Eligibility",
-          "kind": "D",
-          "detail": "1 eligible"
-        },
-        {
-          "step": 8,
-          "name": "Applicability",
-          "kind": "D",
-          "detail": "1 applicable"
+          "detail": "\"copay for tier3\": U-PH-010 s=8.5 cov=0.36, U-PH-005 s=2.2 cov=0.28"
         },
         {
           "step": 12,
           "name": "Return outcome per part",
           "kind": "D",
-          "detail": "copay for tier3: needs_clarification"
+          "detail": "copay for tier3: insufficient_evidence"
         },
         {
           "step": 13,
           "name": "Persist record",
           "kind": "D",
-          "detail": "req-1791428429617-27"
+          "detail": "req-1791430519394-27; gap logged to author queue"
         }
       ]
     }

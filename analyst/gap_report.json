@@ -5,11 +5,11 @@
     "queries": 20,
     "from_search_log": 20,
     "from_gap_queue": 0,
-    "served": 14,
+    "served": 13,
     "routed_not_authorized": 0,
-    "unanswered": 6,
+    "unanswered": 7,
     "clusters": 5,
-    "lexicon_proposals": 2
+    "lexicon_proposals": 1
   },
   "lexicon_proposals": [
     {
@@ -30,23 +30,6 @@
         }
       ],
       "status": "proposed: needs Knowledge Ops approval"
-    },
-    {
-      "from": "tier3",
-      "to": "tier 3",
-      "kind": "joined_token",
-      "evidence": [
-        "Q08"
-      ],
-      "effects": [
-        {
-          "query": "Q08",
-          "before": "needs_clarification",
-          "after": "insufficient_evidence",
-          "units": []
-        }
-      ],
-      "status": "proposed: needs Knowledge Ops approval"
     }
   ],
   "clusters": [
@@ -60,13 +43,15 @@
         {
           "id": "Q07",
           "text": "specialty drug copay"
+        },
+        {
+          "id": "Q08",
+          "text": "copay for tier3"
         }
       ],
-      "demand": 2,
+      "demand": 3,
       "core_terms": [
-        "copay",
-        "specialty",
-        "drug"
+        "copay"
       ],
       "gap_type": "content gap: no approved source; route to the business owner",
       "source_evidence": [],
@@ -81,7 +66,8 @@
         "title": null,
         "synonyms": [
           "tier 3 copay specialty drug",
-          "specialty drug copay"
+          "specialty drug copay",
+          "copay for tier3"
         ],
         "body": null,
         "knowledge_base": null,
@@ -302,9 +288,9 @@
     {
       "id": "Q08",
       "text": "copay for tier3",
-      "status": "served",
-      "outcome": "needs_clarification",
-      "role": "pharmacy_advocate",
+      "status": "gap",
+      "outcome": "insufficient_evidence",
+      "role": null,
       "units": []
     },
     {

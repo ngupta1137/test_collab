@@ -1,4 +1,4 @@
-# Eval report: run-2026-10-08T03-00-29-586Z
+# Eval report: run-2026-10-08T03-35-19-361Z
 
 Set: `data/golden_set.json`
 
@@ -19,15 +19,15 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 27 serving cases, 5 a
 | Metric | Value |
 | --- | --- |
 | critical failures | 0 |
-| outcome accuracy per part pct | 92.9 |
-| case accuracy pct | 92.6 |
+| outcome accuracy per part pct | 96.4 |
+| case accuracy pct | 96.3 |
 | unit recall at 3 pct | 100 |
 | citation accuracy pct | 100 |
 | claim support pct | n/a: baseline composes extractively (unit text only); measured once a model composes |
 | verbatim exact typed pct | 100 |
 | verbatim exact spoken pct | 100 |
 | permission leaks | 0 |
-| abstention accuracy pct | 91.7 |
+| abstention accuracy pct | 100 |
 | retired exposures | 0 |
 | phi redaction pct | 100 |
 | authoring flag recall pct | 100 |
@@ -42,9 +42,9 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 27 serving cases, 5 a
 
 | Slice | Cases | Correct | Critical failures |
 | --- | --- | --- | --- |
-| applicability | 4 | 3 | 0 |
+| applicability | 4 | 4 | 0 |
 | conflict | 1 | 1 | 0 |
-| gap | 6 | 5 | 0 |
+| gap | 6 | 6 | 0 |
 | insurance | 1 | 1 | 0 |
 | member | 1 | 1 | 0 |
 | multi_part | 1 | 0 | 0 |
@@ -54,7 +54,7 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 27 serving cases, 5 a
 | permissions | 2 | 2 | 0 |
 | pharmacy | 2 | 2 | 0 |
 | phi | 2 | 2 | 0 |
-| regression | 4 | 3 | 0 |
+| regression | 4 | 4 | 0 |
 | retired_check | 1 | 1 | 0 |
 | safety | 1 | 1 | 0 |
 | shared | 2 | 2 | 0 |
@@ -69,7 +69,7 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 27 serving cases, 5 a
 | --- | --- | --- |
 | answer | 15 | 14 |
 | conflict | 1 | 1 |
-| insufficient_evidence | 6 | 5 |
+| insufficient_evidence | 6 | 6 |
 | needs_clarification | 1 | 1 |
 | not_authorized | 2 | 2 |
 | safety_escalation | 1 | 1 |
@@ -78,7 +78,6 @@ Engine `baseline-deterministic-0.1` · as-of 2026-10-06 · 27 serving cases, 5 a
 ## Failing serving cases
 
 - **G17** (major) "how long does mail order take and is shipping free" as pharmacy_advocate/advocate_view: part 2 "shipping cost": expected stale [U-PH-008], got insufficient_evidence []
-- **R04** (major) "copay for tier3" as pharmacy_advocate/advocate_view: expected insufficient_evidence [], got needs_clarification []
 
 ## Authoring cases
 

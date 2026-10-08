@@ -15,6 +15,7 @@
     "mapd": "Medicare Advantage Prescription Drug plan",
     "pdp": "Prescription Drug Plan",
     "pa": "prior authorization",
-    "otc": "over-the-counter"
+    "otc": "over-the-counter",
+    "tier3": "tier 3"
   }
 }
